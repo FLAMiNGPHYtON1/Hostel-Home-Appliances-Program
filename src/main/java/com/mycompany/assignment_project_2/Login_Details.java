@@ -48,7 +48,7 @@ public class Login_Details
                     else if (Role.equals("Technician"))
                     {
                         Username = fields[1];                      
-                        Menu_Technician Obj4 = new Menu_Technician();
+                        Menu_Technician Obj4 = new Menu_Technician(Username);
                         JOptionPane.showMessageDialog(null, "NOICCEEE TECHY BOI");                
                         Obj4.setLocationRelativeTo(null);
                         Obj4.setVisible(true);
@@ -56,7 +56,7 @@ public class Login_Details
                     else
                     {
                         Username = fields[1];
-                        Menu_Customer Obj5 = new Menu_Customer();                      
+                        Menu_Customer Obj5 = new Menu_Customer(Username);                      
                         JOptionPane.showMessageDialog(null, "NOICCEEE CUSTOMER BOI");                
                         Obj5.setLocationRelativeTo(null);
                         Obj5.setVisible(true);

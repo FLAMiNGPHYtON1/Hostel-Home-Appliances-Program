@@ -13,9 +13,20 @@ public class Menu_Customer extends javax.swing.JFrame {
     /**
      * Creates new form Menu_Customer1
      */
-    public Menu_Customer() {
-        initComponents();
+    String Label_Name;
+
+    public Menu_Customer()
+    {
+      initComponents();  
     }
+   
+    public Menu_Customer(String Username)
+    {
+        initComponents();  
+        this.Label_Name = Username;
+        Customer_Display_Name.setText(Label_Name);        
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -76,6 +87,9 @@ public class Menu_Customer extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("WELCOME CUSTOMER:- ");
+
+        Customer_Display_Name.setBackground(new java.awt.Color(0, 0, 0));
+        Customer_Display_Name.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

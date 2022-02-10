@@ -13,9 +13,20 @@ public class Menu_Technician extends javax.swing.JFrame {
     /**
      * Creates new form Technician_Menu
      */
-    public Menu_Technician() {
-        initComponents();
+    String Label_Name;
+
+    public Menu_Technician()
+    {
+      initComponents();  
     }
+   
+    public Menu_Technician(String Username)
+    {
+        initComponents();  
+        this.Label_Name = Username;
+        Technician_Display_Name.setText(Label_Name);        
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,6 +65,9 @@ public class Menu_Technician extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Sylfaen", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("<html>WELCOME TECHNICIAN: -");
+
+        Technician_Display_Name.setBackground(new java.awt.Color(0, 0, 0));
+        Technician_Display_Name.setForeground(new java.awt.Color(255, 102, 51));
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 51));
 
@@ -142,16 +156,13 @@ public class Menu_Technician extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel7)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Technician_Option_4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)

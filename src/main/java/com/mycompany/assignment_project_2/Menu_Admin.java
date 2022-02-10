@@ -15,9 +15,14 @@ public class Menu_Admin extends javax.swing.JFrame {
      */
     String Label_Name;
 
+    public Menu_Admin()
+    {
+      initComponents();  
+    }
+   
     public Menu_Admin(String Username)
     {
-        initComponents();
+        initComponents();  
         this.Label_Name = Username;
         Admin_Display_Name.setText(Label_Name);        
     }
@@ -366,11 +371,16 @@ public class Menu_Admin extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        java.awt.EventQueue.invokeLater(new Runnable() 
+        {
+            @Override
+            public void run() 
+            {
+                
                 new Menu_Admin().setVisible(true);
             }
-        });
+        }
+        );
         
         
     }

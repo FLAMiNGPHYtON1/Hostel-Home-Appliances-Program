@@ -14,6 +14,7 @@ public class Login_Details
     private String Password;
     private String Role;
     
+    @SuppressWarnings("ConvertToStringSwitch")
     public void Login_Verification(String U_ID, String U_PS, String U_RL)
     {
         this.User_ID = U_ID;
@@ -22,13 +23,13 @@ public class Login_Details
         int found = 0;
         try 
         {
-            Path p = Paths.get(".", "User_Details.txt");   
-            BufferedReader reader = Files.newBufferedReader(p);
-            String line;
+            Path User_Details = Paths.get(".", "User_Details.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Details);
+            String User_Details_Array;
 
-            while ((line = reader.readLine()) != null) 
+            while ((User_Details_Array = reader.readLine()) != null) 
             {
-                String[] fields = line.split("[,]");
+                String[] fields = User_Details_Array.split("[,]");
                 if (User_ID.equals(fields[0]) && Password.equals(fields[2]) && Role.equals(fields[3]) ) 
                 {
                     found = 1;
@@ -54,9 +55,34 @@ public class Login_Details
                         Obj5.setLocationRelativeTo(null);
                         Obj5.setVisible(true);
                     }                   
-                }  
-                
-                    /*for (int i = 0; i < fields.length; ++i) 
+                }             
+            }            
+        }
+        catch (IOException ex){}  
+        if (found == 0)
+        {
+          JOptionPane.showMessageDialog(null, "NO RECORD FOUND LAH WTF YOU FUCK");  
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        // copy new file & delete temporary file
+        //Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
+       // Files.delete(tempFile);
+}
+        
+              
+
+
+                     /*for (int i = 0; i < fields.length; ++i) 
                     {
                         System.out.println(i + ": " + fields[i]);
                     }
@@ -71,25 +97,7 @@ public class Login_Details
                     add.setText(fields[8]);
                     city.setText(fields[9]);
                     state.setText(fields[10]);
-                    */
+                    */    
 
-            }
-                //writer.write(String.join(",", fields));
+ //writer.write(String.join(",", fields));
                 //writer.newLine();
-        }
-        catch (IOException ex){}  
-        if (found == 0)
-        {
-          JOptionPane.showMessageDialog(null, "NO RECORD FOUND LAH WTF YOU FUCK");  
-        }
-    }
-        // copy new file & delete temporary file
-        //Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
-       // Files.delete(tempFile);
-}
-        
-              
-
-
-      
-

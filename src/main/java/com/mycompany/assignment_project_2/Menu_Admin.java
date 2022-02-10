@@ -26,21 +26,279 @@ public class Menu_Admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        Admin_Display_Name = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Admin_Option_1 = new javax.swing.JButton();
+        Admin_Option_3 = new javax.swing.JButton();
+        Admin_Option_4 = new javax.swing.JButton();
+        Admin_Option_5 = new javax.swing.JButton();
+        Admin_Option_2 = new javax.swing.JButton();
+        Admin_Option_8 = new javax.swing.JButton();
+        Admin_Option_6 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        Admin_Option_7 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
+
+        jLabel1.setFont(new java.awt.Font("Felix Titling", 3, 24)); // NOI18N
+        jLabel1.setText("Welcome Admin:- ");
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("What would you like to do?");
+        jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 0, 0, 0, new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(76, 76, 76)
+                .addComponent(Admin_Display_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(Admin_Display_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 19, Short.MAX_VALUE))
+        );
+
+        jLabel3.setText("1.");
+
+        jLabel4.setText("2.");
+
+        jLabel5.setText("3.");
+
+        Admin_Option_1.setText("Register a new user");
+        Admin_Option_1.setActionCommand("Admin_Option_1");
+        Admin_Option_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Admin_Option_1ActionPerformed(evt);
+            }
+        });
+
+        Admin_Option_3.setText("Delete user from system");
+        Admin_Option_3.setActionCommand("Admin_Option_3");
+        Admin_Option_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Admin_Option_3ActionPerformed(evt);
+            }
+        });
+
+        Admin_Option_4.setText("View user details");
+        Admin_Option_4.setToolTipText("");
+        Admin_Option_4.setActionCommand("Admin_Option_4");
+        Admin_Option_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Admin_Option_4ActionPerformed(evt);
+            }
+        });
+
+        Admin_Option_5.setText("View all registered appointments");
+        Admin_Option_5.setActionCommand("Admin_Option_5");
+        Admin_Option_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Admin_Option_5ActionPerformed(evt);
+            }
+        });
+
+        Admin_Option_2.setText("Change login details of a user");
+        Admin_Option_2.setActionCommand("Admin_Option_2");
+        Admin_Option_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Admin_Option_2ActionPerformed(evt);
+            }
+        });
+
+        Admin_Option_8.setText("Log Out");
+        Admin_Option_8.setActionCommand("Admin_Option_8");
+        Admin_Option_8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Admin_Option_8ActionPerformed(evt);
+            }
+        });
+
+        Admin_Option_6.setText("View payments collected overall");
+        Admin_Option_6.setActionCommand("Admin_Option_6");
+        Admin_Option_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Admin_Option_6ActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("5.");
+
+        jLabel7.setText("6.");
+
+        jLabel8.setText("7.");
+
+        jLabel9.setText("8.");
+
+        jLabel10.setText("4.");
+
+        Admin_Option_7.setText("View payments collected by technician");
+        Admin_Option_7.setActionCommand("Admin_Option_7");
+        Admin_Option_7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Admin_Option_7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Admin_Option_4, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Admin_Option_3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel4))
+                            .addGap(15, 15, 15)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(Admin_Option_2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Admin_Option_1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Admin_Option_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Admin_Option_6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Admin_Option_8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Admin_Option_7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel6)
+                    .addComponent(Admin_Option_1)
+                    .addComponent(Admin_Option_5))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel7)
+                    .addComponent(Admin_Option_2)
+                    .addComponent(Admin_Option_6))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel8)
+                    .addComponent(Admin_Option_3)
+                    .addComponent(Admin_Option_7))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10)
+                    .addComponent(Admin_Option_4)
+                    .addComponent(Admin_Option_8))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Admin_Option_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Admin_Option_2ActionPerformed
+
+    private void Admin_Option_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Admin_Option_1ActionPerformed
+
+    private void Admin_Option_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Admin_Option_3ActionPerformed
+
+    private void Admin_Option_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Admin_Option_4ActionPerformed
+
+    private void Admin_Option_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Admin_Option_5ActionPerformed
+
+    private void Admin_Option_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Admin_Option_6ActionPerformed
+
+    private void Admin_Option_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Admin_Option_7ActionPerformed
+
+    private void Admin_Option_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Admin_Option_8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +337,27 @@ public class Menu_Admin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Admin_Display_Name;
+    private javax.swing.JButton Admin_Option_1;
+    private javax.swing.JButton Admin_Option_2;
+    private javax.swing.JButton Admin_Option_3;
+    private javax.swing.JButton Admin_Option_4;
+    private javax.swing.JButton Admin_Option_5;
+    private javax.swing.JButton Admin_Option_6;
+    private javax.swing.JButton Admin_Option_7;
+    private javax.swing.JButton Admin_Option_8;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

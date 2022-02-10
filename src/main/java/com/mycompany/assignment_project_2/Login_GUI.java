@@ -39,7 +39,7 @@ public class Login_GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Username:- ");
+        jLabel1.setText("Identification Number:-");
 
         jLabel2.setText("Password:- ");
 

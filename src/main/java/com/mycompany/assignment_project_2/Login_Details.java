@@ -30,7 +30,7 @@ public class Login_Details
             while ((User_Details_Array = reader.readLine()) != null) 
             {
                 String[] fields = User_Details_Array.split("[,]");
-                if (User_ID.equals(fields[0]) && Password.equals(fields[2]) && Role.equals(fields[3]) ) 
+                if (User_ID.equals(fields[0]) && Password.equals(fields[3]) && Role.equals(fields[4]) ) 
                 {
                     found = 1;
                     if (Role.equals("Admin"))

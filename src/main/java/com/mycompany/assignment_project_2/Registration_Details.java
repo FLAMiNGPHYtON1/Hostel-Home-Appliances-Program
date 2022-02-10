@@ -3,8 +3,7 @@ package com.mycompany.assignment_project_2;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 
 public class Registration_Details 
@@ -13,18 +12,21 @@ public class Registration_Details
     private String Contact_Number;
     private String Password;
     private String Role;
+    private String Identification_Number;
     
-    public void register(String U_ID, String Ctc_Num, String U_PS, String RL)
+    public void register(String U_id, String U_ID, String Ctc_Num, String U_PS, String RL)
     {
         this.User_ID = U_ID;
         this.Contact_Number = Ctc_Num;
         this.Password = U_PS;
         this.Role = RL;
+        this.Identification_Number = U_id;
         
         FileWriter User_Details;
         try 
         {
             User_Details = new FileWriter("User_Details.txt",true);
+            User_Details.write(Identification_Number + ",");
             User_Details.write(User_ID + ",");
             User_Details.write(Contact_Number + ",");
             User_Details.write(Password + ",");

@@ -10,14 +10,17 @@ import javax.swing.JOptionPane;
 
 public class Login_Details 
 {
-    private String User_ID;
+    private String Identification_Number;
     private String Password;
     private String Role;
+    public String Username;
+    
+    
     
     @SuppressWarnings("ConvertToStringSwitch")
-    public void Login_Verification(String U_ID, String U_PS, String U_RL)
+    public void Login_Verification(String u_id, String U_PS, String U_RL)
     {
-        this.User_ID = U_ID;
+        this.Identification_Number = u_id;
         this.Password = U_PS;
         this.Role = U_RL;
         int found = 0;
@@ -26,30 +29,33 @@ public class Login_Details
             Path User_Details = Paths.get(".", "User_Details.txt");   
             BufferedReader reader = Files.newBufferedReader(User_Details);
             String User_Details_Array;
-
+            
             while ((User_Details_Array = reader.readLine()) != null) 
             {
                 String[] fields = User_Details_Array.split("[,]");
-                if (User_ID.equals(fields[0]) && Password.equals(fields[3]) && Role.equals(fields[4]) ) 
+                if (Identification_Number.equals(fields[0]) && Password.equals(fields[3]) && Role.equals(fields[4]) ) 
                 {
                     found = 1;
                     if (Role.equals("Admin"))
                     {
-                        Menu_Admin Obj3 = new Menu_Admin();
+                        Username = fields[1];
+                        Menu_Admin Obj3 = new Menu_Admin(Username);            
                         JOptionPane.showMessageDialog(null, "NOICCEEE ADMINIY BOI");                
                         Obj3.setLocationRelativeTo(null);
                         Obj3.setVisible(true);
+                        
                     }
                     else if (Role.equals("Technician"))
                     {
+                        Username = fields[1];                      
                         Menu_Technician Obj4 = new Menu_Technician();
-                        
                         JOptionPane.showMessageDialog(null, "NOICCEEE TECHY BOI");                
                         Obj4.setLocationRelativeTo(null);
                         Obj4.setVisible(true);
                     }
                     else
                     {
+                        Username = fields[1];
                         Menu_Customer Obj5 = new Menu_Customer();                      
                         JOptionPane.showMessageDialog(null, "NOICCEEE CUSTOMER BOI");                
                         Obj5.setLocationRelativeTo(null);

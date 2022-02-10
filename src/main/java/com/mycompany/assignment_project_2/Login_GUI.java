@@ -29,7 +29,7 @@ public class Login_GUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        User_txt = new javax.swing.JTextField();
+        ID_txt = new javax.swing.JTextField();
         Pass_txt = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         Rl_txt = new javax.swing.JComboBox<>();
@@ -98,7 +98,7 @@ public class Login_GUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Rl_txt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(User_txt, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ID_txt, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Pass_txt, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(69, 69, 69))
         );
@@ -109,7 +109,7 @@ public class Login_GUI extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(User_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ID_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Pass_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -140,7 +140,7 @@ public class Login_GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String u_id = User_txt.getText();
+        String u_id = ID_txt.getText();
         String u_ps = new String(Pass_txt.getPassword());
         String u_rl = Rl_txt.getSelectedItem().toString();
 
@@ -185,9 +185,9 @@ public class Login_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ID_txt;
     private javax.swing.JPasswordField Pass_txt;
     private javax.swing.JComboBox<String> Rl_txt;
-    private javax.swing.JTextField User_txt;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

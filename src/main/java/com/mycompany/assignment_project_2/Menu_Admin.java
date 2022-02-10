@@ -13,8 +13,13 @@ public class Menu_Admin extends javax.swing.JFrame {
     /**
      * Creates new form Admin_Menu
      */
-    public Menu_Admin() {
+    String Label_Name;
+
+    public Menu_Admin(String Username)
+    {
         initComponents();
+        this.Label_Name = Username;
+        Admin_Display_Name.setText(Label_Name);        
     }
 
     /**
@@ -61,6 +66,10 @@ public class Menu_Admin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Welcome Admin:- ");
 
+        Admin_Display_Name.setBackground(new java.awt.Color(0, 0, 0));
+        Admin_Display_Name.setForeground(new java.awt.Color(255, 255, 255));
+        Admin_Display_Name.setToolTipText("");
+
         jPanel3.setBackground(new java.awt.Color(51, 0, 51));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
@@ -96,9 +105,9 @@ public class Menu_Admin extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(13, 13, 13)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(Admin_Display_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Admin_Display_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -352,6 +361,7 @@ public class Menu_Admin extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Menu_Admin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        
         //</editor-fold>
         //</editor-fold>
 
@@ -361,10 +371,12 @@ public class Menu_Admin extends javax.swing.JFrame {
                 new Menu_Admin().setVisible(true);
             }
         });
+        
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Admin_Display_Name;
+    public javax.swing.JLabel Admin_Display_Name;
     private javax.swing.JButton Admin_Option_1;
     private javax.swing.JButton Admin_Option_2;
     private javax.swing.JButton Admin_Option_3;

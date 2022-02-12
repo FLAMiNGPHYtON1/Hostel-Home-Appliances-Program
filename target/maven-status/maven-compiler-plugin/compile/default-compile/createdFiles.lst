@@ -11,7 +11,9 @@ com\mycompany\assignment_project_2\Menu_Technician$2.class
 com\mycompany\assignment_project_2\Menu_Admin$1.class
 com\mycompany\assignment_project_2\Menu_Admin.class
 com\mycompany\assignment_project_2\Menu_Customer$3.class
+com\mycompany\assignment_project_2\Menu_Admin$11.class
 com\mycompany\assignment_project_2\Registration_Details.class
+com\mycompany\assignment_project_2\Menu_Admin$13.class
 com\mycompany\assignment_project_2\Menu_Technician.class
 com\mycompany\assignment_project_2\Menu_Admin$3.class
 com\mycompany\assignment_project_2\Registration_Form$1.class
@@ -25,4 +27,5 @@ com\mycompany\assignment_project_2\Menu_Admin$10.class
 com\mycompany\assignment_project_2\Menu_Admin$7.class
 com\mycompany\assignment_project_2\Menu_Admin$2.class
 com\mycompany\assignment_project_2\Menu_Technician$3.class
+com\mycompany\assignment_project_2\Menu_Admin$12.class
 com\mycompany\assignment_project_2\Login_GUI.class

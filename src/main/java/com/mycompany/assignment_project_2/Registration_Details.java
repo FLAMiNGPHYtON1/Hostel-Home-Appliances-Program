@@ -14,13 +14,13 @@ public class Registration_Details
     private String Role;
     private String Identification_Number;
     
-    public void register(String U_id, String U_ID, String Ctc_Num, String U_PS, String RL)
+    public void register(String u_ID, String u_id, String u_ct, String u_ps, String u_rl)
     {
-        this.User_ID = U_ID;
-        this.Contact_Number = Ctc_Num;
-        this.Password = U_PS;
-        this.Role = RL;
-        this.Identification_Number = U_id;
+        this.User_ID = u_id;
+        this.Contact_Number = u_ct;
+        this.Password = u_ps;
+        this.Role = u_rl;
+        this.Identification_Number = u_ID;
         
         FileWriter User_Details;
         try 

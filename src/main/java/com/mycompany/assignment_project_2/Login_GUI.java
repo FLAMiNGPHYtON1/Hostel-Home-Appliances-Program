@@ -144,9 +144,9 @@ public class Login_GUI extends javax.swing.JFrame {
         String u_ps = new String(Pass_txt.getPassword());
         String u_rl = Rl_txt.getSelectedItem().toString();
 
-        Login_Details Obj1 = new Login_Details();
-        Obj1.Login_Verification(u_id, u_ps, u_rl);
-        this.dispose();
+        Login_Details Login_Processing_Obj1 = new Login_Details();
+        Login_Processing_Obj1.Login_Verification(u_id, u_ps, u_rl);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

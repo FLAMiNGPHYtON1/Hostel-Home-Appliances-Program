@@ -23,12 +23,13 @@ public class Login_Details
         this.Identification_Number = u_id;
         this.Password = U_PS;
         this.Role = U_RL;
-        int found = 0;
+        int found = 0;   
         try 
         {
             Path User_Details = Paths.get(".", "User_Details.txt");   
             BufferedReader reader = Files.newBufferedReader(User_Details);
             String User_Details_Array;
+            
             
             while ((User_Details_Array = reader.readLine()) != null) 
             {
@@ -38,28 +39,34 @@ public class Login_Details
                     found = 1;
                     if (Role.equals("Admin"))
                     {
+                        Login_GUI Login_Obj2 = new Login_GUI();
+                        Login_Obj2.dispose();
                         Username = fields[1];
-                        Menu_Admin Obj3 = new Menu_Admin(Username);            
+                        Menu_Admin Admin_Object2 = new Menu_Admin(Username);            
                         JOptionPane.showMessageDialog(null, "NOICCEEE ADMINIY BOI");                
-                        Obj3.setLocationRelativeTo(null);
-                        Obj3.setVisible(true);
+                        Admin_Object2.setLocationRelativeTo(null);
+                        Admin_Object2.setVisible(true);                    
                         
                     }
                     else if (Role.equals("Technician"))
                     {
+                        Login_GUI Login_Obj3 = new Login_GUI();
+                        Login_Obj3.dispose();
                         Username = fields[1];                      
-                        Menu_Technician Obj4 = new Menu_Technician(Username);
+                        Menu_Technician Admin_Object3 = new Menu_Technician(Username);
                         JOptionPane.showMessageDialog(null, "NOICCEEE TECHY BOI");                
-                        Obj4.setLocationRelativeTo(null);
-                        Obj4.setVisible(true);
+                        Admin_Object3.setLocationRelativeTo(null);
+                        Admin_Object3.setVisible(true);                       
                     }
                     else
                     {
+                        Login_GUI Login_Obj4 = new Login_GUI();
+                        Login_Obj4.dispose();
                         Username = fields[1];
-                        Menu_Customer Obj5 = new Menu_Customer(Username);                      
+                        Menu_Customer Admin_Object4 = new Menu_Customer(Username);                      
                         JOptionPane.showMessageDialog(null, "NOICCEEE CUSTOMER BOI");                
-                        Obj5.setLocationRelativeTo(null);
-                        Obj5.setVisible(true);
+                        Admin_Object4.setLocationRelativeTo(null);
+                        Admin_Object4.setVisible(true);                   
                     }                   
                 }             
             }            
@@ -67,7 +74,9 @@ public class Login_Details
         catch (IOException ex){}  
         if (found == 0)
         {
-          JOptionPane.showMessageDialog(null, "NO RECORD FOUND LAH");  
+          JOptionPane.showMessageDialog(null, "NO RECORD FOUND LAH");
+          Login_GUI Login_Obj5 = new Login_GUI();
+          Login_Obj5.setVisible(true);
         }
     }
     

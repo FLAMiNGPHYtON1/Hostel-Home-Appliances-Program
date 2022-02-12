@@ -4,6 +4,14 @@
  */
 package com.mycompany.assignment_project_2;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author aliza
@@ -14,12 +22,10 @@ public class Menu_Admin extends javax.swing.JFrame {
      * Creates new form Admin_Menu
      */
     String Label_Name;
-
     public Menu_Admin()
     {
       initComponents();  
     }
-   
     public Menu_Admin(String Username)
     {
         initComponents();  
@@ -306,11 +312,25 @@ public class Menu_Admin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Admin_Option_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_2ActionPerformed
-        // TODO add your handling code here:
+       
+        
+        
+        
+        try
+        {                  
+            Path User_Details = Paths.get(".", "User_Details.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Details);
+            String User_Details_Array;                  
+        }
+        catch (IOException ex){}    
     }//GEN-LAST:event_Admin_Option_2ActionPerformed
 
     private void Admin_Option_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_1ActionPerformed
-        // TODO add your handling code here:
+      Registration_Form Register_Object1 = new Registration_Form();
+      this.setVisible(false);
+      Register_Object1.setLocationRelativeTo(null);
+      Register_Object1.setVisible(true);
+        
     }//GEN-LAST:event_Admin_Option_1ActionPerformed
 
     private void Admin_Option_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_3ActionPerformed
@@ -334,7 +354,10 @@ public class Menu_Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_Admin_Option_7ActionPerformed
 
     private void Admin_Option_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_9ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        Login_GUI Login_Obj1 = new Login_GUI();
+        Login_Obj1.setLocationRelativeTo(null);
+        Login_Obj1.setVisible(true);
     }//GEN-LAST:event_Admin_Option_9ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -375,8 +398,7 @@ public class Menu_Admin extends javax.swing.JFrame {
         {
             @Override
             public void run() 
-            {
-                
+            {               
                 new Menu_Admin().setVisible(true);
             }
         }

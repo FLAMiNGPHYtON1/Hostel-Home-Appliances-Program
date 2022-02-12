@@ -207,7 +207,10 @@ public class Menu_Technician extends javax.swing.JFrame {
     }//GEN-LAST:event_Technician_Option_3ActionPerformed
 
     private void Technician_Option_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Technician_Option_5ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        Login_GUI Login_Obj6 = new Login_GUI();
+        Login_Obj6.setLocationRelativeTo(null);
+        Login_Obj6.setVisible(true);
     }//GEN-LAST:event_Technician_Option_5ActionPerformed
 
     /**

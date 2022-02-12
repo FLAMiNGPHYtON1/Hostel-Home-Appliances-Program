@@ -184,9 +184,7 @@ public class Registration_Form extends javax.swing.JFrame {
         Obj2.register(u_ID, u_id,  u_ct,  u_ps,  u_rl);
         JOptionPane.showMessageDialog(null, "Registration Successful!");
         this.dispose();
-        Menu_Admin Admin_Object1 = new Menu_Admin();
-        Admin_Object1.setVisible(true);
-        
+       
         }
     }//GEN-LAST:event_REGISTER_ButtonActionPerformed
 

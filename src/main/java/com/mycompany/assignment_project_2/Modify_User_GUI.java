@@ -211,11 +211,10 @@ public class Modify_User_GUI extends javax.swing.JFrame {
 
     private void Confirm_Modify_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_Modify_ButtonActionPerformed
 
-    int found = 0;
+        String U_ID_DISPLAY = "";
+        int found = 0;
         try 
-        {           
-            
-                          
+        {                           
             String u_ID = User_IC_Display.getText();    
             String u_id = User_ID_Display.getText();   
             String u_ct = User_Contact_Number_Display.getText();
@@ -224,6 +223,7 @@ public class Modify_User_GUI extends javax.swing.JFrame {
             String IC = (String) User_Table.getValueAt(User_Table.getSelectedRow(), 0);
             System.out.println(IC);           
             System.out.println(u_ID);
+            U_ID_DISPLAY = u_ID;
             
             if( u_ID.equals("") ||  u_id.equals("") || u_ct.equals("") || u_ps.equals("") || u_rl.equals(""))
             {
@@ -233,7 +233,7 @@ public class Modify_User_GUI extends javax.swing.JFrame {
             else
             {              
                 int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm Action!", JOptionPane.YES_NO_OPTION);
-                Path p = Paths.get(",", "User_Details.txt");      
+                Path p = Paths.get(".", "User_Details.txt");      
                 if (answer == JOptionPane.NO_OPTION) 
                 {
                     found = 3;  
@@ -245,11 +245,11 @@ public class Modify_User_GUI extends javax.swing.JFrame {
                     try (BufferedReader reader = Files.newBufferedReader(p);
                         BufferedWriter writer = Files.newBufferedWriter(tempFile)) 
                     {
-                        String line;
+                        String line123;
                     // copy everything until the id is found
-                        while ((line = reader.readLine()) != null) 
+                        while ((line123 = reader.readLine()) != null) 
                         {
-                            String[] fields = line.split("[,]");
+                            String[] fields = line123.split("[,]");
                             System.out.println(fields[0]);
                             if (IC.equals(fields[0])) 
                             {
@@ -288,8 +288,8 @@ public class Modify_User_GUI extends javax.swing.JFrame {
      }
      if (found == 1)
      {
-        
-         JOptionPane.showMessageDialog(rootPane, "Record Updated Successfully for ID: "+ User_IC_Display);        
+         
+         JOptionPane.showMessageDialog(rootPane, "Record Updated Successfully for ID: "+ U_ID_DISPLAY);        
      }   
     }//GEN-LAST:event_Confirm_Modify_ButtonActionPerformed
 

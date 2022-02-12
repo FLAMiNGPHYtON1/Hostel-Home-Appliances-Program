@@ -172,7 +172,7 @@ public class Registration_Form extends javax.swing.JFrame {
         if (User_txt.getText().isEmpty() || Ctc_txt.getText().isEmpty() || new String(Pass_txt.getPassword()).isEmpty() || ID_txt.getText().isEmpty())
         {
            JOptionPane.showMessageDialog(null, "No Fields can be left empty!"); 
-        }
+        } 
         else
         {
         String u_ID = ID_txt.getText();    

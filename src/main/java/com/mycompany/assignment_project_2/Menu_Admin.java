@@ -23,8 +23,7 @@ public class Menu_Admin extends javax.swing.JFrame {
     /**
      * Creates new form Admin_Menu
      */
-    String Label_Name;
-    int Enable_Button = 0;
+    String Label_Name;   
     public Menu_Admin()
     {
       initComponents();  
@@ -50,7 +49,6 @@ public class Menu_Admin extends javax.swing.JFrame {
         User_Details_Table_Dialog = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        Confirm_Modify_Button = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -65,7 +63,27 @@ public class Menu_Admin extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         User_Table = new javax.swing.JTable()
         {public boolean isCellEditable(int row, int column){return false;}};
-        jButton1 = new javax.swing.JButton();
+        Show_Users_Button = new javax.swing.JButton();
+        Confirm_Modify_Button = new javax.swing.JButton();
+        User_Details_Table_Dialog2 = new javax.swing.JDialog();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        User_IC_Display2 = new javax.swing.JTextField();
+        User_ID_Display2 = new javax.swing.JTextField();
+        User_Contact_Number_Display2 = new javax.swing.JTextField();
+        User_Password_Display2 = new javax.swing.JTextField();
+        User_Role_Display2 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        User_Table2 = new javax.swing.JTable()
+        {public boolean isCellEditable(int row, int column){return false;}};
+        Show_Users_Button2 = new javax.swing.JButton();
+        Delete_Modify_Button = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -116,14 +134,6 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        Confirm_Modify_Button.setText("Modify Selected Row");
-        Confirm_Modify_Button.setEnabled(false);
-        Confirm_Modify_Button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Confirm_Modify_ButtonActionPerformed(evt);
-            }
-        });
-
         jLabel4.setText("User_IC:- ");
 
         jLabel5.setText("User Name:- ");
@@ -144,7 +154,7 @@ public class Menu_Admin extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addGap(89, 89, 89)
-                        .addComponent(User_Role_Display))
+                        .addComponent(User_Role_Display, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
@@ -207,10 +217,17 @@ public class Menu_Admin extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(User_Table);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Show_Users_Button.setText("Refresh");
+        Show_Users_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Show_Users_ButtonActionPerformed(evt);
+            }
+        });
+
+        Confirm_Modify_Button.setText("Modify Selected Row");
+        Confirm_Modify_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Confirm_Modify_ButtonActionPerformed(evt);
             }
         });
 
@@ -218,21 +235,21 @@ public class Menu_Admin extends javax.swing.JFrame {
         User_Details_Table_Dialog.getContentPane().setLayout(User_Details_Table_DialogLayout);
         User_Details_Table_DialogLayout.setHorizontalGroup(
             User_Details_Table_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(User_Details_Table_DialogLayout.createSequentialGroup()
-                .addGroup(User_Details_Table_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(User_Details_Table_DialogLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(User_Details_Table_DialogLayout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(Confirm_Modify_Button)
-                        .addGap(40, 40, 40)
-                        .addComponent(jButton1)
-                        .addGap(0, 153, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 755, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(User_Details_Table_DialogLayout.createSequentialGroup()
+                .addGroup(User_Details_Table_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, User_Details_Table_DialogLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(30, 30, 30))
+                    .addGroup(User_Details_Table_DialogLayout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(Show_Users_Button)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Confirm_Modify_Button)
+                        .addGap(54, 54, 54)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         User_Details_Table_DialogLayout.setVerticalGroup(
             User_Details_Table_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -245,11 +262,167 @@ public class Menu_Admin extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(User_Details_Table_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Confirm_Modify_Button)
-                            .addComponent(jButton1))
-                        .addGap(38, 38, 38))
-                    .addGroup(User_Details_Table_DialogLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0))))
+                            .addComponent(Show_Users_Button)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(121, Short.MAX_VALUE))
+        );
+
+        User_Details_Table_Dialog2.setLocation(new java.awt.Point(0, 0));
+        User_Details_Table_Dialog2.setMinimumSize(new java.awt.Dimension(992, 557));
+        User_Details_Table_Dialog2.setSize(new java.awt.Dimension(500, 500));
+
+        jPanel6.setBackground(new java.awt.Color(0, 0, 0));
+
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setText("Details of users currently registered in the system");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jLabel10.setText("User_IC:- ");
+
+        jLabel11.setText("User Name:- ");
+
+        jLabel12.setText("User Contact Number:- ");
+
+        jLabel13.setText("User Password:- ");
+
+        jLabel14.setText("User Role:- ");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addGap(89, 89, 89)
+                        .addComponent(User_Role_Display2, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel12))
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(User_Contact_Number_Display2)
+                            .addComponent(User_Password_Display2)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel10))
+                        .addGap(80, 80, 80)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(User_IC_Display2)
+                            .addComponent(User_ID_Display2))))
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(User_IC_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(User_ID_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(User_Contact_Number_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(User_Password_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(User_Role_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        User_Table2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "User_IC", "User Name", "User Contact Number", "User Password", "User Role"
+            }
+        ));
+        User_Table2.setFocusable(false);
+        User_Table2.setShowGrid(true);
+        User_Table2.getTableHeader().setReorderingAllowed(false);
+        User_Table2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                User_Table2MouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(User_Table2);
+
+        Show_Users_Button2.setText("Refresh");
+        Show_Users_Button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Show_Users_Button2ActionPerformed(evt);
+            }
+        });
+
+        Delete_Modify_Button.setText("Delete_Selected_Row");
+        Delete_Modify_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Delete_Modify_ButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout User_Details_Table_Dialog2Layout = new javax.swing.GroupLayout(User_Details_Table_Dialog2.getContentPane());
+        User_Details_Table_Dialog2.getContentPane().setLayout(User_Details_Table_Dialog2Layout);
+        User_Details_Table_Dialog2Layout.setHorizontalGroup(
+            User_Details_Table_Dialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(User_Details_Table_Dialog2Layout.createSequentialGroup()
+                .addGroup(User_Details_Table_Dialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, User_Details_Table_Dialog2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(30, 30, 30))
+                    .addGroup(User_Details_Table_Dialog2Layout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(Show_Users_Button2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Delete_Modify_Button)
+                        .addGap(54, 54, 54)))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        User_Details_Table_Dialog2Layout.setVerticalGroup(
+            User_Details_Table_Dialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_Details_Table_Dialog2Layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(User_Details_Table_Dialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(User_Details_Table_Dialog2Layout.createSequentialGroup()
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(User_Details_Table_Dialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Delete_Modify_Button)
+                            .addComponent(Show_Users_Button2)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -496,11 +669,12 @@ public class Menu_Admin extends javax.swing.JFrame {
 
     private void Admin_Option_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_2ActionPerformed
         
+        User_Details_Table_Dialog.setVisible(true);
         try
         {                  
             Path User_Details = Paths.get(".", "User_Details.txt");   
             BufferedReader reader = Files.newBufferedReader(User_Details);         
-            DefaultTableModel model1 = (DefaultTableModel) User_Table_2.getModel();  
+            DefaultTableModel model1 = (DefaultTableModel) User_Table.getModel();  
             model1.setRowCount(0);
             String User_Details_Array;         
             while ((User_Details_Array = reader.readLine()) != null) 
@@ -510,7 +684,8 @@ public class Menu_Admin extends javax.swing.JFrame {
             }
         }
         catch (IOException ex){}   
-        Modify_User_GUI Modify_Object1 = new Modify_User_GUI();
+     
+       
         
        
     }//GEN-LAST:event_Admin_Option_2ActionPerformed
@@ -523,7 +698,21 @@ public class Menu_Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_Admin_Option_1ActionPerformed
 
     private void Admin_Option_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_3ActionPerformed
-        // TODO add your handling code here:
+        User_Details_Table_Dialog2.setVisible(true);
+        try
+        {                  
+            Path User_Details = Paths.get(".", "User_Details.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Details);         
+            DefaultTableModel model2 = (DefaultTableModel) User_Table2.getModel();  
+            model2.setRowCount(0);
+            String User_Details_Array;         
+            while ((User_Details_Array = reader.readLine()) != null) 
+            {
+                String[] fields = User_Details_Array.split("[,]");  
+                model2.addRow(fields);
+            }
+        }
+        catch (IOException ex){}   
     }//GEN-LAST:event_Admin_Option_3ActionPerformed
 
     private void Admin_Option_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_4ActionPerformed
@@ -553,88 +742,80 @@ public class Menu_Admin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Admin_Option_8ActionPerformed
 
-    private void Confirm_Modify_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_Modify_ButtonActionPerformed
-        
-        JOptionPane.showConfirmDialog(this, "Confirm modify operation?", "Confirm", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE );
-        String u_ID = User_IC_Display.getText();    
-        String u_id = User_ID_Display.getText();   
-        String u_ct = User_Contact_Number_Display.getText();
-        String u_ps = User_Password_Display.getText();
-        String u_rl = User_Role_Display.getText();
-        String New_User_Data = (u_ID + "," + u_id + "," + u_ct + "," + u_ps + "," + u_rl);
-        DefaultTableModel model3 = (DefaultTableModel)User_Table.getModel();
-        int selected_row_index = User_Table.getSelectedRow();
-        model3.setValueAt(u_ID,selected_row_index,0);
-        model3.setValueAt(u_id,selected_row_index,1);
-        model3.setValueAt(u_ct,selected_row_index,2);
-        model3.setValueAt(u_ps,selected_row_index,3);
-        model3.setValueAt(u_rl,selected_row_index,4);
-        
-    }//GEN-LAST:event_Confirm_Modify_ButtonActionPerformed
-
     private void User_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_User_TableMouseClicked
-        
-        Enable_Button = 1;
-        if (Enable_Button == 0)
-        {
-            Confirm_Modify_Button.setEnabled(false);
-        }
-        else
-        {
-            Confirm_Modify_Button.setEnabled(true);
-        }    
+     
         int selected_row_index = User_Table.getSelectedRow();
         User_IC_Display.setText(User_Table.getValueAt(selected_row_index,0).toString());
         User_ID_Display.setText(User_Table.getValueAt(selected_row_index,1).toString());
         User_Contact_Number_Display.setText(User_Table.getValueAt(selected_row_index,2).toString());
         User_Password_Display.setText(User_Table.getValueAt(selected_row_index,3).toString());
-        User_Role_Display.setText(User_Table.getValueAt(selected_row_index,4).toString());       
+        User_Role_Display.setText(User_Table.getValueAt(selected_row_index,4).toString());
     }//GEN-LAST:event_User_TableMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void Show_Users_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_Users_ButtonActionPerformed
+        try
+        {
+            Path User_Details = Paths.get(".", "User_Details.txt");
+            BufferedReader reader = Files.newBufferedReader(User_Details);
+            DefaultTableModel model1 = (DefaultTableModel) User_Table.getModel();
+            model1.setRowCount(0);
+            String User_Details_Array;
+            while ((User_Details_Array = reader.readLine()) != null)
+            {
+                String[] fields = User_Details_Array.split("[,]");
+                model1.addRow(fields);
+            }
+        }
+        catch (IOException ex){}
+    }//GEN-LAST:event_Show_Users_ButtonActionPerformed
+
+    private void Confirm_Modify_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_Modify_ButtonActionPerformed
+
+        String U_ID_DISPLAY = "";
         int found = 0;
-        try 
-        {           
-            
-            Path p = Paths.get(",", "User_Details.txt");                     
-            String u_ID = User_IC_Display.getText();    
-            String u_id = User_ID_Display.getText();   
+        try
+        {
+            String u_ID = User_IC_Display.getText();
+            String u_id = User_ID_Display.getText();
             String u_ct = User_Contact_Number_Display.getText();
             String u_ps = User_Password_Display.getText();
-            String u_rl = User_Role_Display.getText();         
+            String u_rl = User_Role_Display.getText();
             String IC = (String) User_Table.getValueAt(User_Table.getSelectedRow(), 0);
-            System.out.println(IC);           
+            System.out.println(IC);
             System.out.println(u_ID);
-            
+            U_ID_DISPLAY = IC;
+
             if( u_ID.equals("") ||  u_id.equals("") || u_ct.equals("") || u_ps.equals("") || u_rl.equals(""))
             {
                 found = 2;
-                JOptionPane.showMessageDialog(rootPane, "Fill in All the details.");
-            }            
+                JOptionPane.showMessageDialog(rootPane, "Please select a row");
+            }
             else
-            {              
+            {
                 int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm Action!", JOptionPane.YES_NO_OPTION);
-                if (answer == JOptionPane.NO_OPTION) 
+                /*FOR THE LOVE OF FUCKING GOD DONT CHANGE THE DOT YEAH?*/
+                Path p = Paths.get(".", "User_Details.txt");
+                if (answer == JOptionPane.NO_OPTION)
                 {
-                    found = 3;  
-                } 
-                
-                else if(answer == JOptionPane.YES_OPTION) 
-                {                 
+                    found = 3;
+                }
+
+                else if(answer == JOptionPane.YES_OPTION)
+                {
                     Path tempFile = Files.createTempFile(p.getParent(), "usersTemp", ".txt");
                     try (BufferedReader reader = Files.newBufferedReader(p);
-                        BufferedWriter writer = Files.newBufferedWriter(tempFile)) 
+                        BufferedWriter writer = Files.newBufferedWriter(tempFile))
                     {
-                        String line;
-                    // copy everything until the id is found
-                        while ((line = reader.readLine()) != null) 
+                        String line123;
+                        // copy everything until the id is found
+                        while ((line123 = reader.readLine()) != null)
                         {
-                            String[] fields = line.split("[,]");
+                            String[] fields = line123.split("[,]");
                             System.out.println(fields[0]);
-                            if (IC.equals(fields[0])) 
+                            if (IC.equals(fields[0]))
                             {
                                 found = 1;
-                                for (int i = 0; i < fields.length; ++i) 
+                                for (int i = 0; i < fields.length; ++i)
                                 {
                                     System.out.println(i + ": " + fields[i]);
                                 }
@@ -644,34 +825,148 @@ public class Menu_Admin extends javax.swing.JFrame {
                                 fields[3] = u_ps;
                                 fields[4] = u_rl;
                             }
-                                writer.write(String.join(",", fields));
-                                writer.newLine();
+                            writer.write(String.join(",", fields));
+                            writer.newLine();
 
                         }
                         User_IC_Display.setText(null);
                         User_ID_Display.setText(null);
                         User_Contact_Number_Display.setText(null);
                         User_Password_Display.setText(null);
-                        User_Role_Display.setText(null);                
+                        User_Role_Display.setText(null);
+                    }
+                    // copy new file & delete temporary file
+                    Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
+                    Files.delete(tempFile);
+                }
+            }
+        }
+        catch (IOException ex) {}
+
+        if (found == 0)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Record not found.");
+        }
+        if (found == 1)
+        {
+
+            JOptionPane.showMessageDialog(rootPane, "Record Updated Successfully for ID: "+ U_ID_DISPLAY);
+        }
+    }//GEN-LAST:event_Confirm_Modify_ButtonActionPerformed
+
+    private void User_Table2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_User_Table2MouseClicked
+        int selected_row_index = User_Table2.getSelectedRow();
+        User_IC_Display2.setText(User_Table2.getValueAt(selected_row_index,0).toString());
+        User_ID_Display2.setText(User_Table2.getValueAt(selected_row_index,1).toString());
+        User_Contact_Number_Display2.setText(User_Table2.getValueAt(selected_row_index,2).toString());
+        User_Password_Display2.setText(User_Table2.getValueAt(selected_row_index,3).toString());
+        User_Role_Display2.setText(User_Table2.getValueAt(selected_row_index,4).toString());
+    }//GEN-LAST:event_User_Table2MouseClicked
+
+    private void Show_Users_Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_Users_Button2ActionPerformed
+        try
+        {
+            Path User_Details = Paths.get(".", "User_Details.txt");
+            BufferedReader reader = Files.newBufferedReader(User_Details);
+            DefaultTableModel model1 = (DefaultTableModel) User_Table2.getModel();
+            model1.setRowCount(0);
+            String User_Details_Array;
+            while ((User_Details_Array = reader.readLine()) != null)
+            {
+                String[] fields = User_Details_Array.split("[,]");
+                model1.addRow(fields);
+            }
+        }
+        catch (IOException ex){}
+          
+    }//GEN-LAST:event_Show_Users_Button2ActionPerformed
+
+    private void Delete_Modify_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_Modify_ButtonActionPerformed
+        String U_ID_DISPLAY = "";
+        int found = 0;
+        String u_ID = User_IC_Display2.getText();
+        String u_id = User_ID_Display2.getText();
+        String u_ct = User_Contact_Number_Display2.getText();
+        String u_ps = User_Password_Display2.getText();
+        String u_rl = User_Role_Display2.getText();
+        String IC2 = (String) User_Table2.getValueAt(User_Table2.getSelectedRow(), 0);
+        U_ID_DISPLAY = IC2;
+        try 
+        {         
+            Path p = Paths.get(".", "User_Details.txt");
+            if( u_ID.equals("") ||  u_id.equals("") || u_ct.equals("") || u_ps.equals("") || u_rl.equals(""))
+            {
+                found = 2;
+                JOptionPane.showMessageDialog(rootPane, "Please select a row");
+            }           
+            else
+            {               
+                int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm action!", JOptionPane.YES_NO_OPTION);
+                if (answer == JOptionPane.NO_OPTION) 
+                {                  
+                    found = 3;                 
+                } 
+                
+                else if(answer == JOptionPane.YES_OPTION) 
+                {
+                    
+                    Path tempFile = Files.createTempFile(p.getParent(), "usersTemp", ".txt");
+
+                    try (BufferedReader reader = Files.newBufferedReader(p);
+                            BufferedWriter writer = Files.newBufferedWriter(tempFile)) 
+                    {
+                        String line;
+
+                    // copy everything until the id is found
+                        while ((line = reader.readLine()) != null) 
+                        {
+
+                            String[] fields = line.split("[,]");
+                            if (!IC2.equals(fields[0])) 
+                            {
+                                //found = 1;
+                                for (int i = 0; i < fields.length; ++i) 
+                                {
+                                    System.out.println(i + ": " + fields[i]);
+                                }
+
+                                writer.write(String.join(",", fields));
+                                writer.newLine();
+                            }
+                            if (IC2.equals(fields[0])) 
+                            {
+                                found = 1;
+                            }
+                        }
+                        User_IC_Display2.setText(null);
+                        User_ID_Display2.setText(null);
+                        User_Contact_Number_Display2.setText(null);
+                        User_Password_Display2.setText(null);
+                        User_Role_Display2.setText(null);
                     }
                 // copy new file & delete temporary file
                 Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
-                Files.delete(tempFile);                        
-                }            
-            }   
-        } 
-        catch (IOException ex) {}
+                Files.delete(tempFile);
+                
+    
+                }
+
+                
+            }
+
         
-     if (found == 0)
+        } 
+        catch (IOException ex){}     
+     /*if (found == 0)
      {
          JOptionPane.showMessageDialog(rootPane, "Record not found.");
-     }
+     }*/
      if (found == 1)
      {
         
-         JOptionPane.showMessageDialog(rootPane, "Record Updated Successfully for ID: "+ User_IC_Display);        
+         JOptionPane.showMessageDialog(rootPane, "Record Deleted Successfully!");        
      }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_Delete_Modify_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -728,6 +1023,7 @@ public class Menu_Admin extends javax.swing.JFrame {
     private javax.swing.JButton Admin_Option_8;
     private javax.swing.JButton Admin_Option_9;
     private javax.swing.JButton Confirm_Modify_Button;
+    private javax.swing.JButton Delete_Modify_Button;
     private javax.swing.JLabel List_position_1;
     private javax.swing.JLabel List_position_2;
     private javax.swing.JLabel List_position_3;
@@ -737,15 +1033,28 @@ public class Menu_Admin extends javax.swing.JFrame {
     private javax.swing.JLabel List_position_7;
     private javax.swing.JLabel List_position_8;
     private javax.swing.JLabel List_position_9;
+    private javax.swing.JButton Show_Users_Button;
+    private javax.swing.JButton Show_Users_Button2;
     private javax.swing.JTextField User_Contact_Number_Display;
+    private javax.swing.JTextField User_Contact_Number_Display2;
     private javax.swing.JDialog User_Details_Table_Dialog;
+    private javax.swing.JDialog User_Details_Table_Dialog2;
     private javax.swing.JTextField User_IC_Display;
+    private javax.swing.JTextField User_IC_Display2;
     private javax.swing.JTextField User_ID_Display;
+    private javax.swing.JTextField User_ID_Display2;
     private javax.swing.JTextField User_Password_Display;
+    private javax.swing.JTextField User_Password_Display2;
     private javax.swing.JTextField User_Role_Display;
+    private javax.swing.JTextField User_Role_Display2;
     private javax.swing.JTable User_Table;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTable User_Table2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -753,11 +1062,15 @@ public class Menu_Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

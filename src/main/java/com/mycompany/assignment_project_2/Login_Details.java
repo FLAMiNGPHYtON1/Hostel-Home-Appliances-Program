@@ -67,7 +67,7 @@ public class Login_Details
         catch (IOException ex){}  
         if (found == 0)
         {
-          JOptionPane.showMessageDialog(null, "NO RECORD FOUND LAH WTF YOU FUCK");  
+          JOptionPane.showMessageDialog(null, "NO RECORD FOUND LAH");  
         }
     }
     

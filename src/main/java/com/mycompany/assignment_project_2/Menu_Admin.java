@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -36,7 +37,6 @@ public class Menu_Admin extends javax.swing.JFrame {
         Admin_Display_Name.setText(Label_Name);        
     }
     
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,7 +46,7 @@ public class Menu_Admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        User_Details_Table_Dialog = new javax.swing.JDialog();
+        User_Details_Modify = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -61,11 +61,11 @@ public class Menu_Admin extends javax.swing.JFrame {
         User_Password_Display = new javax.swing.JTextField();
         User_Role_Display = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        User_Table = new javax.swing.JTable()
+        User_Table_Modify = new javax.swing.JTable()
         {public boolean isCellEditable(int row, int column){return false;}};
         Show_Users_Button = new javax.swing.JButton();
         Confirm_Modify_Button = new javax.swing.JButton();
-        User_Details_Table_Dialog2 = new javax.swing.JDialog();
+        User_Details_Delete = new javax.swing.JDialog();
         jPanel6 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -80,10 +80,45 @@ public class Menu_Admin extends javax.swing.JFrame {
         User_Password_Display2 = new javax.swing.JTextField();
         User_Role_Display2 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        User_Table2 = new javax.swing.JTable()
+        User_Table_Delete = new javax.swing.JTable()
         {public boolean isCellEditable(int row, int column){return false;}};
         Show_Users_Button2 = new javax.swing.JButton();
         Delete_Modify_Button = new javax.swing.JButton();
+        User_Details_View = new javax.swing.JDialog();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        User_Table_View = new javax.swing.JTable()
+        {public boolean isCellEditable(int row, int column){return false;}};
+        jPanel8 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        User_Appointments_View = new javax.swing.JDialog();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        User_Table_Appointments_View = new javax.swing.JTable()
+        {public boolean isCellEditable(int row, int column){return false;}};
+        User_Appointments_Delete = new javax.swing.JDialog();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        User_Table_Appointments_Delete = new javax.swing.JTable()
+        {public boolean isCellEditable(int row, int column){return false;}};
+        Show_Appointments = new javax.swing.JButton();
+        Delete_Appointment = new javax.swing.JButton();
+        User_Payment_Collected_All = new javax.swing.JDialog();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        User_Table_Payment_All = new javax.swing.JTable()
+        {public boolean isCellEditable(int row, int column){return false;}};
+        User_Payment_Collected_Specific = new javax.swing.JDialog();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        User_Table_Payment_Specific = new javax.swing.JTable()
+        {public boolean isCellEditable(int row, int column){return false;}};
+        jLabel20 = new javax.swing.JLabel();
+        Technician_IC_Search = new javax.swing.JTextField();
+        Confirm_Search = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -109,9 +144,11 @@ public class Menu_Admin extends javax.swing.JFrame {
         Admin_Option_8 = new javax.swing.JButton();
         List_position_9 = new javax.swing.JLabel();
 
-        User_Details_Table_Dialog.setLocation(new java.awt.Point(0, 0));
-        User_Details_Table_Dialog.setMinimumSize(new java.awt.Dimension(992, 557));
-        User_Details_Table_Dialog.setSize(new java.awt.Dimension(500, 500));
+        User_Details_Modify.setLocation(new java.awt.Point(0, 0));
+        User_Details_Modify.setMaximumSize(new java.awt.Dimension(1376, 697));
+        User_Details_Modify.setMinimumSize(new java.awt.Dimension(1376, 697));
+        User_Details_Modify.setResizable(false);
+        User_Details_Modify.setSize(new java.awt.Dimension(500, 500));
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -199,7 +236,7 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
-        User_Table.setModel(new javax.swing.table.DefaultTableModel(
+        User_Table_Modify.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -207,15 +244,15 @@ public class Menu_Admin extends javax.swing.JFrame {
                 "User_IC", "User Name", "User Contact Number", "User Password", "User Role"
             }
         ));
-        User_Table.setFocusable(false);
-        User_Table.setShowGrid(true);
-        User_Table.getTableHeader().setReorderingAllowed(false);
-        User_Table.addMouseListener(new java.awt.event.MouseAdapter() {
+        User_Table_Modify.setFocusable(false);
+        User_Table_Modify.setShowGrid(true);
+        User_Table_Modify.getTableHeader().setReorderingAllowed(false);
+        User_Table_Modify.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                User_TableMouseClicked(evt);
+                User_Table_ModifyMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(User_Table);
+        jScrollPane1.setViewportView(User_Table_Modify);
 
         Show_Users_Button.setText("Refresh");
         Show_Users_Button.addActionListener(new java.awt.event.ActionListener() {
@@ -231,18 +268,18 @@ public class Menu_Admin extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout User_Details_Table_DialogLayout = new javax.swing.GroupLayout(User_Details_Table_Dialog.getContentPane());
-        User_Details_Table_Dialog.getContentPane().setLayout(User_Details_Table_DialogLayout);
-        User_Details_Table_DialogLayout.setHorizontalGroup(
-            User_Details_Table_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout User_Details_ModifyLayout = new javax.swing.GroupLayout(User_Details_Modify.getContentPane());
+        User_Details_Modify.getContentPane().setLayout(User_Details_ModifyLayout);
+        User_Details_ModifyLayout.setHorizontalGroup(
+            User_Details_ModifyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(User_Details_Table_DialogLayout.createSequentialGroup()
-                .addGroup(User_Details_Table_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, User_Details_Table_DialogLayout.createSequentialGroup()
+            .addGroup(User_Details_ModifyLayout.createSequentialGroup()
+                .addGroup(User_Details_ModifyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, User_Details_ModifyLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(30, 30, 30))
-                    .addGroup(User_Details_Table_DialogLayout.createSequentialGroup()
+                    .addGroup(User_Details_ModifyLayout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addComponent(Show_Users_Button)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -251,25 +288,27 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        User_Details_Table_DialogLayout.setVerticalGroup(
-            User_Details_Table_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(User_Details_Table_DialogLayout.createSequentialGroup()
+        User_Details_ModifyLayout.setVerticalGroup(
+            User_Details_ModifyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_Details_ModifyLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(User_Details_Table_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(User_Details_Table_DialogLayout.createSequentialGroup()
+                .addGroup(User_Details_ModifyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(User_Details_ModifyLayout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(User_Details_Table_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(User_Details_ModifyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Confirm_Modify_Button)
                             .addComponent(Show_Users_Button)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(121, Short.MAX_VALUE))
         );
 
-        User_Details_Table_Dialog2.setLocation(new java.awt.Point(0, 0));
-        User_Details_Table_Dialog2.setMinimumSize(new java.awt.Dimension(992, 557));
-        User_Details_Table_Dialog2.setSize(new java.awt.Dimension(500, 500));
+        User_Details_Delete.setLocation(new java.awt.Point(0, 0));
+        User_Details_Delete.setMaximumSize(new java.awt.Dimension(1376, 697));
+        User_Details_Delete.setMinimumSize(new java.awt.Dimension(1376, 697));
+        User_Details_Delete.setResizable(false);
+        User_Details_Delete.setSize(new java.awt.Dimension(500, 500));
 
         jPanel6.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -357,7 +396,7 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
-        User_Table2.setModel(new javax.swing.table.DefaultTableModel(
+        User_Table_Delete.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -365,15 +404,15 @@ public class Menu_Admin extends javax.swing.JFrame {
                 "User_IC", "User Name", "User Contact Number", "User Password", "User Role"
             }
         ));
-        User_Table2.setFocusable(false);
-        User_Table2.setShowGrid(true);
-        User_Table2.getTableHeader().setReorderingAllowed(false);
-        User_Table2.addMouseListener(new java.awt.event.MouseAdapter() {
+        User_Table_Delete.setFocusable(false);
+        User_Table_Delete.setShowGrid(true);
+        User_Table_Delete.getTableHeader().setReorderingAllowed(false);
+        User_Table_Delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                User_Table2MouseClicked(evt);
+                User_Table_DeleteMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(User_Table2);
+        jScrollPane2.setViewportView(User_Table_Delete);
 
         Show_Users_Button2.setText("Refresh");
         Show_Users_Button2.addActionListener(new java.awt.event.ActionListener() {
@@ -389,18 +428,18 @@ public class Menu_Admin extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout User_Details_Table_Dialog2Layout = new javax.swing.GroupLayout(User_Details_Table_Dialog2.getContentPane());
-        User_Details_Table_Dialog2.getContentPane().setLayout(User_Details_Table_Dialog2Layout);
-        User_Details_Table_Dialog2Layout.setHorizontalGroup(
-            User_Details_Table_Dialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout User_Details_DeleteLayout = new javax.swing.GroupLayout(User_Details_Delete.getContentPane());
+        User_Details_Delete.getContentPane().setLayout(User_Details_DeleteLayout);
+        User_Details_DeleteLayout.setHorizontalGroup(
+            User_Details_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(User_Details_Table_Dialog2Layout.createSequentialGroup()
-                .addGroup(User_Details_Table_Dialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, User_Details_Table_Dialog2Layout.createSequentialGroup()
+            .addGroup(User_Details_DeleteLayout.createSequentialGroup()
+                .addGroup(User_Details_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, User_Details_DeleteLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(30, 30, 30))
-                    .addGroup(User_Details_Table_Dialog2Layout.createSequentialGroup()
+                    .addGroup(User_Details_DeleteLayout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addComponent(Show_Users_Button2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -409,23 +448,376 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 731, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        User_Details_Table_Dialog2Layout.setVerticalGroup(
-            User_Details_Table_Dialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(User_Details_Table_Dialog2Layout.createSequentialGroup()
+        User_Details_DeleteLayout.setVerticalGroup(
+            User_Details_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_Details_DeleteLayout.createSequentialGroup()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(User_Details_Table_Dialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(User_Details_Table_Dialog2Layout.createSequentialGroup()
+                .addGroup(User_Details_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(User_Details_DeleteLayout.createSequentialGroup()
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(User_Details_Table_Dialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(User_Details_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Delete_Modify_Button)
                             .addComponent(Show_Users_Button2)))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(121, Short.MAX_VALUE))
         );
 
+        User_Details_View.setLocation(new java.awt.Point(0, 0));
+        User_Details_View.setMinimumSize(new java.awt.Dimension(743, 476));
+        User_Details_View.setResizable(false);
+
+        User_Table_View.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "User_IC", "User Name", "User Contact Number", "User Password", "User Role"
+            }
+        ));
+        User_Table_View.setFocusable(false);
+        User_Table_View.setShowGrid(true);
+        User_Table_View.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(User_Table_View);
+
+        jPanel8.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel8.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel15.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel15.setFont(new java.awt.Font("SimSun-ExtB", 0, 24)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel15.setText("User Details");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel15)
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout User_Details_ViewLayout = new javax.swing.GroupLayout(User_Details_View.getContentPane());
+        User_Details_View.getContentPane().setLayout(User_Details_ViewLayout);
+        User_Details_ViewLayout.setHorizontalGroup(
+            User_Details_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_Details_ViewLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
+            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        User_Details_ViewLayout.setVerticalGroup(
+            User_Details_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_Details_ViewLayout.createSequentialGroup()
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
+        );
+
+        User_Appointments_View.setMaximumSize(new java.awt.Dimension(994, 588));
+        User_Appointments_View.setMinimumSize(new java.awt.Dimension(994, 588));
+        User_Appointments_View.setResizable(false);
+
+        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel16.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel16.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Details of all appointsments ever registered in system");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
+
+        User_Table_Appointments_View.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Booking Reference", "User IC", "User ID", "Appliance", "Block", "Floor", "Unit", "Status"
+            }
+        ));
+        User_Table_Appointments_View.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(User_Table_Appointments_View);
+        if (User_Table_Appointments_View.getColumnModel().getColumnCount() > 0) {
+            User_Table_Appointments_View.getColumnModel().getColumn(5).setHeaderValue("Floor");
+            User_Table_Appointments_View.getColumnModel().getColumn(6).setHeaderValue("Unit");
+            User_Table_Appointments_View.getColumnModel().getColumn(7).setHeaderValue("Status");
+        }
+
+        javax.swing.GroupLayout User_Appointments_ViewLayout = new javax.swing.GroupLayout(User_Appointments_View.getContentPane());
+        User_Appointments_View.getContentPane().setLayout(User_Appointments_ViewLayout);
+        User_Appointments_ViewLayout.setHorizontalGroup(
+            User_Appointments_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(User_Appointments_ViewLayout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        User_Appointments_ViewLayout.setVerticalGroup(
+            User_Appointments_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_Appointments_ViewLayout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        User_Appointments_Delete.setMaximumSize(new java.awt.Dimension(860, 694));
+        User_Appointments_Delete.setMinimumSize(new java.awt.Dimension(860, 694));
+        User_Appointments_Delete.setResizable(false);
+
+        jPanel10.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel10.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel17.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Details of all appointsments ever registered in system");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel17)
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+
+        User_Table_Appointments_Delete.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Booking Reference", "User IC", "User ID", "Appliance", "Block", "Floor", "Unit", "Status"
+            }
+        ));
+        User_Table_Appointments_Delete.getTableHeader().setReorderingAllowed(false);
+        jScrollPane5.setViewportView(User_Table_Appointments_Delete);
+        if (User_Table_Appointments_Delete.getColumnModel().getColumnCount() > 0) {
+            User_Table_Appointments_Delete.getColumnModel().getColumn(5).setHeaderValue("Floor");
+            User_Table_Appointments_Delete.getColumnModel().getColumn(6).setHeaderValue("Unit");
+            User_Table_Appointments_Delete.getColumnModel().getColumn(7).setHeaderValue("Status");
+        }
+
+        Show_Appointments.setText("Refresh");
+        Show_Appointments.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Show_AppointmentsActionPerformed(evt);
+            }
+        });
+
+        Delete_Appointment.setText("Delete_Selected_Row");
+        Delete_Appointment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Delete_AppointmentActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout User_Appointments_DeleteLayout = new javax.swing.GroupLayout(User_Appointments_Delete.getContentPane());
+        User_Appointments_Delete.getContentPane().setLayout(User_Appointments_DeleteLayout);
+        User_Appointments_DeleteLayout.setHorizontalGroup(
+            User_Appointments_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(User_Appointments_DeleteLayout.createSequentialGroup()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_Appointments_DeleteLayout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(Show_Appointments)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Delete_Appointment)
+                .addGap(51, 51, 51))
+        );
+        User_Appointments_DeleteLayout.setVerticalGroup(
+            User_Appointments_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_Appointments_DeleteLayout.createSequentialGroup()
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(User_Appointments_DeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Delete_Appointment)
+                    .addComponent(Show_Appointments))
+                .addContainerGap(94, Short.MAX_VALUE))
+        );
+
+        User_Payment_Collected_All.setMaximumSize(new java.awt.Dimension(980, 614));
+        User_Payment_Collected_All.setMinimumSize(new java.awt.Dimension(980, 614));
+        User_Payment_Collected_All.setResizable(false);
+
+        jPanel11.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel11.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel18.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("All completed appointment details in the system");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel18)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        User_Table_Payment_All.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "User IC", "User ID", "Booking Reference", "Appliance", "Payment Collected (RM)"
+            }
+        ));
+        User_Table_Payment_All.getTableHeader().setReorderingAllowed(false);
+        jScrollPane6.setViewportView(User_Table_Payment_All);
+
+        javax.swing.GroupLayout User_Payment_Collected_AllLayout = new javax.swing.GroupLayout(User_Payment_Collected_All.getContentPane());
+        User_Payment_Collected_All.getContentPane().setLayout(User_Payment_Collected_AllLayout);
+        User_Payment_Collected_AllLayout.setHorizontalGroup(
+            User_Payment_Collected_AllLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(User_Payment_Collected_AllLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
+        );
+        User_Payment_Collected_AllLayout.setVerticalGroup(
+            User_Payment_Collected_AllLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_Payment_Collected_AllLayout.createSequentialGroup()
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+        );
+
+        User_Payment_Collected_Specific.setMaximumSize(new java.awt.Dimension(879, 644));
+        User_Payment_Collected_Specific.setMinimumSize(new java.awt.Dimension(879, 644));
+        User_Payment_Collected_Specific.setResizable(false);
+
+        jPanel12.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel12.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel19.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel19.setText("All completed appointment details in the system");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, 879, Short.MAX_VALUE)
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel19)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        User_Table_Payment_Specific.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "User IC", "User ID", "Booking Reference", "Appliance", "Payment Collected (RM)"
+            }
+        ));
+        User_Table_Payment_Specific.getTableHeader().setReorderingAllowed(false);
+        jScrollPane7.setViewportView(User_Table_Payment_Specific);
+
+        jLabel20.setText("To see the appointments whose payments were collected by a specific Technician, please enter their IC:- ");
+
+        Confirm_Search.setText("Search");
+        Confirm_Search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Confirm_SearchActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout User_Payment_Collected_SpecificLayout = new javax.swing.GroupLayout(User_Payment_Collected_Specific.getContentPane());
+        User_Payment_Collected_Specific.getContentPane().setLayout(User_Payment_Collected_SpecificLayout);
+        User_Payment_Collected_SpecificLayout.setHorizontalGroup(
+            User_Payment_Collected_SpecificLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(User_Payment_Collected_SpecificLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel20)
+                .addGap(28, 28, 28)
+                .addComponent(Technician_IC_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addComponent(Confirm_Search)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_Payment_Collected_SpecificLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        User_Payment_Collected_SpecificLayout.setVerticalGroup(
+            User_Payment_Collected_SpecificLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_Payment_Collected_SpecificLayout.createSequentialGroup()
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addGroup(User_Payment_Collected_SpecificLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(Technician_IC_Search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Confirm_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(581, 374));
+        setMinimumSize(new java.awt.Dimension(581, 374));
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(51, 0, 0));
         jPanel2.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 0, 0)));
@@ -451,7 +843,9 @@ public class Menu_Admin extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -465,7 +859,7 @@ public class Menu_Admin extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Admin_Display_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33))
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -549,7 +943,7 @@ public class Menu_Admin extends javax.swing.JFrame {
             }
         });
 
-        Admin_Option_6.setText("View payments collected overall");
+        Admin_Option_6.setText("View all completed appointments");
         Admin_Option_6.setActionCommand("Admin_Option_6");
         Admin_Option_6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -567,7 +961,8 @@ public class Menu_Admin extends javax.swing.JFrame {
 
         List_position_4.setText("4.");
 
-        Admin_Option_7.setText("View payments collected by a technician");
+        Admin_Option_7.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        Admin_Option_7.setText("View appointments completed by a specific technician");
         Admin_Option_7.setActionCommand("Admin_Option_7");
         Admin_Option_7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -589,73 +984,82 @@ public class Menu_Admin extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(11, 11, 11)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(List_position_4)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Admin_Option_4, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(List_position_3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Admin_Option_3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(List_position_1)
-                                .addComponent(List_position_2))
-                            .addGap(15, 15, 15)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(Admin_Option_2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Admin_Option_1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGap(69, 69, 69)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(List_position_5)
-                        .addComponent(List_position_6)
-                        .addComponent(List_position_7)
-                        .addComponent(List_position_8))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Admin_Option_6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Admin_Option_7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Admin_Option_8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Admin_Option_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(196, 196, 196)
+                .addGap(231, 231, 231)
                 .addComponent(List_position_9)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Admin_Option_9, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(List_position_4)
+                        .addGap(18, 18, 18)
+                        .addComponent(Admin_Option_4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(List_position_3)
+                        .addGap(18, 18, 18)
+                        .addComponent(Admin_Option_3, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(List_position_1)
+                            .addComponent(List_position_2))
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Admin_Option_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Admin_Option_2, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE))))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(List_position_5)
+                    .addComponent(List_position_6)
+                    .addComponent(List_position_7)
+                    .addComponent(List_position_8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(Admin_Option_6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Admin_Option_7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+                    .addComponent(Admin_Option_8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Admin_Option_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(List_position_1)
-                    .addComponent(List_position_5)
-                    .addComponent(Admin_Option_1)
-                    .addComponent(Admin_Option_5))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(List_position_2)
-                    .addComponent(List_position_6)
-                    .addComponent(Admin_Option_2)
-                    .addComponent(Admin_Option_6))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(List_position_3)
-                    .addComponent(List_position_7)
-                    .addComponent(Admin_Option_3)
-                    .addComponent(Admin_Option_7))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(List_position_4)
-                    .addComponent(Admin_Option_4)
-                    .addComponent(List_position_8)
-                    .addComponent(Admin_Option_8))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(List_position_1)
+                            .addComponent(Admin_Option_1))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(List_position_2)
+                            .addComponent(Admin_Option_2))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(List_position_3)
+                            .addComponent(Admin_Option_3))
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(List_position_4)
+                            .addComponent(Admin_Option_4)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(List_position_5)
+                            .addComponent(Admin_Option_5))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(List_position_6)
+                            .addComponent(Admin_Option_6))
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(List_position_7)
+                            .addComponent(Admin_Option_7))
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(List_position_8)
+                            .addComponent(Admin_Option_8))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Admin_Option_9)
@@ -666,69 +1070,139 @@ public class Menu_Admin extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Admin_Option_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_2ActionPerformed
+             
+ 
         
-        User_Details_Table_Dialog.setVisible(true);
+    private void Admin_Option_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_2ActionPerformed
+        User_Details_Modify.setModal(false);       
         try
-        {                  
+        {  
+            
             Path User_Details = Paths.get(".", "User_Details.txt");   
             BufferedReader reader = Files.newBufferedReader(User_Details);         
-            DefaultTableModel model1 = (DefaultTableModel) User_Table.getModel();  
+            DefaultTableModel model1 = (DefaultTableModel) User_Table_Modify.getModel();  
             model1.setRowCount(0);
-            String User_Details_Array;         
+            String User_Details_Array; 
+            User_IC_Display.setText(null);
+            User_ID_Display.setText(null);
+            User_Contact_Number_Display.setText(null);
+            User_Password_Display.setText(null);
+            User_Role_Display.setText(null);
             while ((User_Details_Array = reader.readLine()) != null) 
             {
                 String[] fields = User_Details_Array.split("[,]");  
                 model1.addRow(fields);
-            }
+            }         
         }
-        catch (IOException ex){}   
-     
-       
-        
-       
+        catch (IOException ex){} 
+        User_Details_Modify.setModal(true);
+        User_Details_Modify.setVisible(true);
+         
     }//GEN-LAST:event_Admin_Option_2ActionPerformed
 
     private void Admin_Option_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_1ActionPerformed
-      Registration_Form Register_Object1 = new Registration_Form();    
+    
+      JFrame Admin_Object5 = this;
+      Registration_Form Register_Object1 = new Registration_Form(Admin_Object5);    
       Register_Object1.setLocationRelativeTo(null);
-      Register_Object1.setVisible(true);
-        
+      Register_Object1.setVisible(true);  
+      this.setVisible(false);
+      
     }//GEN-LAST:event_Admin_Option_1ActionPerformed
 
     private void Admin_Option_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_3ActionPerformed
-        User_Details_Table_Dialog2.setVisible(true);
+        User_Details_Delete.setModal(false);     
         try
         {                  
             Path User_Details = Paths.get(".", "User_Details.txt");   
             BufferedReader reader = Files.newBufferedReader(User_Details);         
-            DefaultTableModel model2 = (DefaultTableModel) User_Table2.getModel();  
+            DefaultTableModel model2 = (DefaultTableModel) User_Table_Delete.getModel();  
             model2.setRowCount(0);
-            String User_Details_Array;         
+            String User_Details_Array;  
+            User_IC_Display2.setText(null);
+            User_ID_Display2.setText(null);
+            User_Contact_Number_Display2.setText(null);
+            User_Password_Display2.setText(null);
+            User_Role_Display2.setText(null);
             while ((User_Details_Array = reader.readLine()) != null) 
             {
                 String[] fields = User_Details_Array.split("[,]");  
                 model2.addRow(fields);
-            }
+            }           
         }
-        catch (IOException ex){}   
+        catch (IOException ex){}
+        User_Details_Delete.setModal(true);  
+        User_Details_Delete.setVisible(true);  
+       
+        
     }//GEN-LAST:event_Admin_Option_3ActionPerformed
 
     private void Admin_Option_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_4ActionPerformed
-        // TODO add your handling code here:
+        User_Details_View.setModal(false);   
+        try
+        {                  
+            Path User_Details = Paths.get(".", "User_Details.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Details);         
+            DefaultTableModel model3 = (DefaultTableModel) User_Table_View.getModel();  
+            model3.setRowCount(0);
+            String User_Details_Array;         
+            while ((User_Details_Array = reader.readLine()) != null) 
+            {
+                String[] fields = User_Details_Array.split("[,]");  
+                model3.addRow(fields);
+            }
+        }
+        catch (IOException ex){}
+        User_Details_View.setModal(true);  
+        User_Details_View.setVisible(true);  
+        
+                                   
     }//GEN-LAST:event_Admin_Option_4ActionPerformed
 
     private void Admin_Option_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_5ActionPerformed
-        // TODO add your handling code here:
+        User_Appointments_View.setModal(false);
+        try
+        {                  
+            Path User_Appointments = Paths.get(".", "Appointments.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Appointments);         
+            DefaultTableModel model4 = (DefaultTableModel) User_Table_Appointments_View.getModel();  
+            model4.setRowCount(0);
+            String User_Appointments_Array;         
+            while ((User_Appointments_Array = reader.readLine()) != null) 
+            {
+                String[] fields = User_Appointments_Array.split("[,]");  
+                model4.addRow(fields);
+            }
+        }
+        catch (IOException ex){} 
+        User_Appointments_View.setModal(true);  
+        User_Appointments_View.setVisible(true);  
     }//GEN-LAST:event_Admin_Option_5ActionPerformed
 
     private void Admin_Option_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_6ActionPerformed
-        // TODO add your handling code here:
+        User_Payment_Collected_All.setModal(false);
+        try
+        {                  
+            Path User_Payments_All = Paths.get(".", "Payment_collected.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Payments_All);         
+            DefaultTableModel model6 = (DefaultTableModel) User_Table_Payment_All.getModel();  
+            model6.setRowCount(0);
+            String User_Payments_Array;         
+            while ((User_Payments_Array = reader.readLine()) != null) 
+            {
+                String[] fields = User_Payments_Array.split("[,]");  
+                model6.addRow(fields);
+            }
+        }
+        catch (IOException ex){} 
+        User_Payment_Collected_All.setModal(true);  
+        User_Payment_Collected_All.setVisible(true);  
+                                              
     }//GEN-LAST:event_Admin_Option_6ActionPerformed
 
     private void Admin_Option_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_7ActionPerformed
-        // TODO add your handling code here:
+       User_Payment_Collected_Specific.setModal(true);   
+       User_Payment_Collected_Specific.setVisible(true);  
     }//GEN-LAST:event_Admin_Option_7ActionPerformed
 
     private void Admin_Option_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_9ActionPerformed
@@ -739,27 +1213,48 @@ public class Menu_Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_Admin_Option_9ActionPerformed
 
     private void Admin_Option_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_8ActionPerformed
-        // TODO add your handling code here:
+        User_Appointments_Delete.setModal(false);
+        try
+        {                  
+            Path User_Appointments = Paths.get(".", "Appointments.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Appointments);         
+            DefaultTableModel model5 = (DefaultTableModel) User_Table_Appointments_Delete.getModel();  
+            model5.setRowCount(0);
+            String User_Appointments_Array;         
+            while ((User_Appointments_Array = reader.readLine()) != null) 
+            {
+                String[] fields = User_Appointments_Array.split("[,]");  
+                model5.addRow(fields);
+            }
+        }
+        catch (IOException ex){} 
+        User_Appointments_Delete.setModal(true);  
+        User_Appointments_Delete.setVisible(true); 
     }//GEN-LAST:event_Admin_Option_8ActionPerformed
 
-    private void User_TableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_User_TableMouseClicked
+    private void User_Table_ModifyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_User_Table_ModifyMouseClicked
      
-        int selected_row_index = User_Table.getSelectedRow();
-        User_IC_Display.setText(User_Table.getValueAt(selected_row_index,0).toString());
-        User_ID_Display.setText(User_Table.getValueAt(selected_row_index,1).toString());
-        User_Contact_Number_Display.setText(User_Table.getValueAt(selected_row_index,2).toString());
-        User_Password_Display.setText(User_Table.getValueAt(selected_row_index,3).toString());
-        User_Role_Display.setText(User_Table.getValueAt(selected_row_index,4).toString());
-    }//GEN-LAST:event_User_TableMouseClicked
+        int selected_row_index = User_Table_Modify.getSelectedRow();
+        User_IC_Display.setText(User_Table_Modify.getValueAt(selected_row_index,0).toString());
+        User_ID_Display.setText(User_Table_Modify.getValueAt(selected_row_index,1).toString());
+        User_Contact_Number_Display.setText(User_Table_Modify.getValueAt(selected_row_index,2).toString());
+        User_Password_Display.setText(User_Table_Modify.getValueAt(selected_row_index,3).toString());
+        User_Role_Display.setText(User_Table_Modify.getValueAt(selected_row_index,4).toString());
+    }//GEN-LAST:event_User_Table_ModifyMouseClicked
 
     private void Show_Users_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_Users_ButtonActionPerformed
         try
         {
             Path User_Details = Paths.get(".", "User_Details.txt");
             BufferedReader reader = Files.newBufferedReader(User_Details);
-            DefaultTableModel model1 = (DefaultTableModel) User_Table.getModel();
+            DefaultTableModel model1 = (DefaultTableModel) User_Table_Modify.getModel();
             model1.setRowCount(0);
             String User_Details_Array;
+            User_IC_Display.setText(null);
+            User_ID_Display.setText(null);
+            User_Contact_Number_Display.setText(null);
+            User_Password_Display.setText(null);
+            User_Role_Display.setText(null);
             while ((User_Details_Array = reader.readLine()) != null)
             {
                 String[] fields = User_Details_Array.split("[,]");
@@ -775,69 +1270,77 @@ public class Menu_Admin extends javax.swing.JFrame {
         int found = 0;
         try
         {
-            String u_ID = User_IC_Display.getText();
-            String u_id = User_ID_Display.getText();
-            String u_ct = User_Contact_Number_Display.getText();
-            String u_ps = User_Password_Display.getText();
-            String u_rl = User_Role_Display.getText();
-            String IC = (String) User_Table.getValueAt(User_Table.getSelectedRow(), 0);
-            System.out.println(IC);
-            System.out.println(u_ID);
-            U_ID_DISPLAY = IC;
-
-            if( u_ID.equals("") ||  u_id.equals("") || u_ct.equals("") || u_ps.equals("") || u_rl.equals(""))
+            if( User_IC_Display.getText().equals("") ||  User_ID_Display.getText().equals("") || User_Contact_Number_Display.getText().equals("") || User_Password_Display.getText().equals("") || User_Role_Display.getText().equals(""))
             {
                 found = 2;
                 JOptionPane.showMessageDialog(rootPane, "Please select a row");
             }
             else
-            {
-                int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm Action!", JOptionPane.YES_NO_OPTION);
-                /*FOR THE LOVE OF FUCKING GOD DONT CHANGE THE DOT YEAH?*/
-                Path p = Paths.get(".", "User_Details.txt");
-                if (answer == JOptionPane.NO_OPTION)
+            {                       
+                String u_ID = User_IC_Display.getText();
+                String u_id = User_ID_Display.getText();
+                String u_ct = User_Contact_Number_Display.getText();
+                String u_ps = User_Password_Display.getText();
+                String u_rl = User_Role_Display.getText();
+                String IC = (String) User_Table_Modify.getValueAt(User_Table_Modify.getSelectedRow(), 0);
+                System.out.println(IC);
+                System.out.println(u_ID);
+                U_ID_DISPLAY = IC;
+
+                if( u_ID.equals("") ||  u_id.equals("") || u_ct.equals("") || u_ps.equals("") || u_rl.equals(""))
                 {
-                    found = 3;
+                    found = 2;
+                    JOptionPane.showMessageDialog(rootPane, "Please select a row");
                 }
-
-                else if(answer == JOptionPane.YES_OPTION)
+                else
                 {
-                    Path tempFile = Files.createTempFile(p.getParent(), "usersTemp", ".txt");
-                    try (BufferedReader reader = Files.newBufferedReader(p);
-                        BufferedWriter writer = Files.newBufferedWriter(tempFile))
+                    int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm Action!", JOptionPane.YES_NO_OPTION);
+                    /*FOR THE LOVE OF FUCKING GOD DONT CHANGE THE DOT YEAH?*/
+                    Path p = Paths.get(".", "User_Details.txt");
+                    if (answer == JOptionPane.NO_OPTION)
                     {
-                        String line123;
-                        // copy everything until the id is found
-                        while ((line123 = reader.readLine()) != null)
-                        {
-                            String[] fields = line123.split("[,]");
-                            System.out.println(fields[0]);
-                            if (IC.equals(fields[0]))
-                            {
-                                found = 1;
-                                for (int i = 0; i < fields.length; ++i)
-                                {
-                                    System.out.println(i + ": " + fields[i]);
-                                }
-                                fields[0] = u_ID;
-                                fields[1] = u_id;
-                                fields[2] = u_ct;
-                                fields[3] = u_ps;
-                                fields[4] = u_rl;
-                            }
-                            writer.write(String.join(",", fields));
-                            writer.newLine();
-
-                        }
-                        User_IC_Display.setText(null);
-                        User_ID_Display.setText(null);
-                        User_Contact_Number_Display.setText(null);
-                        User_Password_Display.setText(null);
-                        User_Role_Display.setText(null);
+                        found = 3;
                     }
-                    // copy new file & delete temporary file
-                    Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
-                    Files.delete(tempFile);
+
+                    else if(answer == JOptionPane.YES_OPTION)
+                    {
+                        Path tempFile = Files.createTempFile(p.getParent(), "usersTemp", ".txt");
+                        try (BufferedReader reader = Files.newBufferedReader(p);
+                            BufferedWriter writer = Files.newBufferedWriter(tempFile))
+                        {
+                            String line123;
+                            // copy everything until the id is found
+                            while ((line123 = reader.readLine()) != null)
+                            {
+                                String[] fields = line123.split("[,]");
+                                System.out.println(fields[0]);
+                                if (IC.equals(fields[0]))
+                                {
+                                    found = 1;
+                                    for (int i = 0; i < fields.length; ++i)
+                                    {
+                                        System.out.println(i + ": " + fields[i]);
+                                    }
+                                    fields[0] = u_ID;
+                                    fields[1] = u_id;
+                                    fields[2] = u_ct;
+                                    fields[3] = u_ps;
+                                    fields[4] = u_rl;
+                                }
+                                writer.write(String.join(",", fields));
+                                writer.newLine();
+
+                            }
+                            User_IC_Display.setText(null);
+                            User_ID_Display.setText(null);
+                            User_Contact_Number_Display.setText(null);
+                            User_Password_Display.setText(null);
+                            User_Role_Display.setText(null);
+                        }
+                        // copy new file & delete temporary file
+                        Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
+                        Files.delete(tempFile);
+                    }
                 }
             }
         }
@@ -854,23 +1357,28 @@ public class Menu_Admin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Confirm_Modify_ButtonActionPerformed
 
-    private void User_Table2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_User_Table2MouseClicked
-        int selected_row_index = User_Table2.getSelectedRow();
-        User_IC_Display2.setText(User_Table2.getValueAt(selected_row_index,0).toString());
-        User_ID_Display2.setText(User_Table2.getValueAt(selected_row_index,1).toString());
-        User_Contact_Number_Display2.setText(User_Table2.getValueAt(selected_row_index,2).toString());
-        User_Password_Display2.setText(User_Table2.getValueAt(selected_row_index,3).toString());
-        User_Role_Display2.setText(User_Table2.getValueAt(selected_row_index,4).toString());
-    }//GEN-LAST:event_User_Table2MouseClicked
+    private void User_Table_DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_User_Table_DeleteMouseClicked
+        int selected_row_index = User_Table_Delete.getSelectedRow();
+        User_IC_Display2.setText(User_Table_Delete.getValueAt(selected_row_index,0).toString());
+        User_ID_Display2.setText(User_Table_Delete.getValueAt(selected_row_index,1).toString());
+        User_Contact_Number_Display2.setText(User_Table_Delete.getValueAt(selected_row_index,2).toString());
+        User_Password_Display2.setText(User_Table_Delete.getValueAt(selected_row_index,3).toString());
+        User_Role_Display2.setText(User_Table_Delete.getValueAt(selected_row_index,4).toString());
+    }//GEN-LAST:event_User_Table_DeleteMouseClicked
 
     private void Show_Users_Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_Users_Button2ActionPerformed
         try
         {
             Path User_Details = Paths.get(".", "User_Details.txt");
             BufferedReader reader = Files.newBufferedReader(User_Details);
-            DefaultTableModel model1 = (DefaultTableModel) User_Table2.getModel();
+            DefaultTableModel model1 = (DefaultTableModel) User_Table_Delete.getModel();
             model1.setRowCount(0);
             String User_Details_Array;
+            User_IC_Display2.setText(null);
+            User_ID_Display2.setText(null);
+            User_Contact_Number_Display2.setText(null);
+            User_Password_Display2.setText(null);
+            User_Role_Display2.setText(null);
             while ((User_Details_Array = reader.readLine()) != null)
             {
                 String[] fields = User_Details_Array.split("[,]");
@@ -882,79 +1390,76 @@ public class Menu_Admin extends javax.swing.JFrame {
     }//GEN-LAST:event_Show_Users_Button2ActionPerformed
 
     private void Delete_Modify_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_Modify_ButtonActionPerformed
-        String U_ID_DISPLAY = "";
-        int found = 0;
-        String u_ID = User_IC_Display2.getText();
-        String u_id = User_ID_Display2.getText();
-        String u_ct = User_Contact_Number_Display2.getText();
-        String u_ps = User_Password_Display2.getText();
-        String u_rl = User_Role_Display2.getText();
-        String IC2 = (String) User_Table2.getValueAt(User_Table2.getSelectedRow(), 0);
-        U_ID_DISPLAY = IC2;
-        try 
-        {         
-            Path p = Paths.get(".", "User_Details.txt");
-            if( u_ID.equals("") ||  u_id.equals("") || u_ct.equals("") || u_ps.equals("") || u_rl.equals(""))
-            {
-                found = 2;
-                JOptionPane.showMessageDialog(rootPane, "Please select a row");
-            }           
-            else
-            {               
-                int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm action!", JOptionPane.YES_NO_OPTION);
-                if (answer == JOptionPane.NO_OPTION) 
-                {                  
-                    found = 3;                 
-                } 
-                
-                else if(answer == JOptionPane.YES_OPTION) 
-                {
-                    
-                    Path tempFile = Files.createTempFile(p.getParent(), "usersTemp", ".txt");
-
-                    try (BufferedReader reader = Files.newBufferedReader(p);
-                            BufferedWriter writer = Files.newBufferedWriter(tempFile)) 
-                    {
-                        String line;
-
-                    // copy everything until the id is found
-                        while ((line = reader.readLine()) != null) 
-                        {
-
-                            String[] fields = line.split("[,]");
-                            if (!IC2.equals(fields[0])) 
-                            {
-                                //found = 1;
-                                for (int i = 0; i < fields.length; ++i) 
-                                {
-                                    System.out.println(i + ": " + fields[i]);
-                                }
-
-                                writer.write(String.join(",", fields));
-                                writer.newLine();
-                            }
-                            if (IC2.equals(fields[0])) 
-                            {
-                                found = 1;
-                            }
-                        }
-                        User_IC_Display2.setText(null);
-                        User_ID_Display2.setText(null);
-                        User_Contact_Number_Display2.setText(null);
-                        User_Password_Display2.setText(null);
-                        User_Role_Display2.setText(null);
-                    }
-                // copy new file & delete temporary file
-                Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
-                Files.delete(tempFile);
-                
-    
-                }
-
-                
-            }
-
         
+        int found = 0;
+        if( User_IC_Display2.getText().equals("") ||  User_ID_Display2.getText().equals("") || User_Contact_Number_Display2.getText().equals("") || User_Password_Display2.getText().equals("") || User_Role_Display2.getText().equals(""))
+        {
+            found = 2;
+            JOptionPane.showMessageDialog(rootPane, "Please select a row");
+        }
+        else
+        {
+            String u_ID = User_IC_Display2.getText();
+            String u_id = User_ID_Display2.getText();
+            String u_ct = User_Contact_Number_Display2.getText();
+            String u_ps = User_Password_Display2.getText();
+            String u_rl = User_Role_Display2.getText();
+            String IC2 = (String) User_Table_Delete.getValueAt(User_Table_Delete.getSelectedRow(), 0);       
+            try 
+            {         
+                Path p = Paths.get(".", "User_Details.txt");
+                if( u_ID.equals("") ||  u_id.equals("") || u_ct.equals("") || u_ps.equals("") || u_rl.equals(""))
+                {
+                    found = 2;
+                    JOptionPane.showMessageDialog(rootPane, "Please select a row");
+                }           
+                else
+                {               
+                    int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm action!", JOptionPane.YES_NO_OPTION);
+                    if (answer == JOptionPane.NO_OPTION) 
+                    {                  
+                        found = 3;                 
+                    } 
+
+                    else if(answer == JOptionPane.YES_OPTION) 
+                    {
+
+                        Path tempFile = Files.createTempFile(p.getParent(), "usersTemp", ".txt");
+
+                        try (BufferedReader reader = Files.newBufferedReader(p);
+                            BufferedWriter writer = Files.newBufferedWriter(tempFile)) 
+                        {
+                            String line;
+                        // copy everything until the id is found
+                            while ((line = reader.readLine()) != null) 
+                            {
+                                String[] fields = line.split("[,]");
+                                if (!IC2.equals(fields[0])) 
+                                {
+                                    //found = 1;
+                                    for (int i = 0; i < fields.length; ++i) 
+                                    {
+                                        System.out.println(i + ": " + fields[i]);
+                                    }
+                                    writer.write(String.join(",", fields));
+                                    writer.newLine();
+                                }
+                                if (IC2.equals(fields[0])) 
+                                {
+                                    found = 1;
+                                }
+                            }
+                            User_IC_Display2.setText(null);
+                            User_ID_Display2.setText(null);
+                            User_Contact_Number_Display2.setText(null);
+                            User_Password_Display2.setText(null);
+                            User_Role_Display2.setText(null);
+                        }
+                    // copy new file & delete temporary file
+                    Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
+                    Files.delete(tempFile);
+                    }
+                }                  
         } 
         catch (IOException ex){}     
      /*if (found == 0)
@@ -966,7 +1471,159 @@ public class Menu_Admin extends javax.swing.JFrame {
         
          JOptionPane.showMessageDialog(rootPane, "Record Deleted Successfully!");        
      }
+        }
     }//GEN-LAST:event_Delete_Modify_ButtonActionPerformed
+
+    private void Show_AppointmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_AppointmentsActionPerformed
+        User_Appointments_Delete.setModal(false);
+        try
+        {                  
+            Path User_Appointments = Paths.get(".", "Appointments.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Appointments);         
+            DefaultTableModel model5 = (DefaultTableModel) User_Table_Appointments_Delete.getModel();  
+            model5.setRowCount(0);
+            String User_Appointments_Array;         
+            while ((User_Appointments_Array = reader.readLine()) != null) 
+            {
+                String[] fields = User_Appointments_Array.split("[,]");  
+                model5.addRow(fields);
+            }
+        }
+        catch (IOException ex){} 
+        User_Appointments_Delete.setModal(true);  
+        User_Appointments_Delete.setVisible(true); 
+    }//GEN-LAST:event_Show_AppointmentsActionPerformed
+
+    private void Delete_AppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_AppointmentActionPerformed
+        int found = 0;
+        int row = User_Table_Appointments_Delete.getSelectedRow();
+        if (row == -1)
+        {
+            found = 2;
+            JOptionPane.showMessageDialog(rootPane, "Please select a row");
+        }
+        else
+        {
+            String Booking_ID = (String) User_Table_Appointments_Delete.getValueAt(User_Table_Appointments_Delete.getSelectedRow(), 0);
+            String u_ID = (String) User_Table_Appointments_Delete.getValueAt(User_Table_Appointments_Delete.getSelectedRow(), 1);
+            String u_id = (String) User_Table_Appointments_Delete.getValueAt(User_Table_Appointments_Delete.getSelectedRow(), 2);
+            String appliance = (String) User_Table_Appointments_Delete.getValueAt(User_Table_Appointments_Delete.getSelectedRow(), 3);
+            String block = (String) User_Table_Appointments_Delete.getValueAt(User_Table_Appointments_Delete.getSelectedRow(), 4);
+            String floor = (String) User_Table_Appointments_Delete.getValueAt(User_Table_Appointments_Delete.getSelectedRow(), 5);   
+            String unit = (String) User_Table_Appointments_Delete.getValueAt(User_Table_Appointments_Delete.getSelectedRow(), 6);
+            String status = (String) User_Table_Appointments_Delete.getValueAt(User_Table_Appointments_Delete.getSelectedRow(), 7);
+            try 
+            {         
+                Path p = Paths.get(".", "Appointments.txt");
+                if( Booking_ID.equals("") ||  u_ID.equals("") || u_id.equals("") || appliance.equals("") || block.equals("") || floor.equals("") ||  unit.equals("") || status.equals(""))
+                {
+                    found = 2;
+                    JOptionPane.showMessageDialog(rootPane, "Please select a row");
+                }           
+                else
+                {               
+                    int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm action!", JOptionPane.YES_NO_OPTION);
+                    if (answer == JOptionPane.NO_OPTION) 
+                    {                  
+                        found = 3;                 
+                    } 
+
+                    else if(answer == JOptionPane.YES_OPTION) 
+                    {
+
+                        Path tempFile = Files.createTempFile(p.getParent(), "appointmentsTemp", ".txt");
+
+                        try (BufferedReader reader = Files.newBufferedReader(p);
+                            BufferedWriter writer = Files.newBufferedWriter(tempFile)) 
+                        {
+                            String line;
+                        // copy everything until the id is found
+                            while ((line = reader.readLine()) != null) 
+                            {
+                                String[] fields = line.split("[,]");
+                                if (!Booking_ID.equals(fields[0])) 
+                                {
+                                    //found = 1;
+                                    for (int i = 0; i < fields.length; ++i) 
+                                    {
+                                        System.out.println(i + ": " + fields[i]);
+                                    }
+                                    writer.write(String.join(",", fields));
+                                    writer.newLine();
+                                }
+                                if (Booking_ID.equals(fields[0])) 
+                                {
+                                    found = 1;
+                                }
+                            }
+                        }
+                    // copy new file & delete temporary file
+                    Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
+                    Files.delete(tempFile);
+                    }
+                }                  
+            } 
+            catch (IOException ex){}     
+            /*if (found == 0)
+            {
+                JOptionPane.showMessageDialog(rootPane, "Record not found.");
+            }*/
+            if (found == 1)
+            {      
+                JOptionPane.showMessageDialog(rootPane, "Record Deleted Successfully!");        
+            }
+        }
+                                   
+    }//GEN-LAST:event_Delete_AppointmentActionPerformed
+
+    private void Confirm_SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_SearchActionPerformed
+
+        int found = 0;
+        try
+        {
+            DefaultTableModel model7 = (DefaultTableModel) User_Table_Payment_Specific.getModel();  
+            model7.setRowCount(0);
+            if( Technician_IC_Search.getText().equals(""))
+            {
+                found = 2;
+                JOptionPane.showMessageDialog(rootPane, "Please enter an IC");
+            }
+            else
+            {                       
+                String IC = Technician_IC_Search.getText();  
+                int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm Action!", JOptionPane.YES_NO_OPTION);
+                /*FOR THE LOVE OF FUCKING GOD DONT CHANGE THE DOT YEAH?*/              
+                if (answer == JOptionPane.NO_OPTION)
+                {
+                    found = 3;
+                }
+                else if(answer == JOptionPane.YES_OPTION)                   
+                {
+                    Path p = Paths.get(".", "Payment_collected.txt");
+                    try (BufferedReader reader = Files.newBufferedReader(p);)
+                    {   
+                        String line;                      
+                        while ((line = reader.readLine()) != null)
+                        {
+                            String[] fields = line.split("[,]");                              
+                            if (IC.equals(fields[0]))
+                            {
+                                found = 1;
+                                model7.addRow(fields);
+                                 
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        catch (IOException ex) {}
+
+        if (found == 0)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Record not found.");
+        }                                 
+    }//GEN-LAST:event_Confirm_SearchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1023,6 +1680,8 @@ public class Menu_Admin extends javax.swing.JFrame {
     private javax.swing.JButton Admin_Option_8;
     private javax.swing.JButton Admin_Option_9;
     private javax.swing.JButton Confirm_Modify_Button;
+    private javax.swing.JButton Confirm_Search;
+    private javax.swing.JButton Delete_Appointment;
     private javax.swing.JButton Delete_Modify_Button;
     private javax.swing.JLabel List_position_1;
     private javax.swing.JLabel List_position_2;
@@ -1033,29 +1692,47 @@ public class Menu_Admin extends javax.swing.JFrame {
     private javax.swing.JLabel List_position_7;
     private javax.swing.JLabel List_position_8;
     private javax.swing.JLabel List_position_9;
+    private javax.swing.JButton Show_Appointments;
     private javax.swing.JButton Show_Users_Button;
     private javax.swing.JButton Show_Users_Button2;
+    private javax.swing.JTextField Technician_IC_Search;
+    private javax.swing.JDialog User_Appointments_Delete;
+    private javax.swing.JDialog User_Appointments_View;
     private javax.swing.JTextField User_Contact_Number_Display;
     private javax.swing.JTextField User_Contact_Number_Display2;
-    private javax.swing.JDialog User_Details_Table_Dialog;
-    private javax.swing.JDialog User_Details_Table_Dialog2;
+    private javax.swing.JDialog User_Details_Delete;
+    private javax.swing.JDialog User_Details_Modify;
+    private javax.swing.JDialog User_Details_View;
     private javax.swing.JTextField User_IC_Display;
     private javax.swing.JTextField User_IC_Display2;
     private javax.swing.JTextField User_ID_Display;
     private javax.swing.JTextField User_ID_Display2;
     private javax.swing.JTextField User_Password_Display;
     private javax.swing.JTextField User_Password_Display2;
+    private javax.swing.JDialog User_Payment_Collected_All;
+    private javax.swing.JDialog User_Payment_Collected_Specific;
     private javax.swing.JTextField User_Role_Display;
     private javax.swing.JTextField User_Role_Display2;
-    private javax.swing.JTable User_Table;
-    private javax.swing.JTable User_Table2;
+    private javax.swing.JTable User_Table_Appointments_Delete;
+    private javax.swing.JTable User_Table_Appointments_View;
+    private javax.swing.JTable User_Table_Delete;
+    private javax.swing.JTable User_Table_Modify;
+    private javax.swing.JTable User_Table_Payment_All;
+    private javax.swing.JTable User_Table_Payment_Specific;
+    private javax.swing.JTable User_Table_View;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1064,13 +1741,23 @@ public class Menu_Admin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     // End of variables declaration//GEN-END:variables
 }

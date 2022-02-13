@@ -4,6 +4,7 @@
  */
 package com.mycompany.assignment_project_2;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,13 +15,24 @@ public class Registration_Form extends javax.swing.JFrame {
 
     /**
      * Creates new form Registration_Form
+     * 
      */
+
     public Registration_Form() {
         this.setLocationRelativeTo(null);
         initComponents();
         this.setLocationRelativeTo(null);
+        
     }
-
+    JFrame Global_Admin_Object_5;
+    Registration_Form(JFrame Admin_Object5) 
+    {
+        initComponents();
+        
+        Global_Admin_Object_5 = Admin_Object5;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,6 +58,9 @@ public class Registration_Form extends javax.swing.JFrame {
         REGISTER_Button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(339, 388));
+        setMinimumSize(new java.awt.Dimension(339, 388));
+        setResizable(false);
 
         jLabel1.setText("Enter Username                           :-");
 
@@ -83,12 +98,6 @@ public class Registration_Form extends javax.swing.JFrame {
         );
 
         jLabel6.setText("Enter Identification Number      :-");
-
-        ID_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ID_txtActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -169,6 +178,7 @@ public class Registration_Form extends javax.swing.JFrame {
 
     private void REGISTER_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_REGISTER_ButtonActionPerformed
         
+        
         if (User_txt.getText().isEmpty() || Ctc_txt.getText().isEmpty() || new String(Pass_txt.getPassword()).isEmpty() || ID_txt.getText().isEmpty())
         {
            JOptionPane.showMessageDialog(null, "No Fields can be left empty!"); 
@@ -184,13 +194,9 @@ public class Registration_Form extends javax.swing.JFrame {
         Obj2.register(u_ID, u_id,  u_ct,  u_ps,  u_rl);
         JOptionPane.showMessageDialog(null, "Registration Successful!");
         this.dispose();
-       
+        Global_Admin_Object_5.setVisible(true);
         }
     }//GEN-LAST:event_REGISTER_ButtonActionPerformed
-
-    private void ID_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ID_txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ID_txtActionPerformed
 
     /**
      * @param args the command line arguments

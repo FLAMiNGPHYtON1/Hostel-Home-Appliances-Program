@@ -145,7 +145,6 @@ public class Menu_Admin extends javax.swing.JFrame {
         List_position_9 = new javax.swing.JLabel();
 
         User_Details_Modify.setLocation(new java.awt.Point(0, 0));
-        User_Details_Modify.setMaximumSize(new java.awt.Dimension(1376, 697));
         User_Details_Modify.setMinimumSize(new java.awt.Dimension(1376, 697));
         User_Details_Modify.setResizable(false);
         User_Details_Modify.setSize(new java.awt.Dimension(500, 500));
@@ -305,7 +304,6 @@ public class Menu_Admin extends javax.swing.JFrame {
         );
 
         User_Details_Delete.setLocation(new java.awt.Point(0, 0));
-        User_Details_Delete.setMaximumSize(new java.awt.Dimension(1376, 697));
         User_Details_Delete.setMinimumSize(new java.awt.Dimension(1376, 697));
         User_Details_Delete.setResizable(false);
         User_Details_Delete.setSize(new java.awt.Dimension(500, 500));
@@ -590,7 +588,6 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        User_Appointments_Delete.setMaximumSize(new java.awt.Dimension(860, 694));
         User_Appointments_Delete.setMinimumSize(new java.awt.Dimension(860, 694));
         User_Appointments_Delete.setResizable(false);
 
@@ -678,7 +675,6 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addContainerGap(94, Short.MAX_VALUE))
         );
 
-        User_Payment_Collected_All.setMaximumSize(new java.awt.Dimension(980, 614));
         User_Payment_Collected_All.setMinimumSize(new java.awt.Dimension(980, 614));
         User_Payment_Collected_All.setResizable(false);
 
@@ -735,7 +731,6 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
-        User_Payment_Collected_Specific.setMaximumSize(new java.awt.Dimension(879, 644));
         User_Payment_Collected_Specific.setMinimumSize(new java.awt.Dimension(879, 644));
         User_Payment_Collected_Specific.setResizable(false);
 

@@ -4,6 +4,13 @@
  */
 package com.mycompany.assignment_project_2;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author aliza
@@ -37,8 +44,15 @@ public class Menu_Technician extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        User_Appointments_View = new javax.swing.JDialog();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        User_Table_Appointments_View = new javax.swing.JTable()
+        {public boolean isCellEditable(int row, int column){return false;}};
+        jDialog2 = new javax.swing.JDialog();
+        jDialog3 = new javax.swing.JDialog();
+        jDialog4 = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Technician_Display_Name = new javax.swing.JLabel();
@@ -55,7 +69,93 @@ public class Menu_Technician extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         Technician_Option_5 = new javax.swing.JButton();
 
-        jScrollPane1.setViewportView(jTree1);
+        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel16.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel16.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Details of all appointsments pending in system");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 924, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
+
+        User_Table_Appointments_View.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Booking Reference", "User IC", "User ID", "Appliance", "Block", "Floor", "Unit", "Status"
+            }
+        ));
+        User_Table_Appointments_View.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(User_Table_Appointments_View);
+
+        javax.swing.GroupLayout User_Appointments_ViewLayout = new javax.swing.GroupLayout(User_Appointments_View.getContentPane());
+        User_Appointments_View.getContentPane().setLayout(User_Appointments_ViewLayout);
+        User_Appointments_ViewLayout.setHorizontalGroup(
+            User_Appointments_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(User_Appointments_ViewLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        User_Appointments_ViewLayout.setVerticalGroup(
+            User_Appointments_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_Appointments_ViewLayout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
+        jDialog2.getContentPane().setLayout(jDialog2Layout);
+        jDialog2Layout.setHorizontalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog2Layout.setVerticalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog3Layout = new javax.swing.GroupLayout(jDialog3.getContentPane());
+        jDialog3.getContentPane().setLayout(jDialog3Layout);
+        jDialog3Layout.setHorizontalGroup(
+            jDialog3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog3Layout.setVerticalGroup(
+            jDialog3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog4Layout = new javax.swing.GroupLayout(jDialog4.getContentPane());
+        jDialog4.getContentPane().setLayout(jDialog4Layout);
+        jDialog4Layout.setHorizontalGroup(
+            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog4Layout.setVerticalGroup(
+            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,6 +215,11 @@ public class Menu_Technician extends javax.swing.JFrame {
 
         Technician_Option_1.setText("View pending appointsments");
         Technician_Option_1.setActionCommand("Technician_Option_1");
+        Technician_Option_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Technician_Option_1ActionPerformed(evt);
+            }
+        });
 
         Technician_Option_2.setText("Complete an appointment");
         Technician_Option_2.setActionCommand("Technician_Option_2");
@@ -213,6 +318,29 @@ public class Menu_Technician extends javax.swing.JFrame {
         Login_Obj6.setVisible(true);
     }//GEN-LAST:event_Technician_Option_5ActionPerformed
 
+    private void Technician_Option_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Technician_Option_1ActionPerformed
+        User_Appointments_View.setModal(false);   
+        try
+        {                  
+            Path User_Appointments = Paths.get(".", "Appointments.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Appointments);         
+            DefaultTableModel model8 = (DefaultTableModel) User_Table_Appointments_View.getModel();  
+            model8.setRowCount(0);
+            String User_Appointments_Array;         
+            while ((User_Appointments_Array = reader.readLine()) != null) 
+            {
+                String[] fields = User_Appointments_Array.split("[,]");
+                if (fields[7].equals("pending"))
+                {
+                   model8.addRow(fields);
+                }               
+            }
+        }
+        catch (IOException ex){}
+        User_Appointments_View.setModal(true);  
+        User_Appointments_View.setVisible(true);  
+    }//GEN-LAST:event_Technician_Option_1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -256,7 +384,13 @@ public class Menu_Technician extends javax.swing.JFrame {
     private javax.swing.JButton Technician_Option_3;
     private javax.swing.JButton Technician_Option_4;
     private javax.swing.JButton Technician_Option_5;
+    private javax.swing.JDialog User_Appointments_View;
+    private javax.swing.JTable User_Table_Appointments_View;
+    private javax.swing.JDialog jDialog2;
+    private javax.swing.JDialog jDialog3;
+    private javax.swing.JDialog jDialog4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -265,7 +399,7 @@ public class Menu_Technician extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTree jTree1;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane4;
     // End of variables declaration//GEN-END:variables
 }

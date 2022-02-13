@@ -1,4 +1,1 @@
-BK12345, IC, Ali_Zahid, washing_machine,D, 20, 09, pending
 BK13333, IC, Basmah_Zahid, AC, B, 10, 10, complete
-BK12246, IC, Hanaa_Zahid, refigerator, C, 12, 15, cancelled
-

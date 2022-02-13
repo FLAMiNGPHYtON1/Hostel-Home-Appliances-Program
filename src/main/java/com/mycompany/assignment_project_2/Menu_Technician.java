@@ -6,11 +6,13 @@ package com.mycompany.assignment_project_2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.nio.file.StandardOpenOption;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -732,6 +734,7 @@ public class Menu_Technician extends javax.swing.JFrame {
     }//GEN-LAST:event_Refresh_ButtonActionPerformed
 
     private void Confirm_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_ButtonActionPerformed
+        
         String Booking_Reference_DISPLAY = "";
         int found = 0;
         int row;
@@ -752,29 +755,38 @@ public class Menu_Technician extends javax.swing.JFrame {
                 String u_block = Block_Display.getText();
                 String u_floor = Floor_Display.getText();
                 String u_unit = Unit_Display.getText();
+                String u_amount;
+                u_amount = switch (u_appliance) 
+                {
+                    case " AC" -> "10";
+                    case " Refrigerator" -> "20";
+                    default -> "30";
+                };
+                
                 String Status = Status_Group.getSelection().getActionCommand();
                 String BK = (String) User_Table_Appointments_Complete.getValueAt(User_Table_Appointments_Complete.getSelectedRow(), 0);     
                 Booking_Reference_DISPLAY = BK;
                 
                 int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm Action!", JOptionPane.YES_NO_OPTION);
                 /*FOR THE LOVE OF FUCKING GOD DONT CHANGE THE DOT YEAH?*/
-                Path p = Paths.get(".", "Appointments.txt");
+                Path p = Paths.get(".", "Appointments.txt");          
                 if (answer == JOptionPane.NO_OPTION)
                 {
                     found = 3;
                 }
-
                 else if(answer == JOptionPane.YES_OPTION)
                 {
+                    String[] fields2 = null; 
                     Path tempFile = Files.createTempFile(p.getParent(), "appointmentsTemp", ".txt");
                     try (BufferedReader reader = Files.newBufferedReader(p);
-                        BufferedWriter writer = Files.newBufferedWriter(tempFile))
-                    {
-                        String line;
+                        BufferedWriter writer = Files.newBufferedWriter(tempFile))                       
+                    {                    
+                        String line;                  
                         // copy everything until the id is found
                         while ((line = reader.readLine()) != null)
                         {
-                            String[] fields = line.split("[,]");                       
+                            String[] fields = line.split("[,]");
+                            fields2 = fields;
                             if (BK.equals(fields[0]))
                             {
                                 found = 1;
@@ -792,9 +804,8 @@ public class Menu_Technician extends javax.swing.JFrame {
                                 fields[7] = Status;                       
                             }
                             writer.write(String.join(",", fields));
-                            writer.newLine();
-
-                        }
+                            writer.newLine();                      
+                        } 
                         Booking_Reference_Display.setText(null);
                         User_IC_Display.setText(null);
                         User_ID_Display.setText(null);
@@ -805,14 +816,34 @@ public class Menu_Technician extends javax.swing.JFrame {
                         Complete_Radio.setSelected(false);
                         Pending_Radio.setSelected(false);
                     }
-                    // copy new file & delete temporary file
+                     // copy new file & delete temporary file
                     Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
-                    Files.delete(tempFile);
+                    Files.delete(tempFile); 
+                    
+                    
+                    FileWriter Payment_collected;
+                        try
+                        {
+                            fields2[0] = IC_value;
+                            fields2[1] = Label_Name;
+                            fields2[2] = u_Booking_ID;
+                            fields2[3] = u_appliance;
+                            fields2[4] = u_amount;                                             
+                          
+                            Payment_collected = new FileWriter("Payment_collected.txt",true);
+                            Payment_collected.write(fields2[0] + ",");
+                            Payment_collected.write(fields2[1] + ",");
+                            Payment_collected.write(fields2[2] + ",");
+                            Payment_collected.write(fields2[3] + ",");
+                            Payment_collected.write(fields2[4]);
+                            Payment_collected.write(System.getProperty("line.separator"));
+                            Payment_collected.close();
+                        }
+                        catch (IOException ex){}  
                 }
-            }
-        }
-        catch (IOException ex) {}
-
+            }             
+        }         
+        catch (IOException ex) {}       
         if (found == 0)
         {
             JOptionPane.showMessageDialog(rootPane, "Record not found.");

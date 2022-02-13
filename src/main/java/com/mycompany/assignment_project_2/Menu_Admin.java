@@ -145,6 +145,7 @@ public class Menu_Admin extends javax.swing.JFrame {
         List_position_9 = new javax.swing.JLabel();
 
         User_Details_Modify.setLocation(new java.awt.Point(0, 0));
+        User_Details_Modify.setMaximumSize(new java.awt.Dimension(1376, 697));
         User_Details_Modify.setMinimumSize(new java.awt.Dimension(1376, 697));
         User_Details_Modify.setResizable(false);
         User_Details_Modify.setSize(new java.awt.Dimension(500, 500));
@@ -524,6 +525,7 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addGap(46, 46, 46))
         );
 
+        User_Appointments_View.setMaximumSize(new java.awt.Dimension(994, 588));
         User_Appointments_View.setMinimumSize(new java.awt.Dimension(994, 588));
         User_Appointments_View.setResizable(false);
 
@@ -965,7 +967,7 @@ public class Menu_Admin extends javax.swing.JFrame {
             }
         });
 
-        Admin_Option_8.setText("Delete/cancel an appointment");
+        Admin_Option_8.setText("Delete an appointment");
         Admin_Option_8.setActionCommand("Admin_Option_8");
         Admin_Option_8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

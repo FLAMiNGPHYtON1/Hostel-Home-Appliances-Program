@@ -1,8 +1,7 @@
-BK13333, IC, Basmah_Zahid, AC, B, 10, 10, complete
-BK15234, IC, Basmah_Zahid, AC, B, 10, 10, complete
-BK13125, IC, Basmah_Zahid, AC, B, 10, 10, complete
-BK15672, IC, Basmah_Zahid, AC, B, 10, 10, pending
+BK13333, IC, Basmah_Zahid, Refrigerator, B, 10, 10, pending
+BK15234, IC, Basmah_Zahid, Refrigerator, B, 10, 10, pending
+BK13125, IC, Basmah_Zahid, Refrigerator, B, 10, 10, pending
+BK15672, IC, Basmah_Zahid, Refrigerator, B, 10, 10, pending
+BK11233, IC, Basmah_Zahid, Washing_machine, B, 10, 10, complete
+BK13213, IC, Basmah_Zahid, Washing_machine, B, 10, 10, complete
 BK11133, IC, Basmah_Zahid, AC, B, 10, 10, complete
-BK132133, IC, Basmah_Zahid, AC, B, 10, 10, complete
-BK11133, IC, Basmah_Zahid, AC, B, 10, 10, pending
-BK132233, IC, Basmah_Zahid, AC, B, 10, 10, pending

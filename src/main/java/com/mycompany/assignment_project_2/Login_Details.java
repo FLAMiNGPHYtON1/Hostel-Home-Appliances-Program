@@ -14,6 +14,7 @@ public class Login_Details
     private String Password;
     private String Role;
     public String Username;
+    public String IC;
     
     
     
@@ -52,8 +53,9 @@ public class Login_Details
                     {
                         Login_GUI Login_Obj3 = new Login_GUI();
                         Login_Obj3.dispose();
-                        Username = fields[1];                      
-                        Menu_Technician Admin_Object3 = new Menu_Technician(Username);
+                        Username = fields[1];   
+                        IC = fields[0];
+                        Menu_Technician Admin_Object3 = new Menu_Technician(Username, IC);
                         JOptionPane.showMessageDialog(null, "NOICCEEE TECHY BOI");                
                         Admin_Object3.setLocationRelativeTo(null);
                         Admin_Object3.setVisible(true);                       

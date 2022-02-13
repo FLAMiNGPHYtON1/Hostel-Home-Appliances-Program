@@ -729,9 +729,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="User_Appointments_View">
       <Properties>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[994, 588]"/>
-        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[994, 588]"/>
         </Property>
@@ -1196,6 +1193,9 @@
     </Container>
     <Container class="javax.swing.JDialog" name="User_Payment_Collected_Specific">
       <Properties>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[879, 644]"/>
+        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[879, 644]"/>
         </Property>

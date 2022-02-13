@@ -524,7 +524,6 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addGap(46, 46, 46))
         );
 
-        User_Appointments_View.setMaximumSize(new java.awt.Dimension(994, 588));
         User_Appointments_View.setMinimumSize(new java.awt.Dimension(994, 588));
         User_Appointments_View.setResizable(false);
 
@@ -731,6 +730,7 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
+        User_Payment_Collected_Specific.setMaximumSize(new java.awt.Dimension(879, 644));
         User_Payment_Collected_Specific.setMinimumSize(new java.awt.Dimension(879, 644));
         User_Payment_Collected_Specific.setResizable(false);
 

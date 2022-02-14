@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author aliza
  */
-public class Menu_Admin extends javax.swing.JFrame {
+public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
 
     /**
      * Creates new form Admin_Menu
@@ -27,7 +27,8 @@ public class Menu_Admin extends javax.swing.JFrame {
     String Label_Name;   
     public Menu_Admin()
     {
-      initComponents();  
+      initComponents(); 
+      this.setLocationRelativeTo(null);
     }
     public Menu_Admin(String Username)
     {
@@ -145,7 +146,6 @@ public class Menu_Admin extends javax.swing.JFrame {
         List_position_9 = new javax.swing.JLabel();
 
         User_Details_Modify.setLocation(new java.awt.Point(0, 0));
-        User_Details_Modify.setMaximumSize(new java.awt.Dimension(1376, 697));
         User_Details_Modify.setMinimumSize(new java.awt.Dimension(1376, 697));
         User_Details_Modify.setResizable(false);
         User_Details_Modify.setSize(new java.awt.Dimension(500, 500));
@@ -525,7 +525,6 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addGap(46, 46, 46))
         );
 
-        User_Appointments_View.setMaximumSize(new java.awt.Dimension(994, 588));
         User_Appointments_View.setMinimumSize(new java.awt.Dimension(994, 588));
         User_Appointments_View.setResizable(false);
 
@@ -732,7 +731,6 @@ public class Menu_Admin extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
-        User_Payment_Collected_Specific.setMaximumSize(new java.awt.Dimension(879, 644));
         User_Payment_Collected_Specific.setMinimumSize(new java.awt.Dimension(879, 644));
         User_Payment_Collected_Specific.setResizable(false);
 
@@ -1068,7 +1066,13 @@ public class Menu_Admin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
              
- 
+    @Override
+    public void Log_Out()
+    {
+        Login_GUI Login_Obj = new Login_GUI();
+        Login_Obj.setLocationRelativeTo(null);
+        Login_Obj.setVisible(true);     
+    }
         
     private void Admin_Option_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_2ActionPerformed
         User_Details_Modify.setModal(false);       
@@ -1204,9 +1208,7 @@ public class Menu_Admin extends javax.swing.JFrame {
 
     private void Admin_Option_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_9ActionPerformed
         this.dispose();
-        Login_GUI Login_Obj1 = new Login_GUI();
-        Login_Obj1.setLocationRelativeTo(null);
-        Login_Obj1.setVisible(true);
+        Log_Out();              
     }//GEN-LAST:event_Admin_Option_9ActionPerformed
 
     private void Admin_Option_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_8ActionPerformed

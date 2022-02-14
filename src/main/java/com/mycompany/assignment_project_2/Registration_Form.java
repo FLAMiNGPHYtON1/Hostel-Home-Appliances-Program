@@ -19,7 +19,7 @@ public class Registration_Form extends javax.swing.JFrame {
      */
 
     public Registration_Form() {
-        this.setLocationRelativeTo(null);
+        
         initComponents();
         this.setLocationRelativeTo(null);
         

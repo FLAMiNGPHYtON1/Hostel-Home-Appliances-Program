@@ -247,18 +247,27 @@
         <Property name="text" type="java.lang.String" value="Book an appointment"/>
         <Property name="actionCommand" type="java.lang.String" value="Customer_Option_1"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Customer_Option_1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Customer_Option_2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cancel an appointment"/>
         <Property name="actionCommand" type="java.lang.String" value="Customer_Option_2"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Customer_Option_2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Customer_Option_3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Review current/past appointments"/>
         <Property name="actionCommand" type="java.lang.String" value="Customer_Option_3"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Customer_Option_3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Customer_Option_4">
       <Properties>
@@ -274,6 +283,9 @@
         <Property name="text" type="java.lang.String" value="View Account Details"/>
         <Property name="actionCommand" type="java.lang.String" value="Customer_Option_5"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Customer_Option_5ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="Customer_Option_6">
       <Properties>

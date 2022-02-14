@@ -14,7 +14,9 @@ public class Login_GUI extends javax.swing.JFrame {
      * Creates new form Login_GUI
      */
     public Login_GUI() {
+        
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -38,6 +40,10 @@ public class Login_GUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
+
+        jPanel1.setMaximumSize(new java.awt.Dimension(376, 262));
+        jPanel1.setMinimumSize(new java.awt.Dimension(376, 262));
 
         jLabel1.setText("Identification Number:-");
 
@@ -58,8 +64,9 @@ public class Login_GUI extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 0, 255));
         jPanel2.setFocusCycleRoot(true);
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
         jLabel3.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("APU Hostel Home Appliances Service Centre ");
 

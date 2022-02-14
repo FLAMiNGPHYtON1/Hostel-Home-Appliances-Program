@@ -8,7 +8,7 @@ package com.mycompany.assignment_project_2;
  *
  * @author aliza
  */
-public class Menu_Customer extends javax.swing.JFrame {
+public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Function {
 
     /**
      * Creates new form Menu_Customer1
@@ -18,6 +18,7 @@ public class Menu_Customer extends javax.swing.JFrame {
     public Menu_Customer()
     {
       initComponents();  
+      this.setLocationRelativeTo(null);
     }
    
     public Menu_Customer(String Username)
@@ -128,12 +129,27 @@ public class Menu_Customer extends javax.swing.JFrame {
 
         Customer_Option_1.setText("Book an appointment");
         Customer_Option_1.setActionCommand("Customer_Option_1");
+        Customer_Option_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Customer_Option_1ActionPerformed(evt);
+            }
+        });
 
         Customer_Option_2.setText("Cancel an appointment");
         Customer_Option_2.setActionCommand("Customer_Option_2");
+        Customer_Option_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Customer_Option_2ActionPerformed(evt);
+            }
+        });
 
         Customer_Option_3.setText("Review current/past appointments");
         Customer_Option_3.setActionCommand("Customer_Option_3");
+        Customer_Option_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Customer_Option_3ActionPerformed(evt);
+            }
+        });
 
         Customer_Option_4.setText("<html> Send remarks for an appointment\n");
         Customer_Option_4.setActionCommand("Customer_Option_4");
@@ -145,6 +161,11 @@ public class Menu_Customer extends javax.swing.JFrame {
 
         Customer_Option_5.setText("View Account Details");
         Customer_Option_5.setActionCommand("Customer_Option_5");
+        Customer_Option_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Customer_Option_5ActionPerformed(evt);
+            }
+        });
 
         Customer_Option_6.setText("Log Out");
         Customer_Option_6.setActionCommand("Customer_Option_6");
@@ -223,14 +244,38 @@ public class Menu_Customer extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    @Override
+    public void Log_Out()
+    {
+        Login_GUI Login_Obj = new Login_GUI();
+        Login_Obj.setLocationRelativeTo(null);
+        Login_Obj.setVisible(true);     
+    }
     private void Customer_Option_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_6ActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        Log_Out();
+        
     }//GEN-LAST:event_Customer_Option_6ActionPerformed
 
     private void Customer_Option_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Customer_Option_4ActionPerformed
+
+    private void Customer_Option_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Customer_Option_5ActionPerformed
+
+    private void Customer_Option_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Customer_Option_3ActionPerformed
+
+    private void Customer_Option_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Customer_Option_2ActionPerformed
+
+    private void Customer_Option_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Customer_Option_1ActionPerformed
 
     /**
      * @param args the command line arguments

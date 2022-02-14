@@ -25,6 +25,7 @@ public class Modify_User_GUI extends javax.swing.JFrame {
      */
     public Modify_User_GUI() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

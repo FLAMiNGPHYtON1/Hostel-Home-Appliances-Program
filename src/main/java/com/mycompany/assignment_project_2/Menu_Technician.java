@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author aliza
  */
-public class Menu_Technician extends javax.swing.JFrame {
+public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Function {
 
     /**
      * Creates new form Technician_Menu
@@ -31,6 +31,7 @@ public class Menu_Technician extends javax.swing.JFrame {
     public Menu_Technician()
     {
       initComponents();  
+      this.setLocationRelativeTo(null);
     }
    
     public Menu_Technician(String Username, String IC)
@@ -39,6 +40,13 @@ public class Menu_Technician extends javax.swing.JFrame {
         this.Label_Name = Username;
         Technician_Display_Name.setText(Label_Name);  
         this.IC_value = IC;
+    }
+    @Override
+    public void Log_Out()
+    {
+        Login_GUI Login_Obj = new Login_GUI();
+        Login_Obj.setLocationRelativeTo(null);
+        Login_Obj.setVisible(true);     
     }
 
 
@@ -622,9 +630,7 @@ public class Menu_Technician extends javax.swing.JFrame {
 
     private void Technician_Option_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Technician_Option_5ActionPerformed
         this.dispose();
-        Login_GUI Login_Obj6 = new Login_GUI();
-        Login_Obj6.setLocationRelativeTo(null);
-        Login_Obj6.setVisible(true);
+        Log_Out();
     }//GEN-LAST:event_Technician_Option_5ActionPerformed
 
     private void Technician_Option_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Technician_Option_1ActionPerformed

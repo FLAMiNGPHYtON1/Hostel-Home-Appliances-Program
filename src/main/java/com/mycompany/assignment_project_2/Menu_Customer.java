@@ -423,7 +423,7 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
     private void Customer_Option_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Customer_Option_2ActionPerformed
-
+//  This method Sets the uneditable JTextlabels to currently logged in user's details, and generates a random Booking ID every time the button is pressed
     private void Customer_Option_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_1ActionPerformed
          Book_Appointment_Dialog.setModal(false);
          Random rand = new Random();
@@ -438,7 +438,7 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
          Book_Appointment_Dialog.setModal(true); 
          Book_Appointment_Dialog.setVisible(true); 
     }//GEN-LAST:event_Customer_Option_1ActionPerformed
-
+// This method takes data enter by user in JTextlabels and JComboBox, Then appends them to Appointments.txt
     private void Confirm_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_ButtonActionPerformed
         
         String Booking_ID = Booking_ID_Display.getText();

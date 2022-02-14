@@ -107,15 +107,12 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
         Technician_Option_1 = new javax.swing.JButton();
         Technician_Option_2 = new javax.swing.JButton();
         Technician_Option_3 = new javax.swing.JButton();
-        Technician_Option_4 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        Technician_Option_5 = new javax.swing.JButton();
+        Technician_Option_4 = new javax.swing.JButton();
 
-        User_Appointments_View.setMaximumSize(new java.awt.Dimension(924, 562));
         User_Appointments_View.setMinimumSize(new java.awt.Dimension(924, 562));
         User_Appointments_View.setResizable(false);
 
@@ -171,7 +168,6 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        User_Appointments_Complete.setMaximumSize(new java.awt.Dimension(1237, 624));
         User_Appointments_Complete.setMinimumSize(new java.awt.Dimension(1237, 624));
         User_Appointments_Complete.setResizable(false);
 
@@ -372,7 +368,6 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
                 .addContainerGap(79, Short.MAX_VALUE))
         );
 
-        Technician_Payments_Collected.setMaximumSize(new java.awt.Dimension(872, 499));
         Technician_Payments_Collected.setMinimumSize(new java.awt.Dimension(872, 499));
         Technician_Payments_Collected.setResizable(false);
 
@@ -520,24 +515,19 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
             }
         });
 
-        Technician_Option_4.setText("View Remarks");
-        Technician_Option_4.setActionCommand("Technician_Option_4");
-
         jLabel3.setText("1.");
 
         jLabel4.setText("2.");
 
         jLabel5.setText("3.");
 
-        jLabel6.setText("4.");
+        jLabel7.setText("4.");
 
-        jLabel7.setText("5.");
-
-        Technician_Option_5.setText("Log out");
-        Technician_Option_5.setActionCommand("Technician_Option_5");
-        Technician_Option_5.addActionListener(new java.awt.event.ActionListener() {
+        Technician_Option_4.setText("Log out");
+        Technician_Option_4.setActionCommand("Technician_Option_5");
+        Technician_Option_4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Technician_Option_5ActionPerformed(evt);
+                Technician_Option_4ActionPerformed(evt);
             }
         });
 
@@ -554,15 +544,13 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
                     .addComponent(jLabel7)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel5))
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Technician_Option_4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Technician_Option_3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Technician_Option_2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Technician_Option_1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Technician_Option_5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Technician_Option_4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46))
         );
         layout.setVerticalGroup(
@@ -581,15 +569,11 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Technician_Option_3)
                     .addComponent(jLabel5))
-                .addGap(32, 32, 32)
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Technician_Option_4)
-                    .addComponent(jLabel6))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Technician_Option_5)
                     .addComponent(jLabel7))
-                .addGap(36, 36, 36))
+                .addGap(76, 76, 76))
         );
 
         pack();
@@ -628,10 +612,10 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
         Technician_Payments_Collected.setVisible(true);                                                             
     }//GEN-LAST:event_Technician_Option_3ActionPerformed
 
-    private void Technician_Option_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Technician_Option_5ActionPerformed
+    private void Technician_Option_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Technician_Option_4ActionPerformed
         this.dispose();
         Log_Out();
-    }//GEN-LAST:event_Technician_Option_5ActionPerformed
+    }//GEN-LAST:event_Technician_Option_4ActionPerformed
 
     private void Technician_Option_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Technician_Option_1ActionPerformed
         User_Appointments_View.setModal(false);   
@@ -762,13 +746,8 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
                 String u_floor = Floor_Display.getText();
                 String u_unit = Unit_Display.getText();
                 String u_amount;
-                u_amount = switch (u_appliance) 
-                {
-                    case " AC" -> "10";
-                    case " Refrigerator" -> "20";
-                    default -> "30";
-                };
-                
+                Appliance_Amount Obj1 = new Appliance_Amount();
+                u_amount = Obj1.GetValue(u_appliance);                             
                 String Status = Status_Group.getSelection().getActionCommand();
                 String BK = (String) User_Table_Appointments_Complete.getValueAt(User_Table_Appointments_Complete.getSelectedRow(), 0);     
                 Booking_Reference_DISPLAY = BK;
@@ -913,7 +892,6 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
     private javax.swing.JButton Technician_Option_2;
     private javax.swing.JButton Technician_Option_3;
     private javax.swing.JButton Technician_Option_4;
-    private javax.swing.JButton Technician_Option_5;
     private javax.swing.JDialog Technician_Payments_Collected;
     private javax.swing.JTextField Unit_Display;
     private javax.swing.JDialog User_Appointments_Complete;
@@ -938,7 +916,6 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

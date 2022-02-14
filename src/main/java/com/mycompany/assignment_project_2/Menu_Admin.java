@@ -146,6 +146,7 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         List_position_9 = new javax.swing.JLabel();
 
         User_Details_Modify.setLocation(new java.awt.Point(0, 0));
+        User_Details_Modify.setMaximumSize(new java.awt.Dimension(1376, 697));
         User_Details_Modify.setMinimumSize(new java.awt.Dimension(1376, 697));
         User_Details_Modify.setResizable(false);
         User_Details_Modify.setSize(new java.awt.Dimension(500, 500));

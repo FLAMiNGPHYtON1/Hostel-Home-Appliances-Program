@@ -724,15 +724,13 @@
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="Technician_Option_4" alignment="1" min="-2" pref="184" max="-2" attributes="0"/>
                   <Component id="Technician_Option_3" alignment="1" min="-2" pref="184" max="-2" attributes="0"/>
                   <Component id="Technician_Option_2" alignment="1" min="-2" pref="184" max="-2" attributes="0"/>
                   <Component id="Technician_Option_1" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="Technician_Option_5" alignment="1" min="-2" pref="184" max="-2" attributes="0"/>
+                  <Component id="Technician_Option_4" alignment="1" min="-2" pref="184" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
           </Group>
@@ -757,17 +755,12 @@
                   <Component id="Technician_Option_3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="Technician_Option_4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Technician_Option_5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -899,12 +892,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Technician_Option_3ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="Technician_Option_4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="View Remarks"/>
-        <Property name="actionCommand" type="java.lang.String" value="Technician_Option_4"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="text" type="java.lang.String" value="1."/>
@@ -920,23 +907,18 @@
         <Property name="text" type="java.lang.String" value="3."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
         <Property name="text" type="java.lang.String" value="4."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="5."/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="Technician_Option_5">
+    <Component class="javax.swing.JButton" name="Technician_Option_4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Log out"/>
         <Property name="actionCommand" type="java.lang.String" value="Technician_Option_5"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Technician_Option_5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Technician_Option_4ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

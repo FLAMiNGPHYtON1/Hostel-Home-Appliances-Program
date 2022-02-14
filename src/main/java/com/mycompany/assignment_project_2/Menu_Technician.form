@@ -155,6 +155,9 @@
     </Container>
     <Container class="javax.swing.JDialog" name="User_Appointments_Complete">
       <Properties>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[1237, 624]"/>
+        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[1237, 624]"/>
         </Property>

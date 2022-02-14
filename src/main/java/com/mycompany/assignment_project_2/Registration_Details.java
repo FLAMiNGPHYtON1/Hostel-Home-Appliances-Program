@@ -6,7 +6,7 @@ import java.io.IOException;
 
 
 
-public class Registration_Details 
+public class Registration_Details extends Registration_Abstraction 
 {
     private String User_ID;
     private String Contact_Number;
@@ -14,6 +14,7 @@ public class Registration_Details
     private String Role;
     private String Identification_Number;
     
+    @Override
     public void register(String u_ID, String u_id, String u_ct, String u_ps, String u_rl)
     {
         this.User_ID = u_id;

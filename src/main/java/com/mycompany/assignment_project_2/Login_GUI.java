@@ -41,6 +41,7 @@ public class Login_GUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
+        setResizable(false);
 
         jPanel1.setMaximumSize(new java.awt.Dimension(376, 262));
         jPanel1.setMinimumSize(new java.awt.Dimension(376, 262));
@@ -56,8 +57,7 @@ public class Login_GUI extends javax.swing.JFrame {
             }
         });
 
-        Rl_txt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Customer", "Technician", " " }));
-        Rl_txt.setSelectedIndex(3);
+        Rl_txt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Customer", "Technician" }));
 
         jLabel5.setText("Role:- ");
 

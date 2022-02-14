@@ -4,6 +4,11 @@
  */
 package com.mycompany.assignment_project_2;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Random;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aliza
@@ -13,7 +18,8 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
     /**
      * Creates new form Menu_Customer1
      */
-    String Label_Name;
+    String Label_Name = "";
+    String IC_value = "";
 
     public Menu_Customer()
     {
@@ -21,11 +27,12 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
       this.setLocationRelativeTo(null);
     }
    
-    public Menu_Customer(String Username)
+    public Menu_Customer(String Username, String IC)
     {
         initComponents();  
-        this.Label_Name = Username;
-        Customer_Display_Name.setText(Label_Name);        
+        this.Label_Name = Username;   
+        Customer_Display_Name.setText(Label_Name);  
+        this.IC_value = IC;
     }
 
 
@@ -38,6 +45,24 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Book_Appointment_Dialog = new javax.swing.JDialog();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        Confirm_Button = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        Appliance_Selection = new javax.swing.JComboBox<>();
+        User_Name_Display = new javax.swing.JTextField();
+        User_IC_Display = new javax.swing.JTextField();
+        Booking_ID_Display = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        Block_Selection = new javax.swing.JComboBox<>();
+        Floor_Selection = new javax.swing.JComboBox<>();
+        Unit_Selection = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -53,6 +78,155 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
         Customer_Option_3 = new javax.swing.JButton();
         Customer_Option_4 = new javax.swing.JButton();
         Customer_Option_5 = new javax.swing.JButton();
+
+        Book_Appointment_Dialog.setMaximumSize(new java.awt.Dimension(589, 544));
+        Book_Appointment_Dialog.setMinimumSize(new java.awt.Dimension(589, 544));
+        Book_Appointment_Dialog.setResizable(false);
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Appointment Registration Form");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 21, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jLabel6)
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+
+        jLabel9.setText("Booking ID  :-  ");
+
+        Confirm_Button.setText("Confirm");
+        Confirm_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Confirm_ButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("User IC        :- ");
+
+        jLabel11.setText("User Name :-");
+
+        jLabel12.setText("Appliance   :- ");
+
+        Appliance_Selection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC", "Washing_machine", "Refrigerator" }));
+        Appliance_Selection.setToolTipText("");
+        Appliance_Selection.setMaximumSize(new java.awt.Dimension(131, 22));
+
+        User_Name_Display.setEditable(false);
+
+        User_IC_Display.setEditable(false);
+
+        Booking_ID_Display.setEditable(false);
+
+        jLabel13.setText("Floor  :-");
+
+        jLabel14.setText("Unit    :- ");
+
+        jLabel15.setText("Block  :-");
+
+        Block_Selection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B", "C" }));
+        Block_Selection.setMaximumSize(new java.awt.Dimension(72, 22));
+
+        Floor_Selection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" }));
+
+        Unit_Selection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+
+        javax.swing.GroupLayout Book_Appointment_DialogLayout = new javax.swing.GroupLayout(Book_Appointment_Dialog.getContentPane());
+        Book_Appointment_Dialog.getContentPane().setLayout(Book_Appointment_DialogLayout);
+        Book_Appointment_DialogLayout.setHorizontalGroup(
+            Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(Book_Appointment_DialogLayout.createSequentialGroup()
+                .addGap(243, 243, 243)
+                .addComponent(Confirm_Button)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Book_Appointment_DialogLayout.createSequentialGroup()
+                .addGroup(Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Book_Appointment_DialogLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel9))
+                        .addGap(18, 18, 18)
+                        .addGroup(Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel12)
+                                .addComponent(User_Name_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Booking_ID_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(User_IC_Display, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(Book_Appointment_DialogLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(Book_Appointment_DialogLayout.createSequentialGroup()
+                                        .addComponent(jLabel14)
+                                        .addGap(63, 63, 63)
+                                        .addComponent(Unit_Selection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Book_Appointment_DialogLayout.createSequentialGroup()
+                                        .addComponent(jLabel13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(Floor_Selection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(Book_Appointment_DialogLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel15)
+                                .addGap(67, 67, 67)
+                                .addComponent(Block_Selection, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(Book_Appointment_DialogLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Appliance_Selection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)))
+                .addGap(80, 80, 80))
+        );
+        Book_Appointment_DialogLayout.setVerticalGroup(
+            Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Book_Appointment_DialogLayout.createSequentialGroup()
+                .addGroup(Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Book_Appointment_DialogLayout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Block_Selection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(47, 47, 47))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Book_Appointment_DialogLayout.createSequentialGroup()
+                        .addGroup(Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(Booking_ID_Display, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel15))
+                        .addGap(41, 41, 41)))
+                .addGroup(Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(User_IC_Display, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel13)
+                    .addComponent(Floor_Selection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(User_Name_Display, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14)
+                    .addComponent(Unit_Selection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(Book_Appointment_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Appliance_Selection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addComponent(Confirm_Button)
+                .addGap(18, 18, 18))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,7 +272,7 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, Short.MAX_VALUE)
                 .addComponent(Customer_Display_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39))
         );
@@ -168,7 +342,7 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,38 +351,37 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Customer_Option_3, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                    .addComponent(Customer_Option_3, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
                     .addComponent(Customer_Option_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Customer_Option_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(68, 68, 68)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 12, Short.MAX_VALUE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel7)))
+                        .addComponent(jLabel7)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(Customer_Option_4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Customer_Option_5, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
-                .addGap(30, 30, 30))
+                    .addComponent(Customer_Option_5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(Customer_Option_1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Customer_Option_4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(19, 19, 19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(43, 43, 43)))
-                .addGap(11, 11, 11)
+                                .addComponent(Customer_Option_4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel7)))
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,7 +394,7 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
                             .addComponent(jLabel5)
                             .addComponent(Customer_Option_3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel8))
-                .addGap(53, 53, 53))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         pack();
@@ -252,8 +425,50 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
     }//GEN-LAST:event_Customer_Option_2ActionPerformed
 
     private void Customer_Option_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_1ActionPerformed
-        // TODO add your handling code here:
+         Book_Appointment_Dialog.setModal(false);
+         Random rand = new Random();
+         int num = rand.nextInt(89999) + 10000;
+         String s1 = String.valueOf(num);
+         String s2 = "BK";
+         String s3 = s2.concat(s1);
+         System.out.println(s3);
+         Booking_ID_Display.setText(s3);
+         User_IC_Display.setText(IC_value);
+         User_Name_Display.setText(Label_Name);
+         Book_Appointment_Dialog.setModal(true); 
+         Book_Appointment_Dialog.setVisible(true); 
     }//GEN-LAST:event_Customer_Option_1ActionPerformed
+
+    private void Confirm_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_ButtonActionPerformed
+        
+        String Booking_ID = Booking_ID_Display.getText();
+        String User_IC = User_IC_Display.getText();
+        String User_Name = User_Name_Display.getText();
+        String Appliance = Appliance_Selection.getSelectedItem().toString();
+        String Block = Block_Selection.getSelectedItem().toString();
+        String Floor = Floor_Selection.getSelectedItem().toString();
+        String Unit = Unit_Selection.getSelectedItem().toString();
+        String Status = " pending";
+        FileWriter Appointment_Details;
+        try 
+        {
+            Appointment_Details = new FileWriter("Appointments.txt",true);
+            Appointment_Details.write(Booking_ID + ",");
+            Appointment_Details.write(User_IC + ",");
+            Appointment_Details.write(User_Name + ", ");
+            Appointment_Details.write(Appliance + ", ");
+            Appointment_Details.write(Block + ", ");
+            Appointment_Details.write(Floor + ", ");
+            Appointment_Details.write(Unit + ", ");
+            Appointment_Details.write(Status);
+            Appointment_Details.write(System.getProperty("line.separator"));
+            Appointment_Details.close();
+            JOptionPane.showMessageDialog(null, "Appointment has been booked successfully!");
+            Book_Appointment_Dialog.setVisible(false);
+        } 
+        catch (IOException ex){} 
+        
+    }//GEN-LAST:event_Confirm_ButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,20 +507,38 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> Appliance_Selection;
+    private javax.swing.JComboBox<String> Block_Selection;
+    private javax.swing.JDialog Book_Appointment_Dialog;
+    private javax.swing.JTextField Booking_ID_Display;
+    private javax.swing.JButton Confirm_Button;
     private javax.swing.JLabel Customer_Display_Name;
     private javax.swing.JButton Customer_Option_1;
     private javax.swing.JButton Customer_Option_2;
     private javax.swing.JButton Customer_Option_3;
     private javax.swing.JButton Customer_Option_4;
     private javax.swing.JButton Customer_Option_5;
+    private javax.swing.JComboBox<String> Floor_Selection;
+    private javax.swing.JComboBox<String> Unit_Selection;
+    private javax.swing.JTextField User_IC_Display;
+    private javax.swing.JTextField User_Name_Display;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

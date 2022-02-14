@@ -4,16 +4,11 @@
  */
 package com.mycompany.assignment_project_2;
 
-
-
 /**
  *
  * @author aliza
  */
-// Interface Log_Out_Function, containing the method Log_Out
-interface Log_Out_Function 
+abstract class Registration_Abstraction 
 {
-   public void Log_Out();
-
+    abstract void register(String u_ID, String u_id, String u_ct, String u_ps, String u_rl);
 }
-

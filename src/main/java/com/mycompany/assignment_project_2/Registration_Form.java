@@ -25,7 +25,8 @@ public class Registration_Form extends javax.swing.JFrame {
         
     }
     JFrame Global_Admin_Object_5;
-    Registration_Form(JFrame Admin_Object5) 
+    
+    public Registration_Form(JFrame Admin_Object5) 
     {
         initComponents();
         

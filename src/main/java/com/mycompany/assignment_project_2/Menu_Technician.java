@@ -12,7 +12,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.nio.file.StandardOpenOption;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -27,13 +26,16 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
      */
     String Label_Name = "";
     String IC_value = "";
-
+    
+//    Constructer
     public Menu_Technician()
     {
       initComponents();  
       this.setLocationRelativeTo(null);
     }
    
+//  Constructer which also intializes the form, but takes the username of user from login gui as variable
+//  then sets the label name Jlabel to it  
     public Menu_Technician(String Username, String IC)
     {
         initComponents();  
@@ -41,6 +43,9 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
         Technician_Display_Name.setText(Label_Name);  
         this.IC_value = IC;
     }
+    
+//    a public method that allows users to logout of their current menu back to the login menu
+//    was implemented to satisfy the requirement of interface (Abstraction)
     @Override
     public void Log_Out()
     {
@@ -168,6 +173,7 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
+        User_Appointments_Complete.setMaximumSize(new java.awt.Dimension(1237, 624));
         User_Appointments_Complete.setMinimumSize(new java.awt.Dimension(1237, 624));
         User_Appointments_Complete.setResizable(false);
 
@@ -579,6 +585,7 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+//  This method only shows payment details of completed appointments which have the same IC as the IC of the currently logged-in technician  
     private void Technician_Option_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Technician_Option_3ActionPerformed
         Technician_Payments_Collected.setModal(false); 
         int found = 0;
@@ -612,11 +619,15 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
         Technician_Payments_Collected.setVisible(true);                                                             
     }//GEN-LAST:event_Technician_Option_3ActionPerformed
 
+//  Destroys technician menu, the calls the Log_out method from the  Log_Out_Function interface     
     private void Technician_Option_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Technician_Option_4ActionPerformed
         this.dispose();
         Log_Out();
     }//GEN-LAST:event_Technician_Option_4ActionPerformed
 
+//    The button intializes the JTable present in the User_Appointments_View dialog box with the current appointment details of pending appointments present
+//    in the Appointments.txt, then it sets the dialog box's modal to true, preventing user from touching the admin menu as long as dialog box is open
+//    Shows tech user all appointments currently marked as pending in the system   
     private void Technician_Option_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Technician_Option_1ActionPerformed
         User_Appointments_View.setModal(false);   
         try
@@ -646,6 +657,9 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
         User_Appointments_View.setVisible(true);  
     }//GEN-LAST:event_Technician_Option_1ActionPerformed
 
+//    The button intializes the JTable present in the User_Appointments_View dialog box with the current appointment details of pending appointments present
+//    in the Appointments.txt, then it sets the dialog box's modal to true, preventing user from touching the admin menu as long as dialog box is open
+//    Shows tech user all appointments currently marked as pending in the system        
     private void Technician_Option_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Technician_Option_2ActionPerformed
         User_Appointments_Complete.setModal(false);   
         try
@@ -675,6 +689,7 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
         User_Appointments_Complete.setVisible(true); 
     }//GEN-LAST:event_Technician_Option_2ActionPerformed
 
+//    This method sets the text of the JLabels in the User_Appointments_Complete Dialog to the text obtained upon clicking a row from the User_Table_Appointments_Complete JTable
     private void User_Table_Appointments_CompleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_User_Table_Appointments_CompleteMouseClicked
         int selected_row_index = User_Table_Appointments_Complete.getSelectedRow();
         Booking_Reference_Display.setText(User_Table_Appointments_Complete.getValueAt(selected_row_index,0).toString());
@@ -695,6 +710,7 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
         }                                            
     }//GEN-LAST:event_User_Table_Appointments_CompleteMouseClicked
 
+//  This method functionally the same as Technician_Option1, in this case, we re-implement it to allow user to refresh table         
     private void Refresh_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Refresh_ButtonActionPerformed
       
         try
@@ -723,6 +739,17 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
 
     }//GEN-LAST:event_Refresh_ButtonActionPerformed
 
+// This method first checks if the JTextFields are empty, if they are not, then it takes whatever text is present in them.
+// The system asks user to select the appointment they want to mark as complete
+// After which, the systems asks user for confirmation upon clicking the Confirm Button
+// If yes, then the system opens 2 files, Payment_Collected.txt and Appointments.txt
+// It then Reads the text in Appointments.txt line by line, and assigns it to an array, after splitting it by "," delimeter
+// After which, the system copies the contents of Appointment.txt to a tempfile
+// The appointment which was selected by user to be marked as completed has its status changed to "completed"
+// After which, the contents tempfile, and the modified appointment is recopied onto the Appointment.txt file and tempfile is deleted.
+    
+//For Payment_Collected.txt, the process is exactly the same, but no temp file is used, instead an array containing specific details in a format different from the text present in Appointment.txt
+//Is appended to the Payment_Collected.txt file, at the same time when the status of the appointment is changed from pending to completed in the Appointment.txt file   
     private void Confirm_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_ButtonActionPerformed
         
         String Booking_Reference_DISPLAY = "";

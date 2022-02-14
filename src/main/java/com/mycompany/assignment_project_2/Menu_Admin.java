@@ -4,6 +4,7 @@
  */
 package com.mycompany.assignment_project_2;
 
+import java.awt.HeadlessException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -25,11 +26,14 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
      * Creates new form Admin_Menu
      */
     String Label_Name;   
+//    Constructer which intializes form and sets location to center
     public Menu_Admin()
     {
       initComponents(); 
       this.setLocationRelativeTo(null);
     }
+//  Constructer which also intializes the form, but takes the username of user from login gui as variable
+//  then sets the label name Jlabel to it  
     public Menu_Admin(String Username)
     {
         initComponents();
@@ -146,7 +150,6 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         List_position_9 = new javax.swing.JLabel();
 
         User_Details_Modify.setLocation(new java.awt.Point(0, 0));
-        User_Details_Modify.setMaximumSize(new java.awt.Dimension(1376, 697));
         User_Details_Modify.setMinimumSize(new java.awt.Dimension(1376, 697));
         User_Details_Modify.setResizable(false);
         User_Details_Modify.setSize(new java.awt.Dimension(500, 500));
@@ -1066,15 +1069,61 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-             
+//    a public method that allows users to logout of their current menu back to the login menu
+//    was implemented to satisfy the requirement of interface (Abstraction)
     @Override
     public void Log_Out()
     {
         Login_GUI Login_Obj = new Login_GUI();
         Login_Obj.setLocationRelativeTo(null);
         Login_Obj.setVisible(true);     
+    }  
+//    A class which inherits from the Modify_File super-class, which then overrides the method it inherited 
+//    Modifies the user_details files, where the orignal method changes the string, while the overrided method deletes
+//    the entirety of the user's details
+    class modify_file_admin_delete extends Modify_File
+    {
+        @Override
+        public int modify_file_admin(String u_ID, String u_id, String u_ct, String u_ps, String u_rl, String IC2, int found)
+        {
+            try
+            {
+                Path p = Paths.get(".", "User_Details.txt");
+                Path tempFile = Files.createTempFile(p.getParent(), "usersTemp", ".txt");
+                try (BufferedReader reader = Files.newBufferedReader(p);
+                    BufferedWriter writer = Files.newBufferedWriter(tempFile)) 
+                {
+                    String line;
+                     // copy everything until the id is found
+                    while ((line = reader.readLine()) != null) 
+                    {
+                        String[] fields = line.split("[,]");
+                        if (!IC2.equals(fields[0])) 
+                        {
+                            //found = 1;
+                            for (int i = 0; i < fields.length; ++i) 
+                            {
+                                System.out.println(i + ": " + fields[i]);
+                            }
+                            writer.write(String.join(",", fields));
+                            writer.newLine();
+                        }
+                        if (IC2.equals(fields[0])) 
+                        {
+                            found = 1;
+                        }
+                    }
+                } 
+                // copy new file & delete temporary file
+                Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
+                Files.delete(tempFile); 
+                    
+            }catch (IOException ex){}
+            return found;
+        }
     }
-        
+//  The button intializes the JTable present in the User_Details_Modify dialog box with the current user details present
+//  in the User_Details.txt, then it sets the dialog box's modal to true, preventing user from touching the admin menu as long as dialog box is open
     private void Admin_Option_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_2ActionPerformed
         User_Details_Modify.setModal(false);       
         try
@@ -1102,16 +1151,19 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
          
     }//GEN-LAST:event_Admin_Option_2ActionPerformed
 
+//  Creates an object of Menu admin, which is then passed to the registration form class when its object is created, the regisration form is then set
+//  to the center of the screen, made visible and the admin menu is made invisible
     private void Admin_Option_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_1ActionPerformed
     
       JFrame Admin_Object5 = this;
       Registration_Form Register_Object1 = new Registration_Form(Admin_Object5);    
       Register_Object1.setLocationRelativeTo(null);
       Register_Object1.setVisible(true);  
-      this.setVisible(false);
-      
+      this.setVisible(false);           
     }//GEN-LAST:event_Admin_Option_1ActionPerformed
 
+//  The button intializes the JTable present in the User_Details_Delete dialog box with the current user details present
+//  in the User_Details.txt, then it sets the dialog box's modal to true, preventing user from touching the admin menu as long as dialog box is open
     private void Admin_Option_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_3ActionPerformed
         User_Details_Delete.setModal(false);     
         try
@@ -1139,6 +1191,9 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         
     }//GEN-LAST:event_Admin_Option_3ActionPerformed
 
+//    The button intializes the JTable present in the User_Details_View dialog box with the current user details present
+//    in the User_Details.txt, then it sets the dialog box's modal to true, preventing user from touching the admin menu as long as dialog box is open
+//    Shows admin user all users currently registered in the system
     private void Admin_Option_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_4ActionPerformed
         User_Details_View.setModal(false);   
         try
@@ -1161,6 +1216,9 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
                                    
     }//GEN-LAST:event_Admin_Option_4ActionPerformed
 
+//    The button intializes the JTable present in the User_Appointments_View dialog box with the current appointment details present
+//    in the Appointments.txt, then it sets the dialog box's modal to true, preventing user from touching the admin menu as long as dialog box is open
+//    Shows admin user all appointments currently registered in the system
     private void Admin_Option_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_5ActionPerformed
         User_Appointments_View.setModal(false);
         try
@@ -1181,6 +1239,9 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         User_Appointments_View.setVisible(true);  
     }//GEN-LAST:event_Admin_Option_5ActionPerformed
 
+//    The button intializes the JTable present in the User_Payment_Collected_All dialog box with the current appointment details of completed appointments present
+//    in the Appointments.txt, then it sets the dialog box's modal to true, preventing user from touching the admin menu as long as dialog box is open
+//    Shows admin user all payment details of completed appointments in the system
     private void Admin_Option_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_6ActionPerformed
         User_Payment_Collected_All.setModal(false);
         try
@@ -1202,16 +1263,22 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
                                               
     }//GEN-LAST:event_Admin_Option_6ActionPerformed
 
+//   The button sets the User_Payment_Collected_Specific dialog box's modal to true, preventing user from touching the admin menu as long as dialog box is open
+//   then makes it visible to the user
     private void Admin_Option_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_7ActionPerformed
        User_Payment_Collected_Specific.setModal(true);   
        User_Payment_Collected_Specific.setVisible(true);  
     }//GEN-LAST:event_Admin_Option_7ActionPerformed
 
+//  Destroys admin menu, the calls the Log_out method from the  Log_Out_Function interface  
     private void Admin_Option_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_9ActionPerformed
         this.dispose();
         Log_Out();              
     }//GEN-LAST:event_Admin_Option_9ActionPerformed
 
+//    The button intializes the JTable present in the User_Appointments_Delete dialog box with the current appointment details of completed appointments present
+//    in the Appointments.txt, then it sets the dialog box's modal to true, preventing user from touching the admin menu as long as dialog box is open
+//    Shows admin user all payment details of completed appointments in the system   
     private void Admin_Option_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_8ActionPerformed
         User_Appointments_Delete.setModal(false);
         try
@@ -1232,6 +1299,8 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         User_Appointments_Delete.setVisible(true); 
     }//GEN-LAST:event_Admin_Option_8ActionPerformed
 
+//  this method listens for an event that occurs in the User_Details_Modify Dialog, specifcally when the user clicks on a row of that dialog box's JTable called User_Table_Modify
+//  Then it sets all the jtextfields in the dialog to whatever value is present in the table
     private void User_Table_ModifyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_User_Table_ModifyMouseClicked
      
         int selected_row_index = User_Table_Modify.getSelectedRow();
@@ -1242,6 +1311,7 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         User_Role_Display.setText(User_Table_Modify.getValueAt(selected_row_index,4).toString());
     }//GEN-LAST:event_User_Table_ModifyMouseClicked
 
+//  This method functionally the same as Admin_Option_2, in this case, we re-implement it to allow user to refresh table   
     private void Show_Users_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_Users_ButtonActionPerformed
         try
         {
@@ -1264,6 +1334,9 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         catch (IOException ex){}
     }//GEN-LAST:event_Show_Users_ButtonActionPerformed
 
+//  This method first checks if the jtextfields are empty, if they are not, it then assigns the data it found inside jtextfields to String variables, then asks user for confirmation on modifying
+//  The selected row, upon confirmation, the string variables are passed to the modify_file_admin method of Modify_File class, which returns a 1 if the operation was successful
+//  Then, the found variable is checked, if it equals to 1, that means the user's login details has been succesfully modified to whatever was present in the jtextfields.
     private void Confirm_Modify_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_Modify_ButtonActionPerformed
 
         String U_ID_DISPLAY = "";
@@ -1296,7 +1369,7 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
                 {
                     int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm Action!", JOptionPane.YES_NO_OPTION);
                     /*FOR THE LOVE OF FUCKING GOD DONT CHANGE THE DOT YEAH?*/
-                    Path p = Paths.get(".", "User_Details.txt");
+                    
                     if (answer == JOptionPane.NO_OPTION)
                     {
                         found = 3;
@@ -1304,47 +1377,18 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
 
                     else if(answer == JOptionPane.YES_OPTION)
                     {
-                        Path tempFile = Files.createTempFile(p.getParent(), "usersTemp", ".txt");
-                        try (BufferedReader reader = Files.newBufferedReader(p);
-                            BufferedWriter writer = Files.newBufferedWriter(tempFile))
-                        {
-                            String line123;
-                            // copy everything until the id is found
-                            while ((line123 = reader.readLine()) != null)
-                            {
-                                String[] fields = line123.split("[,]");
-                                System.out.println(fields[0]);
-                                if (IC.equals(fields[0]))
-                                {
-                                    found = 1;
-                                    for (int i = 0; i < fields.length; ++i)
-                                    {
-                                        System.out.println(i + ": " + fields[i]);
-                                    }
-                                    fields[0] = u_ID;
-                                    fields[1] = u_id;
-                                    fields[2] = u_ct;
-                                    fields[3] = u_ps;
-                                    fields[4] = u_rl;
-                                }
-                                writer.write(String.join(",", fields));
-                                writer.newLine();
-
-                            }
-                            User_IC_Display.setText(null);
-                            User_ID_Display.setText(null);
-                            User_Contact_Number_Display.setText(null);
-                            User_Password_Display.setText(null);
-                            User_Role_Display.setText(null);
-                        }
-                        // copy new file & delete temporary file
-                        Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
-                        Files.delete(tempFile);
+                        Modify_File obj1 = new Modify_File();
+                        found = obj1.modify_file_admin(u_ID,u_id,u_ct,u_ps,u_rl,IC,found);
                     }
+                    User_IC_Display.setText(null);
+                    User_ID_Display.setText(null);
+                    User_Contact_Number_Display.setText(null);
+                    User_Password_Display.setText(null);
+                    User_Role_Display.setText(null);
                 }
             }
-        }
-        catch (IOException ex) {}
+        }catch (HeadlessException e) {}
+        
 
         if (found == 0)
         {
@@ -1357,6 +1401,8 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         }
     }//GEN-LAST:event_Confirm_Modify_ButtonActionPerformed
 
+//  this method listens for an event that occurs in the User_Details_Delete Dialog, specifcally when the user clicks on a row of that dialog box's JTable called User_Table_Delete
+//  Then it sets all the jtextfields in the dialog to whatever value is present in the table
     private void User_Table_DeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_User_Table_DeleteMouseClicked
         int selected_row_index = User_Table_Delete.getSelectedRow();
         User_IC_Display2.setText(User_Table_Delete.getValueAt(selected_row_index,0).toString());
@@ -1366,6 +1412,7 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         User_Role_Display2.setText(User_Table_Delete.getValueAt(selected_row_index,4).toString());
     }//GEN-LAST:event_User_Table_DeleteMouseClicked
 
+//  This method functionally the same as Admin_Option_3, in this case, we re-implement it to allow user to refresh table     
     private void Show_Users_Button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_Users_Button2ActionPerformed
         try
         {
@@ -1389,12 +1436,15 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
           
     }//GEN-LAST:event_Show_Users_Button2ActionPerformed
 
+//  This method asks user for confirmation on deleting the selected row
+//  upon confirmation, the string variables are passed to the modify_file_admin_delete class's method called modify_file_admin, which was inherited from the Modify_File class, 
+//  which assigns a value 1 to the found variable if the operation was successful
+//  Then, the found variable is checked, if it equals to 1, that means the user's login details has been succesfully deleted.   
     private void Delete_Modify_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_Modify_ButtonActionPerformed
         
         int found = 0;
         if( User_IC_Display2.getText().equals("") ||  User_ID_Display2.getText().equals("") || User_Contact_Number_Display2.getText().equals("") || User_Password_Display2.getText().equals("") || User_Role_Display2.getText().equals(""))
-        {
-            found = 2;
+        {          
             JOptionPane.showMessageDialog(rootPane, "Please select a row");
         }
         else
@@ -1407,7 +1457,7 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
             String IC2 = (String) User_Table_Delete.getValueAt(User_Table_Delete.getSelectedRow(), 0);       
             try 
             {         
-                Path p = Paths.get(".", "User_Details.txt");
+                
                 if( u_ID.equals("") ||  u_id.equals("") || u_ct.equals("") || u_ps.equals("") || u_rl.equals(""))
                 {
                     found = 2;
@@ -1423,57 +1473,24 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
 
                     else if(answer == JOptionPane.YES_OPTION) 
                     {
-
-                        Path tempFile = Files.createTempFile(p.getParent(), "usersTemp", ".txt");
-
-                        try (BufferedReader reader = Files.newBufferedReader(p);
-                            BufferedWriter writer = Files.newBufferedWriter(tempFile)) 
-                        {
-                            String line;
-                        // copy everything until the id is found
-                            while ((line = reader.readLine()) != null) 
-                            {
-                                String[] fields = line.split("[,]");
-                                if (!IC2.equals(fields[0])) 
-                                {
-                                    //found = 1;
-                                    for (int i = 0; i < fields.length; ++i) 
-                                    {
-                                        System.out.println(i + ": " + fields[i]);
-                                    }
-                                    writer.write(String.join(",", fields));
-                                    writer.newLine();
-                                }
-                                if (IC2.equals(fields[0])) 
-                                {
-                                    found = 1;
-                                }
-                            }
-                            User_IC_Display2.setText(null);
-                            User_ID_Display2.setText(null);
-                            User_Contact_Number_Display2.setText(null);
-                            User_Password_Display2.setText(null);
-                            User_Role_Display2.setText(null);
-                        }
-                    // copy new file & delete temporary file
-                    Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
-                    Files.delete(tempFile);
+                        modify_file_admin_delete obj1 = new modify_file_admin_delete();
+                        found = obj1.modify_file_admin(u_id, u_id, u_ct, u_ps, u_rl, IC2, found);                          
                     }
+                    User_IC_Display2.setText(null);
+                    User_ID_Display2.setText(null);
+                    User_Contact_Number_Display2.setText(null);
+                    User_Password_Display2.setText(null);
+                    User_Role_Display2.setText(null);
                 }                  
-        } 
-        catch (IOException ex){}     
-     /*if (found == 0)
-     {
-         JOptionPane.showMessageDialog(rootPane, "Record not found.");
-     }*/
-     if (found == 1)
-     {
-        
-         JOptionPane.showMessageDialog(rootPane, "Record Deleted Successfully!");        
-     }
+            }   catch (HeadlessException e){}           
+            if (found == 1)
+            {    
+                JOptionPane.showMessageDialog(rootPane, "Record Deleted Successfully!");        
+            }
         }
     }//GEN-LAST:event_Delete_Modify_ButtonActionPerformed
 
+//  This method functionally the same as Admin_Option_5, in this case, we re-implement it to allow user to refresh table     
     private void Show_AppointmentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Show_AppointmentsActionPerformed
         User_Appointments_Delete.setModal(false);
         try
@@ -1494,6 +1511,10 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         User_Appointments_Delete.setVisible(true); 
     }//GEN-LAST:event_Show_AppointmentsActionPerformed
 
+//    The method checks if a row is selected. If a row is selected, then the method takes the value of each cell in each row, and assigns it to String variables
+//    Then it checks again if those are empty. If they are not, then the programs asks user for confirmation on the delete operation of the selected appointment
+//    If confirmed, then the appointment details from the orignal file are read into a temporary file, except the line containing the booking code equal to whatever
+//    Booking code was obtained on row selection. The temporary file's contents are then copied onto the orignal file, and the temp file is then deleted.
     private void Delete_AppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Delete_AppointmentActionPerformed
         int found = 0;
         int row = User_Table_Appointments_Delete.getSelectedRow();
@@ -1576,6 +1597,9 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
                                    
     }//GEN-LAST:event_Delete_AppointmentActionPerformed
 
+//  This method checks if the text field is empty, if it is now, then it takes the IC of whatever technician the user entered, and searches for a match
+//  In the payment_collected.txt. If a match is found, then all appointments completed by that specific technician's payment details are then added into the 
+//  User_Table_Payment_Specific Jtable.    
     private void Confirm_SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_SearchActionPerformed
 
         int found = 0;

@@ -65,7 +65,8 @@ public class Login_Details
                         Login_GUI Login_Obj4 = new Login_GUI();
                         Login_Obj4.dispose();
                         Username = fields[1];
-                        Menu_Customer Admin_Object4 = new Menu_Customer(Username);                      
+                        IC = fields[0];
+                        Menu_Customer Admin_Object4 = new Menu_Customer(Username, IC);                      
                         JOptionPane.showMessageDialog(null, "NOICCEEE CUSTOMER BOI");                
                         Admin_Object4.setLocationRelativeTo(null);
                         Admin_Object4.setVisible(true);                   

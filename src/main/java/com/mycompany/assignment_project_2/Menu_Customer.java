@@ -407,6 +407,8 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
         Login_Obj.setVisible(true);     
     }
     private void Customer_Option_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_5ActionPerformed
+        Login_Tracking Obj1 = new Login_Tracking ();
+        Obj1.Login_Tracking(Label_Name, "Customer", "Log-Out");
         this.dispose();
         Log_Out();
         

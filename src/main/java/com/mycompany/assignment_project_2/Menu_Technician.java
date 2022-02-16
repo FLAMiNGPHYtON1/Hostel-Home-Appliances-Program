@@ -621,6 +621,8 @@ public class Menu_Technician extends javax.swing.JFrame implements Log_Out_Funct
 
 //  Destroys technician menu, the calls the Log_out method from the  Log_Out_Function interface     
     private void Technician_Option_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Technician_Option_4ActionPerformed
+        Login_Tracking Obj1 = new Login_Tracking ();
+        Obj1.Login_Tracking(Label_Name, "Technician", "Log-Out");
         this.dispose();
         Log_Out();
     }//GEN-LAST:event_Technician_Option_4ActionPerformed

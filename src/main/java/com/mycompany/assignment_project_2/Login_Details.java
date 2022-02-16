@@ -24,6 +24,7 @@ public class Login_Details
         this.Identification_Number = u_id;
         this.Password = U_PS;
         this.Role = U_RL;
+        String Action = "Log-in";
         int found = 0;   
         try 
         {
@@ -43,8 +44,10 @@ public class Login_Details
                         Login_GUI Login_Obj2 = new Login_GUI();
                         Login_Obj2.dispose();
                         Username = fields[1];
-                        Menu_Admin Admin_Object2 = new Menu_Admin(Username);            
-                        JOptionPane.showMessageDialog(null, "NOICCEEE ADMINIY BOI");                
+                        Menu_Admin Admin_Object2 = new Menu_Admin(Username);
+                        Login_Tracking Obj1 = new Login_Tracking ();
+                        Obj1.Login_Tracking(Username, Role, Action);
+                        JOptionPane.showMessageDialog(null, "Admin Login Successful");                
                         Admin_Object2.setLocationRelativeTo(null);
                         Admin_Object2.setVisible(true);                    
                         
@@ -56,7 +59,9 @@ public class Login_Details
                         Username = fields[1];   
                         IC = fields[0];
                         Menu_Technician Technician_Object1 = new Menu_Technician(Username, IC);
-                        JOptionPane.showMessageDialog(null, "NOICCEEE TECHY BOI");                
+                        Login_Tracking Obj2 = new Login_Tracking ();
+                        Obj2.Login_Tracking(Username, Role, Action);
+                        JOptionPane.showMessageDialog(null, "Technician Login Successful");                
                         Technician_Object1.setLocationRelativeTo(null);
                         Technician_Object1.setVisible(true);                       
                     }
@@ -66,8 +71,10 @@ public class Login_Details
                         Login_Obj4.dispose();
                         Username = fields[1];
                         IC = fields[0];
-                        Menu_Customer Customer_Object1 = new Menu_Customer(Username, IC);                      
-                        JOptionPane.showMessageDialog(null, "NOICCEEE CUSTOMER BOI");                
+                        Menu_Customer Customer_Object1 = new Menu_Customer(Username, IC);
+                        Login_Tracking Obj3 = new Login_Tracking ();
+                        Obj3.Login_Tracking(Username, Role, Action);
+                        JOptionPane.showMessageDialog(null, "Customer Login Successful");                
                         Customer_Object1.setLocationRelativeTo(null);
                         Customer_Object1.setVisible(true);                   
                     }                   

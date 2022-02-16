@@ -124,6 +124,11 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         jLabel20 = new javax.swing.JLabel();
         Technician_IC_Search = new javax.swing.JTextField();
         Confirm_Search = new javax.swing.JButton();
+        User_Logging_Dialog = new javax.swing.JDialog();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel22 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        User_Logging_Table = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -148,6 +153,8 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
         Admin_Option_7 = new javax.swing.JButton();
         Admin_Option_8 = new javax.swing.JButton();
         List_position_9 = new javax.swing.JLabel();
+        Admin_Option_10 = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
 
         User_Details_Modify.setLocation(new java.awt.Point(0, 0));
         User_Details_Modify.setMinimumSize(new java.awt.Dimension(1376, 697));
@@ -813,6 +820,64 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
                 .addGap(23, 23, 23))
         );
 
+        User_Logging_Dialog.setMaximumSize(new java.awt.Dimension(830, 557));
+        User_Logging_Dialog.setMinimumSize(new java.awt.Dimension(830, 557));
+
+        jPanel13.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel13.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel22.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("Logging Activity of all Registered Users in System");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel22)
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+
+        User_Logging_Table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Username", "Role", "Action", "Date & Time"
+            }
+        ));
+        jScrollPane8.setViewportView(User_Logging_Table);
+
+        javax.swing.GroupLayout User_Logging_DialogLayout = new javax.swing.GroupLayout(User_Logging_Dialog.getContentPane());
+        User_Logging_Dialog.getContentPane().setLayout(User_Logging_DialogLayout);
+        User_Logging_DialogLayout.setHorizontalGroup(
+            User_Logging_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(User_Logging_DialogLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+        User_Logging_DialogLayout.setVerticalGroup(
+            User_Logging_DialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_Logging_DialogLayout.createSequentialGroup()
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(581, 374));
         setMinimumSize(new java.awt.Dimension(581, 374));
@@ -979,19 +1044,27 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
 
         List_position_9.setText("9.");
 
+        Admin_Option_10.setText("View User Logging Activity");
+        Admin_Option_10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Admin_Option_10ActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("10.");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(231, 231, 231)
-                .addComponent(List_position_9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Admin_Option_9, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(List_position_5)
+                        .addGap(18, 18, 18)
+                        .addComponent(Admin_Option_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(List_position_4)
                         .addGap(18, 18, 18)
@@ -1008,61 +1081,62 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Admin_Option_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Admin_Option_2, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE))))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(List_position_5)
-                    .addComponent(List_position_6)
-                    .addComponent(List_position_7)
-                    .addComponent(List_position_8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(Admin_Option_6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Admin_Option_7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
-                    .addComponent(Admin_Option_8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Admin_Option_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(List_position_6)
+                            .addComponent(List_position_7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Admin_Option_7, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Admin_Option_6, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel21)
+                            .addComponent(List_position_8)
+                            .addComponent(List_position_9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Admin_Option_9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Admin_Option_8, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+                            .addComponent(Admin_Option_10, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(List_position_1)
-                            .addComponent(Admin_Option_1))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(List_position_2)
-                            .addComponent(Admin_Option_2))
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(List_position_3)
-                            .addComponent(Admin_Option_3))
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(List_position_4)
-                            .addComponent(Admin_Option_4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(List_position_5)
-                            .addComponent(Admin_Option_5))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(List_position_6)
-                            .addComponent(Admin_Option_6))
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(List_position_7)
-                            .addComponent(Admin_Option_7))
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(List_position_8)
-                            .addComponent(Admin_Option_8))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(List_position_1)
+                    .addComponent(Admin_Option_1)
+                    .addComponent(Admin_Option_6)
+                    .addComponent(List_position_6))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(List_position_2)
+                    .addComponent(Admin_Option_2)
+                    .addComponent(Admin_Option_7)
+                    .addComponent(List_position_7))
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(List_position_3)
+                    .addComponent(Admin_Option_3)
+                    .addComponent(Admin_Option_8)
+                    .addComponent(List_position_8))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(List_position_4)
+                    .addComponent(Admin_Option_4)
                     .addComponent(Admin_Option_9)
                     .addComponent(List_position_9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(List_position_5)
+                    .addComponent(Admin_Option_5)
+                    .addComponent(Admin_Option_10)
+                    .addComponent(jLabel21))
                 .addContainerGap())
         );
 
@@ -1273,6 +1347,8 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
 //  Destroys admin menu, the calls the Log_out method from the  Log_Out_Function interface  
     private void Admin_Option_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_9ActionPerformed
         this.dispose();
+        Login_Tracking Obj1 = new Login_Tracking ();
+        Obj1.Login_Tracking(Label_Name, "Admin", "Log-Out");
         Log_Out();              
     }//GEN-LAST:event_Admin_Option_9ActionPerformed
 
@@ -1368,7 +1444,7 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
                 else
                 {
                     int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm Action!", JOptionPane.YES_NO_OPTION);
-                    /*FOR THE LOVE OF FUCKING GOD DONT CHANGE THE DOT YEAH?*/
+                    
                     
                     if (answer == JOptionPane.NO_OPTION)
                     {
@@ -1616,7 +1692,7 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
             {                       
                 String IC = Technician_IC_Search.getText();  
                 int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm Action!", JOptionPane.YES_NO_OPTION);
-                /*FOR THE LOVE OF FUCKING GOD DONT CHANGE THE DOT YEAH?*/              
+                            
                 if (answer == JOptionPane.NO_OPTION)
                 {
                     found = 3;
@@ -1648,6 +1724,28 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
             JOptionPane.showMessageDialog(rootPane, "Record not found.");
         }                                 
     }//GEN-LAST:event_Confirm_SearchActionPerformed
+
+    private void Admin_Option_10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Admin_Option_10ActionPerformed
+     
+      User_Logging_Dialog.setModal(false);       
+        try
+        {  
+            
+            Path User_Logging_Activity = Paths.get(".", "User_tracking_details.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Logging_Activity);         
+            DefaultTableModel model5 = (DefaultTableModel) User_Logging_Table.getModel();  
+            model5.setRowCount(0);
+            String User_Logging_Array; 
+            while ((User_Logging_Array = reader.readLine()) != null) 
+            {
+                String[] fields = User_Logging_Array.split("[,]");  
+                model5.addRow(fields);
+            }         
+        }
+        catch (IOException ex){} 
+        User_Logging_Dialog.setModal(true);
+        User_Logging_Dialog.setVisible(true);  
+    }//GEN-LAST:event_Admin_Option_10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1695,6 +1793,7 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JLabel Admin_Display_Name;
     private javax.swing.JButton Admin_Option_1;
+    private javax.swing.JButton Admin_Option_10;
     private javax.swing.JButton Admin_Option_2;
     private javax.swing.JButton Admin_Option_3;
     private javax.swing.JButton Admin_Option_4;
@@ -1731,6 +1830,8 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
     private javax.swing.JTextField User_IC_Display2;
     private javax.swing.JTextField User_ID_Display;
     private javax.swing.JTextField User_ID_Display2;
+    private javax.swing.JDialog User_Logging_Dialog;
+    private javax.swing.JTable User_Logging_Table;
     private javax.swing.JTextField User_Password_Display;
     private javax.swing.JTextField User_Password_Display2;
     private javax.swing.JDialog User_Payment_Collected_All;
@@ -1757,6 +1858,8 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1768,6 +1871,7 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1783,5 +1887,6 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     // End of variables declaration//GEN-END:variables
 }

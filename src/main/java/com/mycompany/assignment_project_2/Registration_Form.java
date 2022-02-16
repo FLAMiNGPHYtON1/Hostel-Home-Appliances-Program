@@ -4,6 +4,13 @@
  */
 package com.mycompany.assignment_project_2;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -178,24 +185,86 @@ public class Registration_Form extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void REGISTER_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_REGISTER_ButtonActionPerformed
-        
-        
+      
         if (User_txt.getText().isEmpty() || Ctc_txt.getText().isEmpty() || new String(Pass_txt.getPassword()).isEmpty() || ID_txt.getText().isEmpty())
         {
            JOptionPane.showMessageDialog(null, "No Fields can be left empty!"); 
         } 
         else
         {
-        String u_ID = ID_txt.getText();    
-        String u_id = User_txt.getText();
-        String u_ps = new String(Pass_txt.getPassword());
-        String u_ct = Ctc_txt.getText();
-        String u_rl = Rl_txt.getSelectedItem().toString();
-        Registration_Details Obj2 = new Registration_Details();
-        Obj2.register(u_ID, u_id,  u_ct,  u_ps,  u_rl);
-        JOptionPane.showMessageDialog(null, "Registration Successful!");
-        this.dispose();
-        Global_Admin_Object_5.setVisible(true);
+            int found = 0;
+            String u_ID = ID_txt.getText();    
+            String u_id = User_txt.getText();
+            String u_ps = new String(Pass_txt.getPassword());
+            String u_ct = Ctc_txt.getText();
+            Pattern username = Pattern.compile("^[a-zA-Z]{0,10}[_]{1}[a-zA-Z]{0,10}$");
+            Pattern ID = Pattern.compile("^[a-zA-Z0-9]{5,15}$");
+            Pattern Contact_Number = Pattern.compile("^[0-9]{10,16}$");
+            Pattern Password = Pattern.compile("^[\\p{Punct} | \\p{Alnum}]{1,16}$");
+
+            Matcher ID_match = ID.matcher(u_ID);
+            Matcher username_match = username.matcher(u_id);
+            Matcher Password_match = Password.matcher(u_ps);
+            Matcher Contact_match = Contact_Number.matcher(u_ct);
+            
+            boolean b1 = ID_match.matches();
+            boolean b2 = username_match.matches();
+            boolean b3 = Password_match.matches();
+            boolean b4 = Contact_match.matches();       
+            if (!b1 || !b2 || !b3 || !b4)
+            {
+                JOptionPane.showMessageDialog(null, """
+                                                    Invalid details entered, please try again!!
+                                                    Username only acceptble in this format:- FirstName_LastName
+                                                    Your IC must only contain alphanumerics and be a minimum of 5 characters long
+                                                    Your Contact Number must be 10 digits long atleast
+                                                    Your Password must only contain alphanumerics""");
+                ID_txt.setText(null);
+                User_txt.setText(null);
+                Pass_txt.setText(null);
+                Ctc_txt.setText(null);
+            }
+            else
+            {
+                Path p = Paths.get(".", "User_Details.txt");
+                try (BufferedReader reader = Files.newBufferedReader(p);)
+                {                 
+                    String line;
+                    while ((line = reader.readLine()) != null)
+                    {
+                       
+                        String[] fields = line.split("[,]");
+                        System.out.println(u_ID);
+                        System.out.println(fields[0]);
+                        if (u_ID.equals(fields[0]))
+                        {                                                   
+                            found = 1;
+                            break;
+                        }
+                        else
+                        {   
+                           found = 0; 
+                        }
+                    }
+                }catch (IOException ex){}
+                if (found == 1)
+                {
+                    JOptionPane.showMessageDialog(null, "This IC has already been registered with another account! \n Please try again!");
+                    ID_txt.setText(null);
+                    User_txt.setText(null);
+                    Pass_txt.setText(null);
+                    Ctc_txt.setText(null);
+                }
+                else
+                {
+                    String u_rl = Rl_txt.getSelectedItem().toString();
+                    Registration_Details Obj2 = new Registration_Details();
+                    Obj2.register(u_ID, u_id,  u_ct,  u_ps,  u_rl);
+                    JOptionPane.showMessageDialog(null, "Registration Successful!");
+                    this.dispose();
+                    Global_Admin_Object_5.setVisible(true);  
+                }             
+            }               
         }
     }//GEN-LAST:event_REGISTER_ButtonActionPerformed
 

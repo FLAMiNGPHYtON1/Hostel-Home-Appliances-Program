@@ -55,10 +55,10 @@ public class Login_Details
                         Login_Obj3.dispose();
                         Username = fields[1];   
                         IC = fields[0];
-                        Menu_Technician Admin_Object3 = new Menu_Technician(Username, IC);
+                        Menu_Technician Technician_Object1 = new Menu_Technician(Username, IC);
                         JOptionPane.showMessageDialog(null, "NOICCEEE TECHY BOI");                
-                        Admin_Object3.setLocationRelativeTo(null);
-                        Admin_Object3.setVisible(true);                       
+                        Technician_Object1.setLocationRelativeTo(null);
+                        Technician_Object1.setVisible(true);                       
                     }
                     else
                     {
@@ -66,10 +66,10 @@ public class Login_Details
                         Login_Obj4.dispose();
                         Username = fields[1];
                         IC = fields[0];
-                        Menu_Customer Admin_Object4 = new Menu_Customer(Username, IC);                      
+                        Menu_Customer Customer_Object1 = new Menu_Customer(Username, IC);                      
                         JOptionPane.showMessageDialog(null, "NOICCEEE CUSTOMER BOI");                
-                        Admin_Object4.setLocationRelativeTo(null);
-                        Admin_Object4.setVisible(true);                   
+                        Customer_Object1.setLocationRelativeTo(null);
+                        Customer_Object1.setVisible(true);                   
                     }                   
                 }             
             }            

@@ -1357,9 +1357,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="User_Logging_Dialog">
       <Properties>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[830, 557]"/>
-        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[830, 557]"/>
         </Property>

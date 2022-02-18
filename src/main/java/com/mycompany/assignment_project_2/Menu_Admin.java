@@ -820,7 +820,6 @@ public class Menu_Admin extends javax.swing.JFrame implements Log_Out_Function {
                 .addGap(23, 23, 23))
         );
 
-        User_Logging_Dialog.setMaximumSize(new java.awt.Dimension(830, 557));
         User_Logging_Dialog.setMinimumSize(new java.awt.Dimension(830, 557));
 
         jPanel13.setBackground(new java.awt.Color(0, 0, 0));

@@ -4,10 +4,18 @@
  */
 package com.mycompany.assignment_project_2;
 
+import java.io.BufferedReader;
+import java.nio.file.StandardCopyOption;
 import java.io.FileWriter;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Random;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -63,6 +71,46 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
         Block_Selection = new javax.swing.JComboBox<>();
         Floor_Selection = new javax.swing.JComboBox<>();
         Unit_Selection = new javax.swing.JComboBox<>();
+        User_Appointments_View = new javax.swing.JDialog();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        User_Table_Appointments_View = new javax.swing.JTable()
+        {public boolean isCellEditable(int row, int column){return false;}};
+        User_Appointments_Cancel = new javax.swing.JDialog();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        Cancelled_Radio = new javax.swing.JRadioButton();
+        Pending_Radio = new javax.swing.JRadioButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        User_Table_Appointments_Cancelled = new javax.swing.JTable()
+        {public boolean isCellEditable(int row, int column){return false;}};
+        Refresh_Button = new javax.swing.JButton();
+        Confirm_Button1 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        Booking_Reference_Display2 = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        User_IC_Display2 = new javax.swing.JTextField();
+        User_ID_Display2 = new javax.swing.JTextField();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        Appliance_Display2 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        Block_Display2 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        Floor_Display2 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        Unit_Display2 = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        User_Details_View = new javax.swing.JDialog();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        User_Table_View = new javax.swing.JTable()
+        {public boolean isCellEditable(int row, int column){return false;}};
+        jPanel8 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        Status_Group = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -79,7 +127,6 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
         Customer_Option_4 = new javax.swing.JButton();
         Customer_Option_5 = new javax.swing.JButton();
 
-        Book_Appointment_Dialog.setMaximumSize(new java.awt.Dimension(589, 544));
         Book_Appointment_Dialog.setMinimumSize(new java.awt.Dimension(589, 544));
         Book_Appointment_Dialog.setResizable(false);
 
@@ -98,7 +145,7 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 21, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,6 +273,350 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(Confirm_Button)
                 .addGap(18, 18, 18))
+        );
+
+        User_Appointments_View.setMinimumSize(new java.awt.Dimension(994, 588));
+        User_Appointments_View.setResizable(false);
+
+        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel9.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel16.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel16.setFont(new java.awt.Font("Trebuchet MS", 3, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Current/Past Appointments");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 848, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
+
+        User_Table_Appointments_View.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Booking Reference", "User IC", "User ID", "Appliance", "Block", "Floor", "Unit", "Status"
+            }
+        ));
+        User_Table_Appointments_View.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(User_Table_Appointments_View);
+
+        javax.swing.GroupLayout User_Appointments_ViewLayout = new javax.swing.GroupLayout(User_Appointments_View.getContentPane());
+        User_Appointments_View.getContentPane().setLayout(User_Appointments_ViewLayout);
+        User_Appointments_ViewLayout.setHorizontalGroup(
+            User_Appointments_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(User_Appointments_ViewLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 772, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        User_Appointments_ViewLayout.setVerticalGroup(
+            User_Appointments_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_Appointments_ViewLayout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        User_Appointments_Cancel.setMaximumSize(new java.awt.Dimension(1220, 725));
+        User_Appointments_Cancel.setMinimumSize(new java.awt.Dimension(1220, 725));
+        User_Appointments_Cancel.setResizable(false);
+
+        jPanel10.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel10.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel17.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Customer Bookings");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel17)
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+
+        jPanel4.setBackground(new java.awt.Color(0, 0, 0));
+
+        Cancelled_Radio.setBackground(new java.awt.Color(0, 0, 0));
+        Status_Group.add(Cancelled_Radio);
+        Cancelled_Radio.setForeground(new java.awt.Color(255, 255, 255));
+        Cancelled_Radio.setText("Cancelled");
+        Cancelled_Radio.setActionCommand("cancelled");
+
+        Pending_Radio.setBackground(new java.awt.Color(0, 0, 0));
+        Status_Group.add(Pending_Radio);
+        Pending_Radio.setForeground(new java.awt.Color(255, 255, 255));
+        Pending_Radio.setText("Pending");
+        Pending_Radio.setActionCommand(" pending");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Cancelled_Radio)
+                    .addComponent(Pending_Radio))
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Cancelled_Radio)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(Pending_Radio)
+                .addGap(25, 25, 25))
+        );
+
+        User_Table_Appointments_Cancelled.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Booking Reference", "User IC", "User ID", "Appliance", "Block", "Floor", "Unit", "Status"
+            }
+        ));
+        User_Table_Appointments_Cancelled.getTableHeader().setReorderingAllowed(false);
+        User_Table_Appointments_Cancelled.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                User_Table_Appointments_CancelledMouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(User_Table_Appointments_Cancelled);
+
+        Refresh_Button.setText("Refresh");
+        Refresh_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Refresh_ButtonActionPerformed(evt);
+            }
+        });
+
+        Confirm_Button1.setText("Confirm");
+        Confirm_Button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Confirm_Button1ActionPerformed(evt);
+            }
+        });
+
+        Booking_Reference_Display2.setEditable(false);
+
+        jLabel21.setText("5. Block                         :- ");
+
+        User_IC_Display2.setEditable(false);
+
+        User_ID_Display2.setEditable(false);
+
+        jLabel25.setText("1. Booking Reference  :- ");
+
+        jLabel22.setText("6. Floor                         :- ");
+
+        Appliance_Display2.setEditable(false);
+
+        jLabel23.setText("7. Unit                          :- ");
+
+        jLabel26.setText("2. User IC                       :- ");
+
+        Block_Display2.setEditable(false);
+
+        jLabel19.setText("3. User ID                       :- ");
+
+        Floor_Display2.setEditable(false);
+
+        jLabel20.setText("4. Appliance Selected  :- ");
+
+        Unit_Display2.setEditable(false);
+
+        jLabel24.setText("8. Current Status        :- ");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel26)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel23))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Unit_Display2)
+                    .addComponent(Floor_Display2)
+                    .addComponent(Block_Display2)
+                    .addComponent(Appliance_Display2)
+                    .addComponent(User_ID_Display2)
+                    .addComponent(User_IC_Display2)
+                    .addComponent(Booking_Reference_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jLabel24)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(Booking_Reference_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel26)
+                    .addComponent(User_IC_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(User_ID_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(Appliance_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(Block_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(Floor_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(Unit_Display2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addComponent(jLabel24))
+        );
+
+        javax.swing.GroupLayout User_Appointments_CancelLayout = new javax.swing.GroupLayout(User_Appointments_Cancel.getContentPane());
+        User_Appointments_Cancel.getContentPane().setLayout(User_Appointments_CancelLayout);
+        User_Appointments_CancelLayout.setHorizontalGroup(
+            User_Appointments_CancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(User_Appointments_CancelLayout.createSequentialGroup()
+                .addGroup(User_Appointments_CancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(User_Appointments_CancelLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(User_Appointments_CancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Refresh_Button)
+                            .addComponent(Confirm_Button1))
+                        .addGap(74, 74, 74)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 48, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 860, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        User_Appointments_CancelLayout.setVerticalGroup(
+            User_Appointments_CancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_Appointments_CancelLayout.createSequentialGroup()
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addGroup(User_Appointments_CancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(User_Appointments_CancelLayout.createSequentialGroup()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(User_Appointments_CancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(User_Appointments_CancelLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(User_Appointments_CancelLayout.createSequentialGroup()
+                                .addGap(25, 25, 25)
+                                .addComponent(Refresh_Button)
+                                .addGap(18, 18, 18)
+                                .addComponent(Confirm_Button1)))))
+                .addContainerGap(126, Short.MAX_VALUE))
+        );
+
+        User_Details_View.setLocation(new java.awt.Point(0, 0));
+        User_Details_View.setMinimumSize(new java.awt.Dimension(743, 476));
+        User_Details_View.setResizable(false);
+
+        User_Table_View.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "User_IC", "User Name", "User Contact Number"
+            }
+        ));
+        User_Table_View.setFocusable(false);
+        User_Table_View.setShowGrid(true);
+        User_Table_View.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(User_Table_View);
+
+        jPanel8.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel8.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel18.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel18.setFont(new java.awt.Font("SimSun-ExtB", 0, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel18.setText("Account Details");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jLabel18)
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout User_Details_ViewLayout = new javax.swing.GroupLayout(User_Details_View.getContentPane());
+        User_Details_View.getContentPane().setLayout(User_Details_ViewLayout);
+        User_Details_ViewLayout.setHorizontalGroup(
+            User_Details_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(User_Details_ViewLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 641, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(56, Short.MAX_VALUE))
+            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        User_Details_ViewLayout.setVerticalGroup(
+            User_Details_ViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, User_Details_ViewLayout.createSequentialGroup()
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(46, 46, 46))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -415,15 +806,79 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
     }//GEN-LAST:event_Customer_Option_5ActionPerformed
 
     private void Customer_Option_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_4ActionPerformed
-        // TODO add your handling code here:
+        User_Details_View.setModal(false);
+        int found = 0;
+        try
+        {            
+            String IC = IC_value;  
+            Path User_Details = Paths.get(".", "User_Details.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Details);         
+            DefaultTableModel model3 = (DefaultTableModel) User_Table_View.getModel();  
+            model3.setRowCount(0);
+            String User_Details_Array;         
+            while ((User_Details_Array = reader.readLine()) != null) 
+            {
+                String[] fields = User_Details_Array.split("[,]"); 
+                if (IC.equals(fields[0]))
+                    {
+                        found = 1;
+                        model3.addRow(fields);
+                }
+            }
+        }
+        catch (IOException ex){}
+        User_Details_View.setModal(true);  
+        User_Details_View.setVisible(true);  
     }//GEN-LAST:event_Customer_Option_4ActionPerformed
 
     private void Customer_Option_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_3ActionPerformed
-        // TODO add your handling code here:
+        User_Appointments_View.setModal(false);
+        int found = 0;
+        try
+        {         
+            String IC = IC_value; 
+            Path User_Appointments = Paths.get(".", "Appointments.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Appointments);         
+            DefaultTableModel model4 = (DefaultTableModel) User_Table_Appointments_View.getModel();  
+            model4.setRowCount(0);
+            String User_Appointments_Array;         
+            while ((User_Appointments_Array = reader.readLine()) != null) 
+            {
+                String[] fields = User_Appointments_Array.split("[,]");  
+                if (IC.equals(fields[1]))
+                    {
+                        found = 1;
+                        model4.addRow(fields);
+                }
+            }
+        }
+        catch (IOException ex){} 
+        User_Appointments_View.setModal(true);  
+        User_Appointments_View.setVisible(true);  
     }//GEN-LAST:event_Customer_Option_3ActionPerformed
 
     private void Customer_Option_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_2ActionPerformed
-        // TODO add your handling code here:
+        User_Appointments_Cancel.setModal(false);   
+        try
+        {             
+            String IC = IC_value; 
+            Path User_Appointments = Paths.get(".", "Appointments.txt");   
+            BufferedReader reader = Files.newBufferedReader(User_Appointments);         
+            DefaultTableModel model5 = (DefaultTableModel) User_Table_Appointments_Cancelled.getModel();  
+            model5.setRowCount(0);
+            String User_Appointments_Array;         
+            while ((User_Appointments_Array = reader.readLine()) != null) 
+            {
+                String[] fields = User_Appointments_Array.split("[,]");  
+                if (IC.equals(fields[1]))
+                    {                     
+                        model5.addRow(fields);
+                }
+            }
+        }
+        catch (IOException ex){} 
+        User_Appointments_Cancel.setModal(true);  
+        User_Appointments_Cancel.setVisible(true);  
     }//GEN-LAST:event_Customer_Option_2ActionPerformed
 //  This method Sets the uneditable JTextlabels to currently logged in user's details, and generates a random Booking ID every time the button is pressed
     private void Customer_Option_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Customer_Option_1ActionPerformed
@@ -472,6 +927,144 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
         
     }//GEN-LAST:event_Confirm_ButtonActionPerformed
 
+    private void User_Table_Appointments_CancelledMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_User_Table_Appointments_CancelledMouseClicked
+        int selected_row_index = User_Table_Appointments_Cancelled.getSelectedRow();
+        Booking_Reference_Display2.setText(User_Table_Appointments_Cancelled.getValueAt(selected_row_index,0).toString());
+        User_IC_Display2.setText(User_Table_Appointments_Cancelled.getValueAt(selected_row_index,1).toString());
+        User_ID_Display2.setText(User_Table_Appointments_Cancelled.getValueAt(selected_row_index,2).toString());
+        Appliance_Display2.setText(User_Table_Appointments_Cancelled.getValueAt(selected_row_index,3).toString());
+        Block_Display2.setText(User_Table_Appointments_Cancelled.getValueAt(selected_row_index,4).toString());
+        Floor_Display2.setText(User_Table_Appointments_Cancelled.getValueAt(selected_row_index,5).toString());
+        Unit_Display2.setText(User_Table_Appointments_Cancelled.getValueAt(selected_row_index,6).toString());
+        String Status_Display = User_Table_Appointments_Cancelled.getValueAt(selected_row_index,7).toString();
+        if (Status_Display.equals(" complete"))
+        {
+            Cancelled_Radio.setSelected(true);
+        }
+        else
+        {
+            Pending_Radio.setSelected(true);
+        }
+    }//GEN-LAST:event_User_Table_Appointments_CancelledMouseClicked
+
+    private void Refresh_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Refresh_ButtonActionPerformed
+
+        try
+        {
+
+            Path User_Appointments = Paths.get(".", "Appointments.txt");
+            BufferedReader reader = Files.newBufferedReader(User_Appointments);
+            DefaultTableModel model9 = (DefaultTableModel) User_Table_Appointments_Cancelled.getModel();
+            model9.setRowCount(0);
+            String User_Appointments_Array;
+            while ((User_Appointments_Array = reader.readLine()) != null)
+            {
+                String[] fields = User_Appointments_Array.split("[,]");
+
+                if (fields[7].equals(" pending"))
+                {
+                    model9.addRow(fields);
+                }
+                else
+                {
+
+                }
+            }
+        }
+        catch (IOException ex){}
+    }//GEN-LAST:event_Refresh_ButtonActionPerformed
+
+    private void Confirm_Button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Confirm_Button1ActionPerformed
+
+        String Booking_Reference_DISPLAY = "";
+        int found = 0;
+        int row;
+        row = User_Table_Appointments_Cancelled.getSelectedRow();
+        try
+        {
+            if(row == -1)
+            {
+                found = 2;
+                JOptionPane.showMessageDialog(rootPane, "Please select a row");
+            }
+            else
+            {
+                String u_Booking_ID = Booking_Reference_Display2.getText();
+                String u_ID = User_IC_Display2.getText();
+                String u_id = User_ID_Display2.getText();
+                String u_appliance = Appliance_Display2.getText();
+                String u_block = Block_Display2.getText();
+                String u_floor = Floor_Display2.getText();
+                String u_unit = Unit_Display2.getText();               
+                String Status = Status_Group.getSelection().getActionCommand();
+                String BK = (String) User_Table_Appointments_Cancelled.getValueAt(User_Table_Appointments_Cancelled.getSelectedRow(), 0);
+                Booking_Reference_DISPLAY = BK;
+
+                int answer = JOptionPane.showConfirmDialog(rootPane, "Are you sure you want to proceed?", "Confirm Action!", JOptionPane.YES_NO_OPTION);             
+                Path p = Paths.get(".", "Appointments.txt");
+                if (answer == JOptionPane.NO_OPTION)
+                {
+                    found = 3;
+                }
+                else if(answer == JOptionPane.YES_OPTION)
+                {                  
+                    Path tempFile = Files.createTempFile(p.getParent(), "appointmentsTemp", ".txt");
+                    try (BufferedReader reader = Files.newBufferedReader(p);
+                        BufferedWriter writer = Files.newBufferedWriter(tempFile))
+                    {
+                        String line;
+                        // copy everything until the id is found
+                        while ((line = reader.readLine()) != null)
+                        {
+                            String[] fields = line.split("[,]");                        
+                            if (BK.equals(fields[0]))
+                            {
+                                found = 1;
+                                for (int i = 0; i < fields.length; ++i)
+                                {
+                                    System.out.println(i + ": " + fields[i]);
+                                }
+                                fields[0] = u_Booking_ID;
+                                fields[1] = u_ID;
+                                fields[2] = u_id;
+                                fields[3] = u_appliance;
+                                fields[4] = u_block;
+                                fields[5] = u_floor;
+                                fields[6] = u_unit;
+                                fields[7] = Status;
+                            }
+                            writer.write(String.join(",", fields));
+                            writer.newLine();
+                        }
+                        Booking_Reference_Display2.setText(null);
+                        User_IC_Display2.setText(null);
+                        User_ID_Display2.setText(null);
+                        Appliance_Display2.setText(null);
+                        Block_Display2.setText(null);
+                        Floor_Display2.setText(null);
+                        Unit_Display2.setText(null);
+                        Cancelled_Radio.setSelected(false);
+                        Pending_Radio.setSelected(false);
+                    }
+                    // copy new file & delete temporary file
+                    Files.copy(tempFile, p, StandardCopyOption.REPLACE_EXISTING);
+                    Files.delete(tempFile);                                  
+                }
+            }
+        }
+        catch (IOException ex) {}
+        if (found == 0)
+        {
+            JOptionPane.showMessageDialog(rootPane, "Record not found.");
+        }
+        if (found == 1)
+        {
+
+            JOptionPane.showMessageDialog(rootPane, "Record Updated Successfully for ID: "+ Booking_Reference_DISPLAY);
+        }
+
+    }//GEN-LAST:event_Confirm_Button1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -507,23 +1100,41 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Appliance_Display2;
     private javax.swing.JComboBox<String> Appliance_Selection;
+    private javax.swing.JTextField Block_Display2;
     private javax.swing.JComboBox<String> Block_Selection;
     private javax.swing.JDialog Book_Appointment_Dialog;
     private javax.swing.JTextField Booking_ID_Display;
+    private javax.swing.JTextField Booking_Reference_Display2;
+    private javax.swing.JRadioButton Cancelled_Radio;
     private javax.swing.JButton Confirm_Button;
+    private javax.swing.JButton Confirm_Button1;
     private javax.swing.JLabel Customer_Display_Name;
     private javax.swing.JButton Customer_Option_1;
     private javax.swing.JButton Customer_Option_2;
     private javax.swing.JButton Customer_Option_3;
     private javax.swing.JButton Customer_Option_4;
     private javax.swing.JButton Customer_Option_5;
+    private javax.swing.JTextField Floor_Display2;
     private javax.swing.JComboBox<String> Floor_Selection;
+    private javax.swing.JRadioButton Pending_Radio;
+    private javax.swing.JButton Refresh_Button;
+    private javax.swing.ButtonGroup Status_Group;
+    private javax.swing.JTextField Unit_Display2;
     private javax.swing.JComboBox<String> Unit_Selection;
+    private javax.swing.JDialog User_Appointments_Cancel;
+    private javax.swing.JDialog User_Appointments_View;
+    private javax.swing.JDialog User_Details_View;
     private javax.swing.JTextField User_IC_Display;
+    private javax.swing.JTextField User_IC_Display2;
+    private javax.swing.JTextField User_ID_Display2;
     private javax.swing.JTextField User_Name_Display;
+    private javax.swing.JTable User_Table_Appointments_Cancelled;
+    private javax.swing.JTable User_Table_Appointments_View;
+    private javax.swing.JTable User_Table_View;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -531,7 +1142,18 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -540,7 +1162,15 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     // End of variables declaration//GEN-END:variables
 }

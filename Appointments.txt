@@ -1,9 +1,9 @@
-BK13333,BP4213444,Basmah_Zahid, Refrigerator, B, 10, 10,cancelled
+BK13333,BP4213444,Basmah_Zahid, Refrigerator, B, 10, 10, cancelled
 BK15234,BP4213444,Basmah_Zahid, Refrigerator, B, 10, 10, pending
 BK13125,BP4213444,Basmah_Zahid, Refrigerator, B, 10, 10, pending
 BK15672,BP4213444,Basmah_Zahid, Refrigerator, B, 10, 10, pending
 BK11233,BP4213444,Basmah_Zahid, Washing_machine, B, 10, 10, pending
 BK13213,BP4213444,Basmah_Zahid, Washing_machine, B, 10, 10, pending
-BK29533,BP4213444,Basmah_Zahid, Washing_machine, B, 3, 9,cancelled
+BK29533,BP4213444,Basmah_Zahid, Washing_machine, B, 3, 9, cancelled
 BK94339,AC666333,Faris_Zulfiqar, Washing_machine, C, 15, 3,  pending
 BK45434,AC666333,Faris_Zulfiqar, Refrigerator, C, 15, 3,  pending

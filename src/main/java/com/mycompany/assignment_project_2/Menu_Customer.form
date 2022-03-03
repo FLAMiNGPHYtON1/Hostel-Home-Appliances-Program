@@ -414,9 +414,6 @@
     </Container>
     <Container class="javax.swing.JDialog" name="User_Appointments_Cancel">
       <Properties>
-        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1220, 725]"/>
-        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[1220, 725]"/>
         </Property>
@@ -564,7 +561,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cancelled"/>
-                <Property name="actionCommand" type="java.lang.String" value="cancelled"/>
+                <Property name="actionCommand" type="java.lang.String" value=" cancelled"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="Pending_Radio">

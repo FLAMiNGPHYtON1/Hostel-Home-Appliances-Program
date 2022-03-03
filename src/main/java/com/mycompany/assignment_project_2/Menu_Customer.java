@@ -333,7 +333,6 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        User_Appointments_Cancel.setMaximumSize(new java.awt.Dimension(1220, 725));
         User_Appointments_Cancel.setMinimumSize(new java.awt.Dimension(1220, 725));
         User_Appointments_Cancel.setResizable(false);
 
@@ -366,7 +365,7 @@ public class Menu_Customer extends javax.swing.JFrame implements Log_Out_Functio
         Status_Group.add(Cancelled_Radio);
         Cancelled_Radio.setForeground(new java.awt.Color(255, 255, 255));
         Cancelled_Radio.setText("Cancelled");
-        Cancelled_Radio.setActionCommand("cancelled");
+        Cancelled_Radio.setActionCommand(" cancelled");
 
         Pending_Radio.setBackground(new java.awt.Color(0, 0, 0));
         Status_Group.add(Pending_Radio);
